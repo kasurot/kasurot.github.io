@@ -1,6 +1,6 @@
 ---
 title: "3 Resume Mistakes I See Too Often (And How to Fix Them)"
-date: 2023-10-29
+date: 2026-02-13
 layout: post
 ---
 

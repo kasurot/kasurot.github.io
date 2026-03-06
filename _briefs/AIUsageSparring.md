@@ -1,6 +1,6 @@
 ---
 title: "Cognitive Sparring: Using AI to Think Against You"
-date: 2023-11-05
+date: 2026-02-01
 description: "Stop using AI as a copywriter. Use it as a cognitive sparring partner to challenge assumptions, analyze trade-offs, and force interdisciplinary reasoning."
 tags: [AI, Critical Thinking, Strategy]
 ---

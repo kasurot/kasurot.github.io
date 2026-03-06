@@ -1,6 +1,6 @@
 ---
 title: "The Shock Doctrine of IT: Moving from Crisis to Capital Allocation"
-date: 2023-11-10
+date: 2026-02-19
 description: "Disaster architecture often leads to a 'Frankenstein' stack. True resilience is about inspecting the roof while the sun is shining, not just fixing it during the storm."
 tags: [Risk Management, Capital Allocation, IT Strategy]
 ---

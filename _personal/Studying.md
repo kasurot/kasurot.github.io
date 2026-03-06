@@ -1,6 +1,6 @@
 ---
 title: "How I Study: From Passive Recall to Active Judgment"
-date: 2023-10-28
+date: 2026-02-06
 layout: post
 ---
 

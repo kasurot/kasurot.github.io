@@ -1,6 +1,6 @@
 ---
 title: "Marketing is Not Arts & Crafts: It's Unit Economics"
-date: 2023-11-20
+date: 2026-02-27
 description: "Applying systems engineering to marketing: solving the 'Last Mile Problem' and understanding the distribution tax of access friction."
 tags: [IT Strategy, CISO, Capital Allocation, Systems Thinking]
 ---

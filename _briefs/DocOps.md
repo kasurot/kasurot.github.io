@@ -1,6 +1,6 @@
 ---
 title: "Governance as Code: Moving from Static PDFs to DocOps"
-date: 2023-11-15
+date: 2026-01-12
 description: "Knowledge debt in IAM turns into security risk. The strategic shift is towards DocOps: versioned, auditable, code-based documentation."
 tags: [IAM, Governance, DevOps, Strategy]
 ---
