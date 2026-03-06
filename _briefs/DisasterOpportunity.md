@@ -5,25 +5,27 @@ description: "Disaster architecture often leads to a 'Frankenstein' stack. True 
 tags: [Risk Management, Capital Allocation, IT Strategy]
 ---
 
-We often quote the phrase, "Never let a good crisis go to waste."
+The aphorism "Never let a good crisis go to waste" is often cited in boardrooms as a call to action. In the context of IT strategy, however, this mindset frequently leads to a phenomenon I call **"Disaster Architecture."**
 
-But in practice, this mindset often leads to "Disaster Architecture."
+### The Shock Doctrine
+A breach occurs, or a critical system fails. In the ensuing panic, standard due diligence is suspended. The checkbook opens, and governance processes—designed to ensure long-term viability—are bypassed in the name of speed.
 
-We have all seen the pattern:
-A breach or outage occurs. Standard due diligence is suspended. The checkbook opens. And suddenly, the governance processes we rely on are bypassed in the name of speed.
+Naomi Klein coined the term "The Shock Doctrine" to describe pushing through controversial changes while a population is disoriented. In the enterprise IT world, this results in a **"Frankenstein" stack**: a collection of expensive, poorly integrated tools purchased at a panic premium.
 
-Naomi Klein calls this the "Shock Doctrine"—pushing through changes while the system is disoriented.
-In our world, this often results in a "Frankenstein" stack: expensive, poorly integrated, and purchased at a panic premium.
+To move from reactive Crisis Management to strategic Capital Allocation, we must recognize the hidden costs of this "Shock Therapy."
 
-To move from Crisis Management to Capital Allocation, we need to recognize the hidden costs of "Shock Therapy":
+### 1. Governance Protects Future Optionality
+When we bypass procurement and architecture reviews during a shock, we often lock the organization into multi-year commitments. These hasty decisions rarely fit the long-term architectural vision once the dust settles. Governance is not just red tape; it is the mechanism that preserves your future optionality.
 
-⚖️ Governance Protects Future Optionality: When we bypass procurement during a shock, we lock the organization into multi-year commitments that may not fit the long-term architecture once the dust settles.
+### 2. The Shadow IT Consequence
+A "Big Bang" migration driven by crisis often feels necessary, but it creates significant organizational trauma. Users, disoriented by sudden, unmanaged changes, will retreat to familiar, unmanaged tools just to keep working.
 
-🏗️ The Shadow IT Consequence: A "Big Bang" migration often feels necessary, but it creates organizational trauma. Users disoriented by sudden changes will retreat to unmanaged tools just to keep working.
+The result is a paradox: the security measure intended to lock down the environment actually drives users into Shadow IT.
 
-📉 The "Panic Premium" (TCO): Unit economics are hardest to control when leverage is lowest. Negotiating a renewal or purchase during an outage is rarely a win for the balance sheet.
+### 3. The "Panic Premium" (Unit Economics)
+Unit economics are hardest to control when your leverage is lowest. Negotiating a renewal or a new purchase during an active outage is rarely a win for the balance sheet. You are paying a "Panic Premium"—a tax on your lack of preparedness.
 
-True resilience isn't just about how fast we fix the roof during the storm.
-It’s about how well we inspected it while the sun was shining.
+### Conclusion: Inspecting the Roof
+True resilience isn't defined by how fast we fix the roof during the storm. It is defined by how well we inspected it while the sun was shining.
 
-When we look at our current security roadmap, how much of it was designed by architectural intent, and how much was dictated by the last crisis?
+As leaders, we must ask a difficult question of our current security roadmap: **How much of it was designed by architectural intent, and how much was dictated by the last crisis?**

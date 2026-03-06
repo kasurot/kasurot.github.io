@@ -74,7 +74,7 @@
         }
 
         body {
-            font-family: 'Noto Sans', sans-serif;
+            font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
             background-color: var(--bg-color);
             color: var(--text-dark);
             line-height: 1.5;
@@ -133,6 +133,18 @@
         .posts-list h3 a { color: var(--header-blue); text-decoration: none; font-size: 18px; }
         .posts-list h3 a:hover { text-decoration: underline; }
         .posts-list .post-meta { font-size: 12px; color: var(--text-gray); font-style: italic; margin-bottom: 10px; }
+
+        /* Single Post Layout Styles */
+        .post-header { margin-bottom: 30px; }
+        .post-header h1 { 
+            text-transform: none; 
+            letter-spacing: 0; 
+            border-bottom: 1px solid var(--border-medium); 
+            padding-bottom: 15px; 
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .post-header .meta { font-size: 13px; color: var(--text-gray); font-style: italic; }
 
         /* Post Content Styles */
         .post-content h2 { font-size: 18px; color: var(--accent-gold); margin-top: 25px; margin-bottom: 10px; }
@@ -248,17 +260,17 @@
         .pending-cert { color: var(--text-gray); font-style: italic; font-size: 12px; }
 
         .job-block, .card-block {
-            margin-bottom: 18px;
-            padding: 15px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid var(--border-light);
             border-radius: 8px;
+            background-color: var(--bg-color);
             transition: all 0.2s ease;
-            border: 1px solid transparent;
         }
         .job-block:hover {
-            background-color: var(--bg-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-color: var(--border-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--accent-gold);
         }
         .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
         .job-title { font-weight: 700; font-size: 14px; color: var(--header-blue); }
