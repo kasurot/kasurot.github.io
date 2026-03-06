@@ -107,11 +107,28 @@
 
         /* Post Listing Styles */
         .posts-list .post-item {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed var(--border-light);
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            background-color: var(--bg-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
-        .posts-list .post-item:last-child { border-bottom: none; }
+        
+        /* Card Hover Effect */
+        .posts-list .post-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--accent-gold);
+        }
+
+        /* Dark mode specific card adjustment */
+        body.dark-mode .posts-list .post-item {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .posts-list .post-item:last-child { border-bottom: 1px solid var(--border-light); }
+        
         .posts-list h3 { margin-bottom: 5px; }
         .posts-list h3 a { color: var(--header-blue); text-decoration: none; font-size: 18px; }
         .posts-list h3 a:hover { text-decoration: underline; }
@@ -158,6 +175,15 @@
             color: var(--text-gray);
             display: flex;
             gap: 15px;
+        }
+
+        /* SVG Icon Styling */
+        .icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: text-bottom;
+            fill: currentColor;
+            margin-right: 4px;
         }
 
         .contact-info a {
@@ -254,7 +280,7 @@
             background-color: var(--header-blue); color: var(--bg-color);
             width: 50px; height: 50px; border-radius: 50%;
             border: none; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            font-size: 24px; display: flex; align-items: center; justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             z-index: 100; transition: transform 0.2s;
         }
         .theme-toggle:hover { transform: scale(1.1); }
@@ -286,7 +312,12 @@
 </head>
 <body>
 
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌗</button>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <!-- SVG Sun/Moon Icon -->
+        <svg class="icon" style="width: 24px; height: 24px; margin: 0;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
     <button class="download-btn" onclick="window.print()">Print / Save PDF</button>
 
     <div class="resume-container">
