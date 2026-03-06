@@ -3,11 +3,12 @@ layout: default
 title: Executive Briefs | Kevin Armstrong
 ---
 <section>
-    <div class="section-title" style="cursor: default;">Executive Briefs &amp; Insights</div>
+    <h2 class="section-title">Executive Briefs &amp; Insights</h2>
     <div class="posts-list">
         {% for brief in site.briefs | sort: 'date' | reverse %}
           <div class="post-item">
               <h3><a href="{{ brief.url | relative_url }}">{{ brief.title }}</a></h3>
+              <!-- DEBUG: Raw date is [{{ brief.date }}] -->
               <p class="post-meta">Published on {{ brief.date | date: "%B %-d, %Y" }}</p>
               <p>{{ brief.description }}</p>
           </div>
