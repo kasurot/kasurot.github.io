@@ -1,0 +1,20 @@
+---
+layout: default
+title: Personal Posts
+permalink: /personal.html
+---
+
+<h2 class="section-title">Personal &amp; Learning Journey</h2>
+<p style="margin-bottom: 30px;">
+    Thoughts on continuous learning, productivity, and personal growth.
+</p>
+
+<div class="posts-list">
+  {% for post in site.personal | sort: 'date' | reverse %}
+    <div class="post-item">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+      {{ post.excerpt }}
+    </div>
+  {% endfor %}
+</div>

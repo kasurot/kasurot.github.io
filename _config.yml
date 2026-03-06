@@ -1,8 +1,23 @@
 # Site settings
-title: Kevin Armstrong | Strategic IT Executive & Architect
-author: Kevin Armstrong
-email: kevin@the-armstrongs.org
-description: >-
-  Strategic Systems Architect specialized in risk mitigation, capital efficiency, and identity strategy (CIAM/IAM).
-url: "https://kasurot.github.io"
-linkedin_url: "https://linkedin.com/in/kevinsarmstrong"
+title: Kevin Armstrong
+email: your-email@example.com
+description: Strategic IT Executive | Systems Architecture
+linkedin_url: "https://www.linkedin.com/in/kevinsarmstrong"
+
+# Collections Configuration
+# This tells Jekyll to treat _briefs and _personal as special content types.
+collections:
+  briefs:
+    output: true # Generates a page for each brief
+    permalink: /briefs/:title/
+  personal:
+    output: true # Generates a page for each personal post
+    permalink: /personal/:title/
+
+# Default layout for posts in collections
+# This automatically applies the 'post' layout to all items in these collections.
+defaults:
+  - scope: { type: "briefs" }
+    values: { layout: "post" }
+  - scope: { type: "personal" }
+    values: { layout: "post" }
