@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Kevin Armstrong</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (Generated SVG Data URI) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230f172a%22/><text x=%2250%22 y=%2250%22 font-family=%22Arial%22 font-size=%2250%22 fill=%22white%22 text-anchor=%22middle%22 dy=%22.35em%22>KA</text></svg>">
+
+    <!-- Open Graph / Social Sharing Tags -->
+    <meta property="og:title" content="Kevin Armstrong | Senior IT Executive & Architect">
+    <meta property="og:description" content="Strategic Systems Architect specialized in risk mitigation, capital efficiency, and identity strategy (CIAM/IAM).">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kasurot.github.io/">
+
+    <style>
+        :root {
+            --header-blue: #0f172a;
+            --text-dark: #1e293b;
+            --text-gray: #475569;
+            --bg-color: #f8fafc;
+            --accent-gold: #b45309;
+            --container-bg: #ffffff;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --text-body: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --header-blue: #e2e8f0;
+                --text-dark: #f1f5f9;
+                --text-gray: #94a3b8;
+                --bg-color: #0f172a;
+                --accent-gold: #fbbf24;
+                --container-bg: #1e293b;
+                --border-light: #334155;
+                --border-medium: #475569;
+                --text-body: #cbd5e1;
+            }
+        }
+
+        /* Manual Theme Overrides */
+        body.light-mode {
+            --header-blue: #0f172a;
+            --text-dark: #1e293b;
+            --text-gray: #475569;
+            --bg-color: #f8fafc;
+            --accent-gold: #b45309;
+            --container-bg: #ffffff;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --text-body: #334155;
+        }
+
+        body.dark-mode {
+            --header-blue: #e2e8f0;
+            --text-dark: #f1f5f9;
+            --text-gray: #94a3b8;
+            --bg-color: #0f172a;
+            --accent-gold: #fbbf24;
+            --container-bg: #1e293b;
+            --border-light: #334155;
+            --border-medium: #475569;
+            --text-body: #cbd5e1;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .resume-container {
+            max-width: 8.5in;
+            margin: 40px auto;
+            background: var(--container-bg);
+            padding: 40px 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-height: 11in;
+        }
+
+        header {
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--header-blue);
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 13px;
+            color: var(--text-gray);
+            display: flex;
+            gap: 15px;
+        }
+
+        .contact-info a {
+            color: var(--header-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .section-title {
+            color: var(--header-blue);
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-medium);
+            padding-bottom: 4px;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        /* Collapsible Section Styling */
+        details > summary { list-style: none; cursor: pointer; position: relative; }
+        details > summary::-webkit-details-marker { display: none; } /* Hide default triangle */
+        details > summary::after {
+            content: '+'; position: absolute; right: 0; top: 0;
+            font-size: 16px; color: var(--header-blue);
+        }
+        details[open] > summary::after { content: '−'; } /* Minus sign */
+        /* Smooth fade in for content */
+        details[open] > div { animation: fadeIn 0.3s ease-in-out; }
+
+        p { margin-bottom: 8px; font-size: 13px; color: var(--text-body); }
+        ul { list-style-position: outside; margin-left: 18px; margin-bottom: 10px; }
+        li { margin-bottom: 6px; font-size: 13px; color: var(--text-body); }
+
+        .competency-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .competency-grid { grid-template-columns: 1fr; }
+            .resume-container { padding: 20px; }
+            .contact-info { flex-direction: column; gap: 5px; }
+            .separator { display: none; }
+        }
+
+        .competency-column h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .cert-list { list-style: none; margin-left: 0; font-size: 13px; }
+        .cert-list li { margin-bottom: 4px; }
+        .cert-category { font-weight: 700; color: var(--header-blue); margin-right: 5px; }
+        .pending-cert { color: var(--text-gray); font-style: italic; font-size: 12px; }
+
+        .job-block, .card-block {
+            margin-bottom: 18px;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .job-block:hover {
+            background-color: var(--bg-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-color: var(--border-light);
+        }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .job-title { font-weight: 700; font-size: 14px; color: var(--header-blue); }
+        .company-name { font-weight: 600; color: var(--text-dark); }
+        .job-details { font-size: 12px; color: var(--text-gray); font-style: italic; }
+        .early-career { font-size: 12px; color: var(--text-gray); margin-top: 5px; border-top: 1px dashed var(--border-light); padding-top: 5px; }
+        .education-focus { font-size: 12px; color: var(--text-gray); }
+
+        .download-btn {
+            position: fixed; bottom: 20px; right: 20px;
+            background-color: var(--header-blue); color: var(--bg-color);
+            padding: 12px 24px; border-radius: 50px;
+            text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            font-weight: bold; cursor: pointer; border: none; font-family: inherit;
+        }
+
+        .theme-toggle {
+            position: fixed; bottom: 80px; right: 20px;
+            background-color: var(--header-blue); color: var(--bg-color);
+            width: 50px; height: 50px; border-radius: 50%;
+            border: none; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            font-size: 24px; display: flex; align-items: center; justify-content: center;
+            z-index: 100; transition: transform 0.2s;
+        }
+        .theme-toggle:hover { transform: scale(1.1); }
+
+        .resume-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-gray);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media print {
+            .resume-container { box-shadow: none; margin: 0; padding: 0; width: 100%; max-width: none; }
+            .download-btn, .theme-toggle { display: none; }
+            a { text-decoration: none; color: inherit; }
+            /* Force expand all details for print */
+            details { display: block; }
+            summary { display: none; }
+            div { animation: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">🌗</button>
+    <button class="download-btn" onclick="window.print()">Print / Save PDF</button>
+
+    <div class="resume-container">
+        <header>
+            <h1>Kevin Armstrong</h1>
+            <h2>Strategic IT Executive | Systems Architecture</h2>
+            <div class="contact-info">
+                <span>Aiken, SC (Open to Relocation)</span>
+                <span class="separator">|</span>
+                <a href="mailto:kevin@the-armstrongs.org">kevin@the-armstrongs.org</a>
+                <span class="separator">|</span>
+                <a href="https://linkedin.com/in/kevinsarmstrong" target="_blank">linkedin.com/in/kevinsarmstrong</a>
+            </div>
+        </header>
+
+        <main>
+        <section>
+            <details open>
+                <summary class="section-title">Strategic Value Proposition</summary>
+                <div>
+                    <p>
+                        <strong>Senior Systems Architect and IT Executive</strong> specialized in mitigating operational risk and maximizing capital efficiency in complex enterprise environments. Proven track record of converting technical debt into high-margin, scalable assets. I bridge the gap between architectural governance and P&L optimization, positioning IT not as a cost center, but as an insurance policy against execution risk and a driver of sustainable revenue continuity.
+                    </p>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <details open>
+                <summary class="section-title">Core Competencies &amp; Frameworks</summary>
+                <div class="competency-grid">
+                    <div class="competency-column">
+                        <h3>Capital Efficiency &amp; Risk</h3>
+                        <ul>
+                            <li>Total Cost of Ownership (TCO) Reduction</li>
+                            <li>Operational Risk Mitigation &amp; Governance</li>
+                            <li>P&L Optimization &amp; Margin Analysis</li>
+                            <li>Human Capital ROI (Team Throughput)</li>
+                        </ul>
+                    </div>
+                    <div class="competency-column">
+                        <h3>Strategic Architecture</h3>
+                        <ul>
+                            <li>Identity Strategy as Risk Hedge (Zero Trust)</li>
+                            <li>Post-M&amp;A Infrastructure Consolidation</li>
+                            <li>Cloud FinOps &amp; Asset Liquidation</li>
+                            <li>Enterprise Logic &amp; Process Automation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-light);">
+                    <h3 style="font-size: 12px; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 8px; font-weight: 700;">Technical Ecosystems</h3>
+                    <ul style="list-style: none; margin-left: 0; font-size: 13px; color: var(--text-body);">
+                        <li style="margin-bottom: 4px;"><strong>Identity &amp; Access:</strong> Microsoft Entra (Hybrid/Cloud), Ping Identity, Okta, CIAM/B2C</li>
+                        <li style="margin-bottom: 4px;"><strong>Cloud &amp; Automation:</strong> Azure Networking, Azure Arc, DevOps, Infrastructure-as-Code</li>
+                        <li style="margin-bottom: 4px;"><strong>Data &amp; Modern Work:</strong> Microsoft Fabric, Power BI, Microsoft 365 (Intune/Teams)</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <details open>
+                <summary class="section-title">Professional Experience</summary>
+                <div>
+                    <!-- GCA Technology Services -->
+                    <div class="job-block">
+                        <div class="job-header">
+                            <div>
+                                <span class="job-title">Director of Professional Services</span>
+                                <span class="company-name"> | GCA Technology Services</span>
+                            </div>
+                            <div class="job-details">May 2021 – Present</div>
+                        </div>
+                        <ul>
+                            <li><strong>Business Model Pivot (NRE to ARR):</strong> Engineered a strategic transition from volatile project-based consulting (NRE) to <strong>high-margin "Managed Identity" subscriptions (ARR)</strong>, creating a scalable, recurring asset class within the services portfolio.</li>
+                            <li><strong>Strategic Identity Architecture (IAM &amp; CIAM):</strong> Directed a holistic identity modernization portfolio leveraging <strong>Auth0, Okta, Ping Identity, and Microsoft Entra</strong>. Unified Customer and Workforce strategies to liquidate redundant legacy assets (e.g., Okta-to-Entra migrations) while designing vendor-neutral CIAM patterns that prevented lock-in and reduced long-term TCO.</li>
+                            <li><strong>Identity Orchestration &amp; Fraud Defense:</strong> Architected adaptive access journeys for a National Retail Enterprise using <strong>Ping DaVinci</strong>, successfully mitigating <strong>high-velocity New Account Fraud (NAF)</strong> and Account Takeover (ATO) attacks to protect e-commerce revenue streams.</li>
+                            <li><strong>Human Capital &amp; Margin Optimization:</strong> Maximized engineering ROI by deploying the "<strong>Engineering Growth Model</strong>," a performance framework that optimized consultant throughput and minimized burnout risk by gamifying the acquisition of high-value technical competencies.</li>
+                            <li><strong>AI Enablement:</strong> Operationalized <strong>Generative AI</strong> adoption by architecting a centralized prompt library and Copilot agents, reducing the cognitive load on senior staff and accelerating time-to-value for routine operations.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Liberty Latin America -->
+                    <div class="job-block">
+                        <div class="job-header">
+                            <div>
+                                <span class="job-title">Enterprise Technology Supervisor</span>
+                                <span class="company-name"> | Liberty Latin America</span>
+                            </div>
+                            <div class="job-details">Aug 2019 – Apr 2021</div>
+                        </div>
+                        <ul>
+                            <li><strong>M&amp;A Infrastructure Consolidation:</strong> Executed a high-risk technical merger of 5 Active Directory domains (<strong>10,000+ users</strong>), permanently lowering TCO by liquidating redundant infrastructure assets and unifying the identity control plane.</li>
+                            <li><strong>Zero Trust Implementation:</strong> Deployed Zero Trust architecture as a primary hedge against data breach liability, systematically reducing the attack surface by eliminating <strong>40%</strong> of standing privileged access accounts.</li>
+                            <li><strong>Operational Efficiency:</strong> Automated labor-intensive workflows to increase engineering throughput by <strong>15%</strong>, successfully avoiding the OpEx requirement for additional support headcount.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cable & Wireless -->
+                    <div class="job-block">
+                        <div class="job-header">
+                            <div>
+                                <span class="job-title">Senior Systems Engineer</span>
+                                <span class="company-name"> | Cable &amp; Wireless Communications</span>
+                            </div>
+                            <div class="job-details">Apr 2017 – Aug 2019</div>
+                        </div>
+                        <ul>
+                            <li><strong>Process Automation:</strong> Developed automated provisioning logic to bridge gaps between HR and IT systems, reducing operational friction and data latency.</li>
+                            <li><strong>Endpoint Security Strategy:</strong> Strengthened the organizational security posture by deploying <strong>AppLocker and LAPS</strong>, mitigating the risk of lateral movement across the enterprise fleet.</li>
+                        </ul>
+                    </div>
+
+                    <!-- TaxSlayer -->
+                    <div class="job-block">
+                        <div class="job-header">
+                            <div>
+                                <span class="job-title">Senior Systems Engineer</span>
+                                <span class="company-name"> | TaxSlayer, LLC</span>
+                            </div>
+                            <div class="job-details">Mar 2015 – Feb 2017</div>
+                        </div>
+                        <ul>
+                            <li><strong>Revenue Continuity:</strong> Secured availability for <strong>high-velocity transactional systems</strong> during peak fiscal periods, effectively eliminating downtime-induced liquidity risks.</li>
+                            <li><strong>Storage Architecture:</strong> Managed the migration of critical data assets to high-performance SAN architecture to support transaction volume scaling.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Prior Experience Summary -->
+                    <div class="early-career">
+                        <strong>Prior Operations Experience (2002–2015):</strong> Progressive engineering roles establishing foundational expertise in Enterprise Systems, Virtualization, and Technical Consulting (including contracts with ManPower &amp; Quanexus).
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <details open>
+                <summary class="section-title">Certifications &amp; Credentials</summary>
+                <div class="card-block">
+                    <ul class="cert-list">
+                        <li><span class="cert-category">Strategic Credentials:</span> CISSP | Microsoft Cybersecurity Architect Expert (SC-100)</li>
+                        <li><span class="cert-category">Professional Development:</span> <span class="pending-cert">ISACA CRISC (Candidate - Target Q3 2026)</span> | <span class="pending-cert">FinOps Certified Practitioner (Candidate - Target 2026)</span></li>
+                        <li><span class="cert-category">Technical Mastery:</span> Azure Security Engineer (AZ-500) | Fabric Analytics Engineer (DP-600) | Identity & Access Admin (SC-300) | Okta Consultant</li>
+                        <li><span class="cert-category">Architecture &amp; Automation:</span> Microsoft DevOps Engineer Expert | Azure Solutions Architect Expert</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <details open>
+                <summary class="section-title">Education</summary>
+                <div class="card-block">
+                    <p>
+                        <strong>Bachelor of Science, Network and System Administration</strong><br>
+                        <em>Western Governors University</em> | Salt Lake City, UT<br>
+                        <span class="education-focus">Focus: Enterprise Systems Architecture &amp; Operations</span>
+                    </p>
+                </div>
+            </details>
+        </section>
+        </main>
+
+        <footer class="resume-footer">
+            &copy; <span id="year"></span> Kevin Armstrong. Strategic Architecture &amp; Operations.
+        </footer>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDarkMode = body.classList.contains('dark-mode') || (!body.classList.contains('light-mode') && systemDark);
+
+            body.classList.remove('light-mode', 'dark-mode');
+            const newTheme = isDarkMode ? 'light-mode' : 'dark-mode';
+            body.classList.add(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Ensure all details are open when printing
+        window.onbeforeprint = () => {
+            document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+        };
+    </script>
+</body>
+</html>
