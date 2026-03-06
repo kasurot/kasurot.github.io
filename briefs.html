@@ -1,0 +1,16 @@
+---
+layout: default
+title: Executive Briefs | Kevin Armstrong
+---
+<section>
+    <div class="section-title" style="cursor: default;">Executive Briefs &amp; Insights</div>
+    <div class="posts-list">
+        {% for post in site.posts %}
+            <div class="post-item">
+                <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                <p class="post-meta">Published on {{ post.date | date: "%B %-d, %Y" }}</p>
+                <p>{{ post.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
