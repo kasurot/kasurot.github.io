@@ -1,0 +1,19 @@
+---
+layout: default
+title: Philippines News | Family
+permalink: /family/philippines/
+---
+
+<h2 class="section-title">🇵🇭 Philippines News</h2>
+<p style="margin-bottom: 30px;">Latest news from the Philippines for the family.</p>
+
+<div class="posts-list">
+  {% assign articles = site["family-philippines"] | sort: 'date' %}
+  {% for post in articles reversed %}
+    <div class="post-item">
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</p>
+      <p>{{ post.description }}</p>
+    </div>
+  {% endfor %}
+</div>

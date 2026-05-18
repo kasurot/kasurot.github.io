@@ -1,0 +1,33 @@
+---
+layout: default
+title: Family News | Kevin Armstrong
+---
+
+<h2 class="section-title">🏠 Family News</h2>
+<p style="margin-bottom: 30px;">Curated news for the family. Pick a section below.</p>
+
+<div class="posts-list">
+  {% assign ph_count = site["family-philippines"] | size %}
+  <div class="post-item">
+    <h3><a href="/family/philippines/">🇵🇭 Philippines</a></h3>
+    <p>{{ ph_count }} articles</p>
+  </div>
+
+  {% assign iam_count = site["family-iam"] | size %}
+  <div class="post-item">
+    <h3><a href="/family/iam/">🔐 IAM &amp; Cybersecurity</a></h3>
+    <p>{{ iam_count }} articles</p>
+  </div>
+
+  {% assign us_count = site["family-us"] | size %}
+  <div class="post-item">
+    <h3><a href="/family/us/">🇺🇸 US News</a></h3>
+    <p>{{ us_count }} articles</p>
+  </div>
+
+  {% assign world_count = site["family-world"] | size %}
+  <div class="post-item">
+    <h3><a href="/family/world/">🌍 World News</a></h3>
+    <p>{{ world_count }} articles</p>
+  </div>
+</div>
