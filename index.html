@@ -3,16 +3,18 @@ layout: default
 title: Kevin Armstrong | Strategic IT Executive & Systems Architect
 description: Turning technical debt into high-margin, scalable assets. IT Executive specializing in identity architecture, risk mitigation, and P&L optimization.
 ---
+
 <section class="hero-section">
-    <h1 style="text-transform: none; letter-spacing: 0; font-size: 32px; margin-bottom: 10px;">
+    <p class="hero-identity">20+ years in identity, security, and enterprise infrastructure.</p>
+    <h1 class="hero-headline">
         Turning Technical Debt Into<br>High-Margin, Scalable Assets
     </h1>
-    <p style="font-size: 16px; color: var(--text-gray); max-width: 600px; margin-bottom: 20px;">
+    <p class="hero-sub">
         IT Executive specializing in identity architecture, risk mitigation, and capital efficiency.
         I bridge the gap between architectural governance and P&amp;L optimization&mdash;positioning IT
         as a driver of sustainable revenue continuity, not a cost center.
     </p>
-    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+    <div class="hero-ctas">
         <a href="{{ '/resume/' | relative_url }}" class="cta-btn cta-primary">View Full Resume</a>
         <a href="{{ '/briefs.html' | relative_url }}" class="cta-btn cta-secondary">Read Executive Briefs</a>
     </div>
@@ -28,18 +30,39 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
 
 <section class="featured-briefs">
     <h2 class="section-title">Featured Insights</h2>
+    <div class="brief-filters">
+        <button class="filter-btn active" data-tag="all">All</button>
+        {% assign all_tags = "" | split: "" %}
+        {% for brief in site.briefs %}
+            {% for tag in brief.tags %}
+                {% unless all_tags contains tag %}
+                    {% assign all_tags = all_tags | push: tag %}
+                {% endunless %}
+            {% endfor %}
+        {% endfor %}
+        {% for tag in all_tags %}
+            <button class="filter-btn" data-tag="{{ tag }}">{{ tag }}</button>
+        {% endfor %}
+    </div>
     <div class="posts-list">
         {% assign featured = site.briefs | sort: 'date' | reverse | slice: 0, 3 %}
         {% for brief in featured %}
-          <div class="post-item">
+          <div class="post-item" data-tags="{{ brief.tags | join: ',' }}">
               <h3><a href="{{ brief.url | relative_url }}">{{ brief.title }}</a></h3>
               <p class="post-meta">{{ brief.date | date: "%B %-d, %Y" }}</p>
               <p>{{ brief.description }}</p>
+              {% if brief.tags.size > 0 %}
+              <div class="post-tags">
+                  {% for tag in brief.tags %}
+                  <span class="post-tag">{{ tag }}</span>
+                  {% endfor %}
+              </div>
+              {% endif %}
           </div>
         {% endfor %}
     </div>
-    <p style="margin-top: 15px;">
-        <a href="{{ '/briefs.html' | relative_url }}" style="color: var(--accent-gold); font-weight: 600; text-decoration: none;">
+    <p class="view-all-link">
+        <a href="{{ '/briefs.html' | relative_url }}">
             View all executive briefs &rarr;
         </a>
     </p>
@@ -47,9 +70,36 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
 
 <style>
     .hero-section {
-        padding: 20px 0 30px;
-        border-bottom: 1px solid var(--border-light);
-        margin-bottom: 30px;
+        padding: 32px 0 36px;
+        border-bottom: 2px solid var(--accent-gold);
+        margin-bottom: 32px;
+    }
+    .hero-identity {
+        font-size: 14px;
+        color: var(--accent-gold);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+    }
+    .hero-headline {
+        text-transform: none;
+        letter-spacing: 0;
+        font-size: 32px;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+    .hero-sub {
+        font-size: 16px;
+        color: var(--text-gray);
+        max-width: 600px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    .hero-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
     }
     .cta-btn {
         display: inline-block;
@@ -98,8 +148,78 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
     .featured-briefs {
         margin-bottom: 20px;
     }
+    /* Brief tag filters */
+    .brief-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+    .filter-btn {
+        background: var(--bg-color);
+        border: 1px solid var(--border-medium);
+        border-radius: 999px;
+        padding: 5px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-gray);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+        border-color: var(--accent-gold);
+        color: var(--accent-gold);
+    }
+    .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+    }
+    .post-tag {
+        font-size: 11px;
+        background: var(--bg-color);
+        border: 1px solid var(--border-light);
+        border-radius: 999px;
+        padding: 2px 8px;
+        color: var(--text-gray);
+    }
+    .view-all-link {
+        margin-top: 15px;
+    }
+    .view-all-link a {
+        color: var(--accent-gold);
+        font-weight: 600;
+        text-decoration: none;
+    }
+    .view-all-link a:hover {
+        text-decoration: underline;
+    }
     @media print {
-        .cta-btn, .trust-ribbon { display: none; }
+        .cta-btn, .trust-ribbon, .brief-filters { display: none; }
         .hero-section { border-bottom: none; margin-bottom: 0; }
     }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelectorAll('.filter-btn');
+    const posts = document.querySelectorAll('.post-item');
+    filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filters.forEach(f => f.classList.remove('active'));
+            btn.classList.add('active');
+            const tag = btn.dataset.tag;
+            posts.forEach(post => {
+                if (tag === 'all') {
+                    post.style.display = '';
+                } else {
+                    const postTags = post.dataset.tags || '';
+                    post.style.display = postTags.includes(tag) ? '' : 'none';
+                }
+            });
+        });
+    });
+});
+</script>

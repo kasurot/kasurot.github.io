@@ -1,6 +1,6 @@
 ---
 title: "Marketing is Not Arts & Crafts: It's Unit Economics"
-date: 2026-02-27
+date: 2026-04-23
 description: "Applying systems engineering to marketing: solving the 'Last Mile Problem' and understanding the distribution tax of access friction."
 tags: [IT Strategy, CISO, Capital Allocation, Systems Thinking]
 ---
@@ -14,15 +14,15 @@ As part of a shift to Strategic Capital Allocation, I dove into the unit economi
 
 It is about Unit Economics and Capital Efficiency.
 
-In Systems Engineering, we call this **The Last Mile Problem**. We can move data across the world instantly, but the final connection to the user is where the friction—and the cost—explodes.
+In Systems Engineering, we call this **The Last Mile Problem**. We can move data across the world instantly, but the final connection to the user is where the friction and the cost explode.
 
 To solve the Last Mile, we must apply these 3 Laws of Capital Allocation:
 
 ### 📉 1. The Distribution Tax (TCO > Price)
-Marketing teaches that businesses spend 3–4x more on access (distribution) than on the product itself.
+Marketing teaches that businesses spend far more on access (distribution) than on the product itself.
 
 *   **The Trap:** We obsess over the licensing fee (the product).
-*   **The Reality:** The logistics of access—Identity, SSO, Provisioning—are our distribution costs.
+*   **The Reality:** The logistics of access (Identity, SSO, Provisioning) are our distribution costs.
 *   **The Lesson:** We pay for the software once. We pay for the friction every single day.
 
 ### ⚖️ 2. The Denominator Trap

@@ -8,8 +8,8 @@ description: Full professional resume for Kevin Armstrong — Fractional CISO, D
     <details open>
         <summary class="section-title">Strategic Value Proposition</summary>
         <div>
-            <p>
-                <strong>Fractional CISO and Director of Security</strong> specialized in identity architecture, risk mitigation, and capital efficiency across complex enterprise environments. Proven track record of converting technical debt into high-margin, scalable assets. I bridge the gap between architectural governance and P&amp;L optimization, positioning IT not as a cost center, but as an insurance policy against execution risk and a driver of sustainable revenue continuity.
+            <p class="resume-summary">
+                <strong>Fractional CISO and Director of Security</strong> with 20+ years converting identity sprawl into consolidated, revenue-protecting assets. I don't just architect systems&mdash;I warrant the outcome. From post-M&amp;A domain merges to Zero Trust programs that cut privileged access by 40%, my work sits at the intersection of risk ownership and P&amp;L impact.
             </p>
         </div>
     </details>
@@ -38,12 +38,12 @@ description: Full professional resume for Kevin Armstrong — Fractional CISO, D
                 </ul>
             </div>
         </div>
-        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border-light);">
-            <h3 style="font-size: 12px; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 8px; font-weight: 700;">Technical Ecosystems</h3>
-            <ul style="list-style: none; margin-left: 0; font-size: 13px; color: var(--text-body);">
-                <li style="margin-bottom: 4px;"><strong>Identity &amp; Access:</strong> Microsoft Entra (Hybrid/Cloud), Ping Identity, Okta, CIAM/B2C</li>
-                <li style="margin-bottom: 4px;"><strong>Cloud &amp; Automation:</strong> Azure Networking, Azure Arc, DevOps, Infrastructure-as-Code</li>
-                <li style="margin-bottom: 4px;"><strong>Data &amp; Modern Work:</strong> Microsoft Fabric, Power BI, Microsoft 365 (Intune/Teams)</li>
+        <div class="tech-ecosystem">
+            <h3 class="tech-ecosystem-title">Technical Ecosystems</h3>
+            <ul class="tech-list">
+                <li><strong>Identity &amp; Access:</strong> Microsoft Entra (Hybrid/Cloud), Ping Identity, Okta, CIAM/B2C</li>
+                <li><strong>Cloud &amp; Automation:</strong> Azure Networking, Azure Arc, DevOps, Infrastructure-as-Code</li>
+                <li><strong>Data &amp; Modern Work:</strong> Microsoft Fabric, Power BI, Microsoft 365 (Intune/Teams)</li>
             </ul>
         </div>
     </details>
@@ -155,3 +155,32 @@ description: Full professional resume for Kevin Armstrong — Fractional CISO, D
         </div>
     </details>
 </section>
+
+<style>
+    .resume-summary {
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text-dark);
+    }
+    .tech-ecosystem {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dashed var(--border-light);
+    }
+    .tech-ecosystem-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: var(--accent-gold);
+        margin-bottom: 8px;
+        font-weight: 700;
+    }
+    .tech-list {
+        list-style: none;
+        margin-left: 0;
+        font-size: 13px;
+        color: var(--text-body);
+    }
+    .tech-list li {
+        margin-bottom: 4px;
+    }
+</style>

@@ -5,14 +5,96 @@ description: Executive briefs and strategic insights on identity architecture, s
 ---
 <section>
     <h2 class="section-title">Executive Briefs &amp; Insights</h2>
+    <div class="brief-filters">
+        <button class="filter-btn active" data-tag="all">All</button>
+        {% assign all_tags = "" | split: "" %}
+        {% for brief in site.briefs %}
+            {% for tag in brief.tags %}
+                {% unless all_tags contains tag %}
+                    {% assign all_tags = all_tags | push: tag %}
+                {% endunless %}
+            {% endfor %}
+        {% endfor %}
+        {% for tag in all_tags %}
+            <button class="filter-btn" data-tag="{{ tag }}">{{ tag }}</button>
+        {% endfor %}
+    </div>
     <div class="posts-list">
         {% assign briefs = site.briefs | sort: 'date' %}
         {% for brief in briefs reversed %}
-          <div class="post-item">
+          <div class="post-item" data-tags="{{ brief.tags | join: ',' }}">
               <h3><a href="{{ brief.url | relative_url }}">{{ brief.title }}</a></h3>
               <p class="post-meta">Published on {{ brief.date | date: "%B %-d, %Y" }}</p>
               <p>{{ brief.description }}</p>
+              {% if brief.tags.size > 0 %}
+              <div class="post-tags">
+                  {% for tag in brief.tags %}
+                  <span class="post-tag">{{ tag }}</span>
+                  {% endfor %}
+              </div>
+              {% endif %}
           </div>
         {% endfor %}
     </div>
 </section>
+
+<style>
+    .brief-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+    .filter-btn {
+        background: var(--bg-color);
+        border: 1px solid var(--border-medium);
+        border-radius: 999px;
+        padding: 5px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-gray);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+        border-color: var(--accent-gold);
+        color: var(--accent-gold);
+    }
+    .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 10px;
+    }
+    .post-tag {
+        font-size: 11px;
+        background: var(--bg-color);
+        border: 1px solid var(--border-light);
+        border-radius: 999px;
+        padding: 2px 8px;
+        color: var(--text-gray);
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelectorAll('.filter-btn');
+    const posts = document.querySelectorAll('.post-item');
+    filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filters.forEach(f => f.classList.remove('active'));
+            btn.classList.add('active');
+            const tag = btn.dataset.tag;
+            posts.forEach(post => {
+                if (tag === 'all') {
+                    post.style.display = '';
+                } else {
+                    const postTags = post.dataset.tags || '';
+                    post.style.display = postTags.includes(tag) ? '' : 'none';
+                }
+            });
+        });
+    });
+});
+</script>
