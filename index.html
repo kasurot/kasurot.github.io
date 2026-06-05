@@ -45,9 +45,14 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
         {% endfor %}
     </div>
     <div class="posts-list">
-        {% assign featured = site.briefs | sort: 'date' | reverse %}
-        {% for brief in featured %}
-          <div class="post-item" data-tags="{{ brief.tags | join: ',' }}">
+        {% assign featured_titles = "The CFO's Guide to Identity Liquidation|You Think You Have Zero Trust. You Don't.|AI Agents Are Non-Human Identities. You Already Have a Governance Framework." | split: "|" %}
+        {% assign sorted = site.briefs | sort: 'date' | reverse %}
+        {% for brief in sorted %}
+          {% assign is_featured = false %}
+          {% for ft in featured_titles %}
+            {% if brief.title == ft %}{% assign is_featured = true %}{% endif %}
+          {% endfor %}
+          <div class="post-item" data-tags="{{ brief.tags | join: ',' }}" {% if is_featured %}data-featured="true"{% endif %}>
               <h3><a href="{{ brief.url | relative_url }}">{{ brief.title }}</a></h3>
               <p class="post-meta">{{ brief.date | date: "%B %-d, %Y" }}</p>
               <p>{{ brief.description }}</p>
@@ -196,6 +201,9 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
     .view-all-link a:hover {
         text-decoration: underline;
     }
+    .post-item:not([data-featured]) {
+        display: none;
+    }
     @media print {
         .cta-btn, .trust-ribbon, .brief-filters { display: none; }
         .hero-section { border-bottom: none; margin-bottom: 0; }
@@ -206,19 +214,24 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
 document.addEventListener('DOMContentLoaded', () => {
     const filters = document.querySelectorAll('.filter-btn');
     const posts = document.querySelectorAll('.post-item');
+    const postsList = document.querySelector('.posts-list');
     filters.forEach(btn => {
         btn.addEventListener('click', () => {
             filters.forEach(f => f.classList.remove('active'));
             btn.classList.add('active');
             const tag = btn.dataset.tag;
-            posts.forEach(post => {
-                if (tag === 'all') {
-                    post.style.display = '';
-                } else {
+            if (tag === 'all') {
+                postsList.classList.remove('filtering-active');
+                posts.forEach(post => {
+                    post.style.display = post.hasAttribute('data-featured') ? '' : 'none';
+                });
+            } else {
+                postsList.classList.add('filtering-active');
+                posts.forEach(post => {
                     const postTags = (post.dataset.tags || '').split(',');
                     post.style.display = postTags.includes(tag) ? '' : 'none';
-                }
-            });
+                });
+            }
         });
     });
 });
