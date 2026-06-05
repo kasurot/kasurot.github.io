@@ -2,37 +2,16 @@
 title: Kevin Armstrong
 email: kevin@the-armstrongs.org
 author: Kevin Armstrong
-description: Strategic IT Executive | Systems Architecture
+description: "Identity Architecture | Security Leadership | Capital Efficiency"
 linkedin_url: "https://www.linkedin.com/in/kevinsarmstrong"
 
 # Collections Configuration
-# This tells Jekyll to treat _briefs and _personal as special content types.
 collections:
   briefs:
-    output: true # Generates a page for each brief
+    output: true
     permalink: /briefs/:title/
-  personal:
-    output: true # Generates a page for each personal post
-    permalink: /personal/:title/
 
-  # Family News Sections (unlinked from nav)
-  family-philippines:
-    output: true
-    permalink: /family/philippines/:title/
-  family-iam:
-    output: true
-    permalink: /family/iam/:title/
-  family-us:
-    output: true
-    permalink: /family/us/:title/
-  family-world:
-    output: true
-    permalink: /family/world/:title/
-
-# Default layout for posts in collections
-# This automatically applies the 'post' layout to all items in these collections.
+# Default layout for posts in briefs collection.
 defaults:
   - scope: { type: "briefs" }
-    values: { layout: "post" }
-  - scope: { type: "personal" }
     values: { layout: "post" }
