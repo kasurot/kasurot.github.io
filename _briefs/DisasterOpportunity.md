@@ -3,7 +3,7 @@ layout: post
 title: "The Shock Doctrine of IT: Moving from Crisis to Capital Allocation"
 date: 2026-03-12
 description: "Disaster architecture turns breach response into a full-suite purchase you can't operationalize. The Panic Premium is the tax you pay for skipping governance."
-tags: [Risk Management, Capital Allocation, IT Strategy]
+tags: [Risk Management, Capital Allocation, IT Strategy, Procurement]
 ---
 
 The aphorism "Never let a good crisis go to waste" is often cited in boardrooms as a call to action. In the context of IT strategy, however, this mindset leads to **"Disaster Architecture"**: expensive, poorly integrated tools purchased at a panic premium, governed by the clock instead of by design.

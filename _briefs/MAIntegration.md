@@ -3,7 +3,7 @@ layout: post
 title: "M&A IT Integration: The Identity Cost Nobody Plans For"
 date: 2026-05-14
 description: "The deal team models revenue synergies and factors in IT integration costs. But identity governance, access continuity, and ownership accountability are the factors that determine whether the integration actually succeeds."
-tags: [M&A, Identity Strategy, Capital Allocation, Risk Management]
+tags: [M&A, Identity Strategy, Capital Allocation, Risk Management, Compliance]
 ---
 
 Every M&A deal models IT integration. The financial model includes a line item for it. The deal team knows systems need to merge. That part is not ignored.

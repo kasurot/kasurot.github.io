@@ -3,7 +3,7 @@ layout: post
 title: "AI Agents Are Non-Human Identities. You Already Have a Governance Framework."
 date: 2026-06-05
 description: "Every AI agent gets an identity, permissions, and access to resources. The governance questions are the same ones you should already be asking about service accounts. The framework exists. Apply it."
-tags: [AI Governance, Non-Human Identity, IAM, Risk Management]
+tags: [AI Governance, IAM, Risk Management, Compliance]
 ---
 
 Every AI agent in your environment has an identity. It authenticates. It accesses resources. It makes decisions. And in most organizations, nobody owns it.
