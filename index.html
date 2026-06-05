@@ -45,7 +45,7 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
         {% endfor %}
     </div>
     <div class="posts-list">
-        {% assign featured = site.briefs | sort: 'date' | reverse | slice: 0, 3 %}
+        {% assign featured = site.briefs | sort: 'date' | reverse %}
         {% for brief in featured %}
           <div class="post-item" data-tags="{{ brief.tags | join: ',' }}">
               <h3><a href="{{ brief.url | relative_url }}">{{ brief.title }}</a></h3>
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (tag === 'all') {
                     post.style.display = '';
                 } else {
-                    const postTags = post.dataset.tags || '';
+                    const postTags = (post.dataset.tags || '').split(',');
                     post.style.display = postTags.includes(tag) ? '' : 'none';
                 }
             });

@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (tag === 'all') {
                     post.style.display = '';
                 } else {
-                    const postTags = post.dataset.tags || '';
+                    const postTags = (post.dataset.tags || '').split(',');
                     post.style.display = postTags.includes(tag) ? '' : 'none';
                 }
             });
