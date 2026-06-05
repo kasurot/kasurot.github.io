@@ -204,6 +204,12 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
     .post-item:not([data-featured]) {
         display: none;
     }
+    .posts-list.filtering .post-item {
+        display: none !important;
+    }
+    .posts-list.filtering .post-item.matched {
+        display: block !important;
+    }
     @media print {
         .cta-btn, .trust-ribbon, .brief-filters { display: none; }
         .hero-section { border-bottom: none; margin-bottom: 0; }
@@ -220,16 +226,19 @@ document.addEventListener('DOMContentLoaded', () => {
             filters.forEach(f => f.classList.remove('active'));
             btn.classList.add('active');
             const tag = btn.dataset.tag;
+            postsList.classList.remove('filtering');
+            posts.forEach(post => post.classList.remove('matched'));
             if (tag === 'all') {
-                postsList.classList.remove('filtering-active');
                 posts.forEach(post => {
                     post.style.display = post.hasAttribute('data-featured') ? '' : 'none';
                 });
             } else {
-                postsList.classList.add('filtering-active');
+                postsList.classList.add('filtering');
                 posts.forEach(post => {
                     const postTags = (post.dataset.tags || '').split(',');
-                    post.style.display = postTags.includes(tag) ? '' : 'none';
+                    if (postTags.includes(tag)) {
+                        post.classList.add('matched');
+                    }
                 });
             }
         });
