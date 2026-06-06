@@ -3,7 +3,7 @@ layout: post
 title: "The CFO's Guide to Identity Liquidation"
 date: 2026-01-08
 description: "Every redundant identity tool is a liability on your balance sheet. Here's the math on why, and how to write it down."
-tags: [IAM, Capital Allocation, Identity Strategy]
+tags: [Capital Efficiency, Identity Strategy]
 ---
 
 Every redundant identity tool is a liability on your balance sheet. You just can't see it in the GL.

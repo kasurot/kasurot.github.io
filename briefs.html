@@ -7,15 +7,8 @@ description: Executive briefs and strategic insights on identity architecture, s
     <h2 class="section-title">Executive Briefs &amp; Insights</h2>
     <div class="brief-filters">
         <button class="filter-btn active" data-tag="all" aria-pressed="true">All</button>
-        {% assign all_tags = "" | split: "" %}
-        {% for brief in site.briefs %}
-            {% for tag in brief.tags %}
-                {% unless all_tags contains tag %}
-                    {% assign all_tags = all_tags | push: tag %}
-                {% endunless %}
-            {% endfor %}
-        {% endfor %}
-        {% for tag in all_tags %}
+        {% assign allowed_tags = "Risk Management,Capital Efficiency,Identity Strategy,Governance,AI,Vendor Strategy,Zero Trust,M & A" | split: "," %}
+        {% for tag in allowed_tags %}
             {% assign count = 0 %}
             {% for brief in site.briefs %}
                 {% if brief.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}

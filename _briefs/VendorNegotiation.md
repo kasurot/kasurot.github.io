@@ -3,7 +3,7 @@ layout: post
 title: "The Identity Platform Trap: Buy What You Can Operationalize"
 date: 2026-05-28
 description: "Vendors sell platforms. You should buy outcomes. The gap between what you purchase and what your team can actually run is where lock-in lives and carry cost compounds."
-tags: [Vendor Strategy, Capital Allocation, IAM, Risk Management, Procurement]
+tags: [Vendor Strategy, Capital Efficiency, Identity Strategy, Risk Management]
 ---
 
 Vendors sell platforms. You should buy outcomes. The gap between what you purchase and what your team can actually run is where lock-in lives and carry cost compounds.
