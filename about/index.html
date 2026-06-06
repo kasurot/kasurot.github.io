@@ -1,28 +1,34 @@
 ---
 layout: default
 title: About | Kevin Armstrong
-description: Fractional CISO and Director of Security specializing in identity architecture, risk mitigation, and P&L optimization.
+description: Director of Security specializing in identity architecture, risk mitigation, and capital efficiency. 20+ years building enterprise security programs.
 ---
 
-<section>
-    <h2 class="section-title">About Kevin Armstrong</h2>
-    <p>
-        <strong>Kevin Armstrong</strong> is a Director of Security / Identity leader with 20+ years of experience
-        building and operating enterprise identity, security, and governance programs. His work spans
-        Microsoft Entra, Okta, Ping Identity, and SailPoint, with large-scale delivery including a
-        10,000+ user multi-domain consolidation and standing-privilege reduction across complex
-        hybrid environments.
-    </p>
-    <p>
-        Kevin leads with an engineering-first approach and strong business alignment. His focus is reducing
-        execution risk, improving margin discipline, and turning identity programs into controllable,
-        measurable business assets rather than recurring cost centers.
-    </p>
+<section class="about-hero">
+    <div class="about-photo">
+        <img src="{{ '/images/kevin-armstrong.jpg' | relative_url }}" alt="Kevin Armstrong" class="headshot">
+    </div>
+    <div class="about-intro">
+        <h2 class="section-title">About Kevin Armstrong</h2>
+        <p class="about-lead">
+            <strong>IT shouldn't cost more every year.</strong> Kevin Armstrong is a security leader who treats identity programs as capital assets, not recurring expenses. With 20+ years in enterprise security, his focus is simple: reduce execution risk, improve margin discipline, and make identity measurable.
+        </p>
+        <p>
+            His work spans Microsoft Entra, Okta, Ping Identity, and SailPoint, with large-scale delivery including a 10,000+ user multi-domain consolidation and standing-privilege reduction across complex hybrid environments. He leads with an engineering-first approach and strong business alignment.
+        </p>
+    </div>
 </section>
 
 <section>
     <h2 class="section-title">What I Do</h2>
     <div class="competency-grid">
+        <div class="competency-column">
+            <h3>For PE, Portfolio Companies &amp; Executive Engagements</h3>
+            <ul>
+                <li><strong>Post-Acquisition Identity Risk Review:</strong> Rapid assessment of identity sprawl, privileged access exposure, and integration risk across merged environments.</li>
+                <li><strong>Fractional CISO / Director Advisory:</strong> Board-ready governance, security strategy, and operating-model design without full-time overhead.</li>
+            </ul>
+        </div>
         <div class="competency-column">
             <h3>For Enterprise Security &amp; Identity Programs</h3>
             <ul>
@@ -31,45 +37,33 @@ description: Fractional CISO and Director of Security specializing in identity a
                 <li><strong>Compliance Evidence Delivery:</strong> Access certification, SoD, entitlement governance, and audit-ready control evidence for ISO 27001, SOC 2, and NIST-aligned programs.</li>
             </ul>
         </div>
-        <div class="competency-column">
-            <h3>For PE, Portfolio Companies &amp; Executive Engagements</h3>
-            <ul>
-                <li><strong>Post-Acquisition Identity Risk Review:</strong> Rapid assessment of identity sprawl, privileged access exposure, and integration risk across merged environments.</li>
-                <li><strong>Fractional CISO / Director Advisory:</strong> Board-ready governance, security strategy, and operating-model design without full-time overhead.</li>
-            </ul>
-        </div>
     </div>
 </section>
 
 <section>
-    <h2 class="section-title">Professional Background</h2>
-    <p>
-        Most recently, Kevin served as <strong>Director of Professional Services at GCA Technology Services</strong>,
-        where he led multi-platform identity modernization across Microsoft Entra, Okta, Ping Identity, and
-        SailPoint, unifying workforce and customer identity strategy while reducing long-term platform risk
-        and ownership cost.
-    </p>
-    <p>
-        Prior to GCA, Kevin executed a high-risk M&amp;A infrastructure consolidation at <strong>Liberty Latin America</strong>,
-        merging multiple Active Directory domains and deploying Zero Trust controls that materially reduced
-        privileged access exposure across a large, distributed enterprise.
-    </p>
+    <h2 class="section-title">Where I've Been</h2>
+    <div class="about-narrative">
+        <p>
+            At <strong>GCA Technology Services</strong>, I led multi-platform identity modernization across Microsoft Entra, Okta, Ping Identity, and SailPoint, unifying workforce and customer identity strategy while reducing long-term platform risk and ownership cost.
+        </p>
+        <p>
+            At <strong>Liberty Latin America</strong>, I executed a high-risk M&amp;A infrastructure consolidation, merging multiple Active Directory domains and deploying Zero Trust controls that materially reduced privileged access exposure across a large, distributed enterprise spanning multiple countries.
+        </p>
+        <p>
+            The thread through all of it: <strong>identity is the control plane</strong>. Get it right, and security, compliance, and cost follow. Get it wrong, and everything downstream becomes expensive.
+        </p>
+    </div>
 </section>
 
 <section>
-    <h2 class="section-title">Certifications &amp; Credentials</h2>
+    <h2 class="section-title">Credentials</h2>
     <div class="card-block">
-        <p>
-            CISSP | Microsoft Cybersecurity Architect Expert (SC-100) | Azure Security Engineer (AZ-500)
-            | Azure Solutions Architect Expert | Okta Consultant
-        </p>
-        <p class="pending-cert">
-            ISACA CRISC (Candidate &mdash; Target Q3 2026) | FinOps Certified Practitioner (Candidate &mdash; Target 2026)
-        </p>
-        <p style="margin-top: 10px;">
-            <a href="{{ '/resume/' | relative_url }}" style="color: var(--accent-gold); font-weight: 600; text-decoration: none;">
-                View full credentials &amp; experience &rarr;
-            </a>
+        <div class="cert-list">
+            <p><span class="cert-category">Active:</span> CISSP | Microsoft Cybersecurity Architect Expert (SC-100) | Azure Security Engineer (AZ-500) | Azure Solutions Architect Expert | Okta Consultant</p>
+            <p class="pending-cert">In Progress: ISACA CRISC (Target Q3 2026) | FinOps Certified Practitioner (Target 2026)</p>
+        </div>
+        <p class="about-cta">
+            <a href="{{ '/resume/' | relative_url }}" class="cta-link">View full credentials &amp; experience &rarr;</a>
         </p>
     </div>
 </section>
@@ -79,7 +73,7 @@ description: Fractional CISO and Director of Security specializing in identity a
     <div class="card-block">
         <p>
             <strong>Bachelor of Science, Network and System Administration</strong><br>
-            <em>Western Governors University</em> | Salt Lake City, UT
+            <em>Western Governors University</em>
         </p>
         <p>
             <strong>Business Foundations</strong><br>
@@ -87,3 +81,76 @@ description: Fractional CISO and Director of Security specializing in identity a
         </p>
     </div>
 </section>
+
+<section class="about-cta-section">
+    <p>Want to talk about your identity program?</p>
+    <a href="{{ '/engage/' | relative_url }}" class="cta-btn cta-secondary">Let's connect &rarr;</a>
+</section>
+
+<style>
+    .about-hero {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        margin-bottom: 32px;
+    }
+    .about-photo {
+        flex-shrink: 0;
+    }
+    .headshot {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--border-medium);
+    }
+    .about-intro {
+        flex: 1;
+    }
+    .about-lead {
+        font-size: 1.05em;
+        color: var(--header-blue);
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+    .about-narrative p {
+        margin-bottom: 12px;
+    }
+    .about-narrative p:last-child {
+        font-weight: 600;
+        color: var(--header-blue);
+    }
+    .about-cta {
+        margin-top: 12px;
+    }
+    .cta-link {
+        color: var(--accent-gold);
+        font-weight: 600;
+        text-decoration: none;
+    }
+    .cta-link:hover {
+        text-decoration: underline;
+    }
+    .about-cta-section {
+        text-align: center;
+        padding: 24px 0;
+        border-top: 1px solid var(--border-light);
+        margin-top: 8px;
+    }
+    .about-cta-section p {
+        font-size: 16px;
+        color: var(--text-dark);
+        margin-bottom: 12px;
+    }
+    @media (max-width: 768px) {
+        .about-hero {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .headshot {
+            width: 100px;
+            height: 100px;
+        }
+    }
+</style>
