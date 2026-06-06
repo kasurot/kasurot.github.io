@@ -411,20 +411,18 @@
             }
             .nav-links a:last-child { border-bottom: none; }
             .nav-right { display: none; }
+            h2 { letter-spacing: 0.3px; font-size: 11px; }
             .competency-grid { grid-template-columns: 1fr; }
             .resume-container { padding: 20px; }
             .contact-info { flex-direction: column; gap: 5px; }
             .separator { display: none; }
             .trust-ribbon {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+                flex-wrap: wrap;
+                justify-content: flex-start;
                 gap: 8px;
-                padding: 14px 0 26px;
-                scrollbar-width: none;
+                padding: 14px 0 20px;
             }
-            .trust-ribbon::-webkit-scrollbar { display: none; }
-            .trust-ribbon span { white-space: nowrap; flex-shrink: 0; }
+            .trust-ribbon span { white-space: nowrap; }
         }
 
         .competency-column h3 {
