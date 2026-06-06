@@ -11,6 +11,9 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
     <p class="hero-sub">
         IT as a revenue driver, not a cost center. Strategy grounded in identity architecture, security, and capital efficiency.
     </p>
+    <p class="hero-bio">
+        20+ years leading IT transformation across identity, security, and infrastructure.
+    </p>
 </section>
 
 <section class="trust-ribbon">
@@ -21,7 +24,7 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
 </section>
 
 <section class="featured-briefs">
-    <h2 class="section-title">Featured Insights</h2>
+    <h2 class="section-title">Executive Briefs</h2>
     <div class="brief-filters">
         <button class="filter-btn active" data-tag="all" aria-pressed="true">All</button>
         {% assign allowed_tags = "Risk Management,Capital Efficiency,Identity Strategy,Governance,AI,Vendor Strategy,Zero Trust,M & A" | split: "," %}
@@ -53,7 +56,7 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
           <div class="post-item" data-tags="{{ brief.tags | join: ',' }}" {% if is_featured %}data-featured="true"{% endif %}>
               <h3><a href="{{ brief.url | relative_url }}">{{ brief.title }}</a></h3>
               <p class="post-meta">{{ brief.date | date: "%B %-d, %Y" }}</p>
-              <p>{{ brief.description }}</p>
+              <p class="post-description">{{ brief.description }}</p>
               {% if brief.tags.size > 0 %}
               <div class="post-tags">
                   {% for tag in brief.tags %}
@@ -64,11 +67,11 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
           </div>
         {% endfor %}
     </div>
-    <p class="view-all-link">
-        <a href="{{ '/briefs.html' | relative_url }}">
+    <div class="view-all-link">
+        <a href="{{ '/briefs.html' | relative_url }}" class="cta-btn cta-secondary">
             View all executive briefs &rarr;
         </a>
-    </p>
+    </div>
 </section>
 
 <style>
@@ -88,8 +91,15 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
         font-size: 16px;
         color: var(--text-gray);
         max-width: 600px;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
         line-height: 1.6;
+    }
+    .hero-bio {
+        font-size: 14px;
+        color: var(--text-gray);
+        font-style: italic;
+        max-width: 600px;
+        margin-bottom: 0;
     }
     .hero-ctas {
         display: flex;
@@ -230,18 +240,17 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
         color: var(--text-gray);
     }
     .view-all-link {
-        margin-top: 15px;
+        margin-top: 20px;
+        text-align: center;
     }
-    .view-all-link a {
-        color: var(--accent-gold);
-        font-weight: 600;
-        text-decoration: none;
+    .post-description {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
-    .view-all-link a:hover {
-        text-decoration: underline;
-    }
-    .post-item:not([data-featured]) {
-        display: none;
+    .post-item[data-featured] {
+        border-left: 3px solid var(--accent-gold);
     }
     .posts-list.filtering .post-item {
         display: none !important;
@@ -310,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Apply filter
         if (tag === 'all') {
             posts.forEach(post => {
-                post.style.display = post.hasAttribute('data-featured') ? '' : 'none';
+                post.style.display = '';
             });
         } else {
             postsList.classList.add('filtering');
