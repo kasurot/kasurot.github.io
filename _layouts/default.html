@@ -113,27 +113,7 @@
         .nav-toggle.active .bar:nth-child(2) { opacity: 0; }
         .nav-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-        .main-nav {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 10px;
-        }
-        .main-nav a {
-            text-decoration: none;
-            color: var(--text-gray);
-            font-weight: 600;
-            font-size: 13px;
-            padding: 5px 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s ease;
-        }
-        .main-nav a:hover {
-            color: var(--header-blue);
-        }
-        .main-nav a.active {
-            color: var(--header-blue);
-            border-bottom-color: var(--accent-gold);
-        }
+        /* Navigation removed - now in .nav-links above */
 
         /* Post Listing Styles */
         .posts-list .post-item {
@@ -274,13 +254,58 @@
         }
 
         header {
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 15px;
+            margin-bottom: 0;
+        }
+
+        /* Sticky nav bar */
+        .sticky-nav {
             position: sticky;
             top: 0;
             background: var(--bg-color);
             z-index: 100;
-            border-bottom: 2px solid var(--border-light);
-            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-light);
+            padding: 10px 0;
             margin-bottom: 20px;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 600;
+            font-size: 13px;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: var(--header-blue);
+        }
+        .nav-links a.active {
+            color: var(--header-blue);
+            border-bottom-color: var(--accent-gold);
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+        .nav-linkedin {
+            color: var(--text-gray);
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+        .nav-linkedin:hover {
+            color: var(--accent-gold);
         }
 
         h1 {
@@ -360,7 +385,7 @@
         @media (max-width: 768px) {
             .theme-toggle { display: none !important; }
             .nav-toggle { display: block; }
-            .main-nav {
+            .nav-links {
                 display: none;
                 flex-direction: column;
                 gap: 0;
@@ -373,13 +398,14 @@
                 box-shadow: 0 4px 12px rgba(0,0,0,0.08);
                 z-index: 150;
             }
-            .main-nav.active { display: flex; }
-            .main-nav a {
+            .nav-links.active { display: flex; }
+            .nav-links a {
                 padding: 12px 20px;
                 border-bottom: 1px solid var(--border-light);
                 font-size: 15px;
             }
-            .main-nav a:last-child { border-bottom: none; }
+            .nav-links a:last-child { border-bottom: none; }
+            .nav-right { display: none; }
             .competency-grid { grid-template-columns: 1fr; }
             .resume-container { padding: 20px; }
             .contact-info { flex-direction: column; gap: 5px; }
@@ -541,19 +567,19 @@
 
         // Mobile hamburger nav
         const navToggle = document.getElementById('nav-toggle');
-        const mainNav = document.querySelector('.main-nav');
-        if (navToggle && mainNav) {
+        const navLinks = document.querySelector('.nav-links');
+        if (navToggle && navLinks) {
             navToggle.addEventListener('click', () => {
                 navToggle.classList.toggle('active');
-                mainNav.classList.toggle('active');
-                const expanded = mainNav.classList.contains('active');
+                navLinks.classList.toggle('active');
+                const expanded = navLinks.classList.contains('active');
                 navToggle.setAttribute('aria-expanded', expanded);
             });
             // Close nav when a link is clicked
-            mainNav.querySelectorAll('a').forEach(link => {
+            navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     navToggle.classList.remove('active');
-                    mainNav.classList.remove('active');
+                    navLinks.classList.remove('active');
                     navToggle.setAttribute('aria-expanded', 'false');
                 });
             });
