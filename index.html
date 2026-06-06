@@ -6,7 +6,7 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
 
 <section class="hero-section">
     <h1 class="hero-headline">
-        Turning Technical Debt Into<br>High-Margin, Scalable Assets
+        Turning Technical Debt Into High-Margin, Scalable Assets
     </h1>
     <p class="hero-sub">
         IT as a revenue driver, not a cost center. Strategy grounded in identity architecture, security, and capital efficiency.
@@ -39,6 +39,15 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
             {% endfor %}
             <button class="filter-btn" data-tag="{{ tag }}" aria-pressed="false">{{ tag }} <span class="tag-count">{{ count }}</span></button>
         {% endfor %}
+    </div>
+    <div class="filter-dropdown">
+        <label for="tag-filter-select" class="sr-only">Filter by tag</label>
+        <select id="tag-filter-select">
+            <option value="all">All Insights</option>
+            {% for tag in all_tags %}
+            <option value="{{ tag }}">{{ tag }}</option>
+            {% endfor %}
+        </select>
     </div>
     <div class="posts-list">
         {% assign featured_titles = "The CFO's Guide to Identity Liquidation|You Think You Have Zero Trust. You Don't.|AI Agents Are Non-Human Identities. You Already Have a Governance Framework." | split: "|" %}
@@ -149,6 +158,39 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
         gap: 8px;
         margin-bottom: 16px;
     }
+    .filter-dropdown {
+        display: none;
+    }
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+    }
+    .filter-dropdown select {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid var(--border-medium);
+        border-radius: 8px;
+        background: var(--bg-color);
+        color: var(--text-dark);
+        font-size: 14px;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23475569' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+    }
+    .filter-dropdown select:focus {
+        outline: none;
+        border-color: var(--accent-gold);
+    }
     .filter-btn {
         background: var(--bg-color);
         border: 1px solid var(--border-medium);
@@ -214,8 +256,44 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
     .posts-list.filtering .post-item.matched {
         display: block !important;
     }
+    /* Floating LinkedIn button (mobile) */
+    .floating-linkedin {
+        display: none;
+        position: fixed;
+        bottom: 24px;
+        right: 20px;
+        background: #0077B5;
+        color: #fff;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        z-index: 200;
+        text-decoration: none;
+        transition: transform 0.2s;
+    }
+    .floating-linkedin:hover {
+        transform: scale(1.1);
+    }
+    .floating-linkedin svg {
+        width: 24px;
+        height: 24px;
+        fill: #fff;
+    }
+    @media (max-width: 768px) {
+        .brief-filters { display: none; }
+        .filter-dropdown { display: block; margin-bottom: 16px; }
+        .floating-linkedin { display: flex; }
+        .post-item { padding: 16px !important; }
+        .trust-ribbon { padding: 8px 0 14px !important; }
+        .hero-section { padding: 20px 0 24px !important; margin-bottom: 20px !important; }
+        .hero-headline { font-size: 24px !important; }
+        .hero-sub { font-size: 15px !important; }
+    }
     @media print {
-        .cta-btn, .trust-ribbon, .brief-filters { display: none; }
+        .cta-btn, .trust-ribbon, .brief-filters, .filter-dropdown, .floating-linkedin { display: none; }
         .hero-section { border-bottom: none; margin-bottom: 0; }
     }
 </style>
@@ -223,30 +301,41 @@ description: Turning technical debt into high-margin, scalable assets. IT Execut
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const filters = document.querySelectorAll('.filter-btn');
+    const dropdown = document.getElementById('tag-filter-select');
     const posts = document.querySelectorAll('.post-item');
     const postsList = document.querySelector('.posts-list');
+
+    function applyFilter(tag) {
+        postsList.classList.remove('filtering');
+        posts.forEach(post => post.classList.remove('matched'));
+        // Sync buttons
+        filters.forEach(f => { f.classList.remove('active'); f.setAttribute('aria-pressed', 'false'); });
+        const activeBtn = document.querySelector(`.filter-btn[data-tag="${tag}"]`);
+        if (activeBtn) { activeBtn.classList.add('active'); activeBtn.setAttribute('aria-pressed', 'true'); }
+        // Sync dropdown
+        if (dropdown) dropdown.value = tag;
+        // Apply filter
+        if (tag === 'all') {
+            posts.forEach(post => {
+                post.style.display = post.hasAttribute('data-featured') ? '' : 'none';
+            });
+        } else {
+            postsList.classList.add('filtering');
+            posts.forEach(post => {
+                const postTags = (post.dataset.tags || '').split(',');
+                if (postTags.includes(tag)) {
+                    post.classList.add('matched');
+                }
+            });
+        }
+    }
+
     filters.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filters.forEach(f => { f.classList.remove('active'); f.setAttribute('aria-pressed', 'false'); });
-            btn.classList.add('active');
-            btn.setAttribute('aria-pressed', 'true');
-            const tag = btn.dataset.tag;
-            postsList.classList.remove('filtering');
-            posts.forEach(post => post.classList.remove('matched'));
-            if (tag === 'all') {
-                posts.forEach(post => {
-                    post.style.display = post.hasAttribute('data-featured') ? '' : 'none';
-                });
-            } else {
-                postsList.classList.add('filtering');
-                posts.forEach(post => {
-                    const postTags = (post.dataset.tags || '').split(',');
-                    if (postTags.includes(tag)) {
-                        post.classList.add('matched');
-                    }
-                });
-            }
-        });
+        btn.addEventListener('click', () => applyFilter(btn.dataset.tag));
     });
+
+    if (dropdown) {
+        dropdown.addEventListener('change', () => applyFilter(dropdown.value));
+    }
 });
 </script>
