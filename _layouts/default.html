@@ -381,6 +381,16 @@
             .resume-container { padding: 20px; }
             .contact-info { flex-direction: column; gap: 5px; }
             .separator { display: none; }
+            .trust-ribbon {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                gap: 8px;
+                padding: 14px 0 26px;
+                scrollbar-width: none;
+            }
+            .trust-ribbon::-webkit-scrollbar { display: none; }
+            .trust-ribbon span { white-space: nowrap; flex-shrink: 0; }
         }
 
         .competency-column h3 {
@@ -533,12 +543,15 @@
             navToggle.addEventListener('click', () => {
                 navToggle.classList.toggle('active');
                 mainNav.classList.toggle('active');
+                const expanded = mainNav.classList.contains('active');
+                navToggle.setAttribute('aria-expanded', expanded);
             });
             // Close nav when a link is clicked
             mainNav.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     navToggle.classList.remove('active');
                     mainNav.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
                 });
             });
         }
