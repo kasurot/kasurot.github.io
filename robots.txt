@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://the-armstrongs.org/sitemap.xml
+Sitemap: https://www.the-armstrongs.org/sitemap.xml
