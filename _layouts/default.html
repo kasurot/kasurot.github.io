@@ -489,10 +489,13 @@
         .cert-details > summary { font-size: 13px; font-weight: 600; color: var(--accent-gold); }
         .cert-details > summary::after { color: var(--accent-gold); }
         .cert-details .cert-group {
-            font-size: 11px; text-transform: uppercase; letter-spacing: .4px;
-            font-weight: 700; color: var(--text-gray); margin: 12px 0 3px 0;
+            font-size: 11px; text-transform: uppercase; letter-spacing: .6px;
+            font-weight: 700; color: var(--accent-gold);
+            margin: 16px 0 5px 0; padding-top: 10px;
+            border-top: 1px solid var(--border-light);
         }
-        .cert-details p { font-size: 12.5px; line-height: 1.65; margin-bottom: 2px; }
+        .cert-details .cert-group:first-child { border-top: none; padding-top: 0; margin-top: 8px; }
+        .cert-details p { font-size: 13px; line-height: 1.7; margin-bottom: 2px; }
         .pending-cert { color: var(--text-gray); font-style: italic; font-size: 12px; }
 
         .job-block, .card-block {
