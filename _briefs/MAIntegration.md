@@ -10,14 +10,14 @@ Every M&A deal models IT integration. The financial model includes a line item f
 
 What is ignored is the accountability layer underneath the technology: who owns the access, how do you maintain governance during the transition, and what happens to the cost when two identity platforms run in parallel longer than planned.
 
-### 📊 The Accountability Gap
+### The Accountability Gap
 The deal team models IT integration as a cost with a timeline. The integration team discovers that the timeline is not determined by the technology. The directories are compatible. The platforms can be connected. The applications can be migrated.
 
 The timeline is determined by the governance: consolidating two access review cycles, two audit trails, two compliance frameworks, and two sets of ownership accountability into one. The technology can be connected quickly. The governance consolidation is what actually takes time, because it requires decisions about ownership, access scope, and accountability that no vendor can make for you.
 
 Most deal teams model the technology integration. Few model the governance decisions that determine how long it actually takes and what it actually costs.
 
-### 🔐 Identity Is the Accountability Layer
+### Identity Is the Accountability Layer
 Merging two companies is a technology project, but it is not just a technology project. The identity layer is where accountability lives: who has access to what, who owns that access, and who is responsible when something goes wrong.
 
 Consider what identity governance actually requires during integration:
@@ -32,14 +32,14 @@ Consider what identity governance actually requires during integration:
 
 This is not a project plan. It is an accountability gap. And most deal teams do not model it.
 
-### 💰 The Permanent Cost
+### The Permanent Cost
 The visible cost of M&A IT integration is the technology migration. The actual cost is the governance decisions that determine how long the migration takes and what it costs to sustain.
 
 Two identity platforms running in parallel until governance is consolidated. Duplicate access review cycles running simultaneously. Two sets of audit evidence being maintained. Two sets of ownership accountability being tracked. Every one of these duplicated processes has a labor cost, and that cost persists until someone makes the governance decisions to consolidate them.
 
 The synergy number assumed the integration would be a technology project with a defined timeline. The actual timeline is determined by governance decisions, not technology migration. And governance decisions take longer than technology migration because they require organizational alignment, not just technical configuration.
 
-### ✅ The Recommendation
+### The Recommendation
 The path forward is not faster migration. It is earlier accountability planning.
 
 Model identity governance cost in the deal memo alongside the technology integration cost. Do not treat access ownership as a post-close detail. Treat it as a pre-close risk factor. The accountability layer determines whether the integration sustains itself or collapses under duplicated governance overhead.

@@ -10,7 +10,7 @@ Every AI agent in your environment has an identity. It authenticates. It accesse
 
 This is not a new problem. It is the service account problem you've had for decades, applied to a new identity type. The difference is that service accounts sit idle until someone calls them. AI agents act autonomously. The governance gap is the same. The consequence is not.
 
-### 🔑 The Three Questions
+### The Three Questions
 Every non-human identity, from service accounts to AI agents, should answer three questions. Most organizations cannot answer them for service accounts, let alone for AI agents.
 
 **What does it do?** Not what vendor brochure says it does. What specific business function does it serve, and what actions does it perform? If you cannot answer this, you cannot scope its permissions. And if you cannot scope its permissions, you have an open door with a login.
@@ -21,7 +21,7 @@ Every non-human identity, from service accounts to AI agents, should answer thre
 
 These three questions are not new. They apply to every non-human identity you have ever deployed. The fact that AI agents are autonomous does not change the framework. It makes the framework more urgent.
 
-### 🤖 The Identity Spectrum
+### The Identity Spectrum
 AI agent identity is not a binary choice. It is a spectrum, and the industry is converging on the middle.
 
 **Fully Autonomous (System-Owned):** The agent holds its own identity, its own permissions, its own lifecycle. The user is the trigger. The agent operates independently. This is what most vendors are shipping today. It creates the most governance burden, because the organization must manage the agent lifecycle with no connection to the user who deployed it.
@@ -32,10 +32,10 @@ AI agent identity is not a binary choice. It is a spectrum, and the industry is 
 
 Most organizations are deploying fully autonomous agents because that is what the vendors are selling. The governance question is not which model to implement today. It is which point on the spectrum to design your governance posture around. The industry is moving toward delegated models because they balance autonomy with accountability. Planning for that shift now is cheaper than retrofitting it later.
 
-### 📋 The Governance Maturity Gap
+### The Governance Maturity Gap
 Discovery tools will find the orphans and surface the excessive permissions. But a tool is not a strategy. Ownership is the root cause. If you are not solving the due diligence of who owns each agent and what it can access, you are layering compensating controls on an unsolved problem.
 
-### ✅ The Recommendation
+### The Recommendation
 The path forward is not a new governance platform. It is applying the framework you should already have.
 
 Start with the three questions. For every AI agent in your environment: what does it do, are the permissions scoped to that, and who owns it? If you cannot answer all three, you have found your gap.
