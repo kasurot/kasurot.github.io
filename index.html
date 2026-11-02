@@ -289,7 +289,11 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
         height: 24px;
         fill: #fff;
     }
+    /* Mobile: the tab bar already carries About, so the secondary CTA is one
+       tap away twice over. Keep the primary action, drop the duplicate. */
     @media (max-width: 768px) {
+        .hero-ctas .cta-secondary { display: none; }
+        .hero-ctas .cta-primary { display: block; text-align: center; }
         .brief-filters { display: none; }
         .filter-dropdown { display: block; margin-bottom: 16px; }
         .post-item { padding: 16px !important; }
