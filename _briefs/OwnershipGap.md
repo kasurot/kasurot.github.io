@@ -32,7 +32,7 @@ The measurement that matters is drift: every role assignment, credential additio
 
 Access reviews page humans. The fastest-growing identity population in your estate is not human.
 
-Service principals are the clearest example, and the review capability exists: Microsoft ships access reviews for service principals, gated behind an extra license and scoped to privileged role assignments. Most tenants never bought it. Managed identities carry no owner attribute, which is the part no license fixes.
+Service principals are the clearest example, and the review capability exists: Microsoft ships access reviews for service principals, gated behind an extra license and scoped to privileged role assignments. Most tenants never bought it. Managed identities carry no owner attribute at all. That is not an oversight to fix by handing out ownership: in Entra, an application owner can add credentials and act as the application, which is an escalation path, not a control. The owner belongs in a register, not in the directory.
 
 Certificates make the point harder. A certificate template is an Active Directory object whose permissions decide who can obtain a certificate as whom, and no cloud access review pages it. Microsoft documented in October 2026 how help-desk impersonation reached certificate services and produced certificates for eleven privileged accounts. The templates were not unowned. They were unreviewed, which is worse: the directory says they have an owner and everyone believes it.
 
@@ -52,7 +52,7 @@ The test is not whether the leader can do the work, but whether it still happens
 
 These are not five problems. They are five symptoms of one.
 
-The test is simple. An owner can say what the object does without asking, and can delete it. A name in a campaign that can do neither is a signature, and a signature satisfies an audit while changing nothing.
+The test is simple. An owner can say what the object does without asking, and can get it deleted when the answer is wrong. A name that can do neither is a signature, and a signature satisfies an audit while changing nothing.
 
 ### The Recommendation
 
