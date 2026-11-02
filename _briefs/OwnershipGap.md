@@ -30,11 +30,11 @@ The measurement that matters is drift: every role assignment, credential additio
 
 ### Failure Three: The Population Grew Without a Process
 
-Access reviews page humans. The fastest-growing identity population in your estate is not human.
+Access reviews page the object types someone scoped a campaign to. The fastest-growing identity population in your estate is not on that list.
 
-Service principals are the clearest example, and the review capability exists: Microsoft ships access reviews for service principals, gated behind an extra license and scoped to privileged role assignments. Most tenants never bought it. Managed identities carry no owner attribute at all. That is not an oversight to fix by handing out ownership: in Entra, an application owner can add credentials and act as the application, which is an escalation path, not a control. The owner belongs in a register, not in the directory.
+Service principals are the clearest example, and the review capability exists: Microsoft ships access reviews for service principals, behind Workload ID Premium on top of Governance, and scoped to privileged role assignments. Most tenants I assess never bought it. Managed identities carry no owner attribute at all. That is not an oversight to fix by handing out ownership: in Entra, an application owner can add credentials and act as the application, which is an escalation path, not a control. The owner belongs in a register, not in the directory.
 
-Certificates make the point harder. A certificate template is an Active Directory object whose permissions decide who can obtain a certificate as whom, and no cloud access review pages it. Microsoft documented in October 2026 how help-desk impersonation reached certificate services and produced certificates for eleven privileged accounts. The templates were not unowned. They were unreviewed, which is worse: the directory says they have an owner and everyone believes it.
+Certificates are the harder case. A template's enrollment permissions decide whether a principal can request a certificate, and one setting decides whether the requester can name the subject. No access review reaches either: not Entra's, because the object lives in Active Directory, and not AD's, because there is no such review. In its 30 October advisory, Microsoft documented help-desk impersonation reaching certificate services through an ESC1 template and an ESC8 relay that produced a domain controller certificate. The templates were not unowned. They were unreviewed, which is worse: the directory says they have an owner and everyone believes it.
 
 ### Failure Four: Unowned Work Is Unfunded
 
