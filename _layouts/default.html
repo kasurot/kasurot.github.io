@@ -468,9 +468,6 @@
             }
             .floating-linkedin { display: none !important; }
             .resume-container { padding-bottom: 70px; }
-            /* The bottom tab bar is the mobile navigation; the footer row repeats it */
-            .footer-links { display: none; }
-            .footer-inner { justify-content: center; }
         }
 
         .competency-column h3 {
@@ -563,6 +560,14 @@
             transition: color 0.2s ease;
         }
         .footer-links a:hover { color: var(--accent-gold); }
+
+        /* Mobile: the bottom tab bar is the only navigation surface, so the footer
+           link row would just repeat it. Declared after the base rules above so it
+           wins the cascade. */
+        @media (max-width: 768px) {
+            .footer-links { display: none; }
+            .footer-inner { justify-content: center; }
+        }
         .footer-social {
             display: flex;
             gap: 12px;
