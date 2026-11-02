@@ -4,7 +4,7 @@ Issues found while auditing the non-brief pages and running the About/Capabiliti
 
 ## P1 — employer-sensitive or credibility-damaging
 
-- [ ] **`/resume/` publishes GCA's commercial model.** The page carries "Business Model Pivot (NRE to ARR)", "high-margin 'Managed Identity' subscriptions", "gamifying the acquisition of high-value technical competencies", the line "I don't just architect systems. I warrant the outcome", and client descriptors ("a National Retail Enterprise", Ping DaVinci NAF/ATO work). Kevin is redoing the resume; fold this into that pass rather than patching twice.
+- [x] **`/resume/` published GCA's commercial model.** Rebuilt from the new resume master, 2026-11-02: NRE-to-ARR, margin, "I warrant the outcome" and the client descriptors are gone; the page and the document now say the same thing.
 - [ ] **Home `<title>` is job-seeker framing.** "Kevin Armstrong | Strategic IT Executive & Systems Architect" appears in every browser tab and search snippet. Should read as what he does, not what he is applying for.
 - [ ] **Briefs carry no employer attribution.** Ten briefs, zero mentions of GCA, while gca.net/blog runs overlapping posts by the same author (AI agents, Zero Trust, AD consolidation, platform consolidation). Decide a one-line byline plus a canonical/syndication rule with GCA marketing.
 
@@ -34,3 +34,5 @@ Issues found while auditing the non-brief pages and running the About/Capabiliti
 - Footer navigation is a row of five icon buttons on desktop, matching the mobile tab bar; the duplicate text-link row is gone.
 - Home hero CTAs removed; the briefs list starts immediately below.
 - Capabilities is public, linked and indexed; About carries a pointer instead of a duplicate grid.
+- The Wharton entry was wrong on the site and in the resume: it is a Business Foundations Specialization (Coursera / University of Pennsylvania), not Wharton Executive Education. Corrected in both.
+- Resume rebuilt from the master: 34 Microsoft certifications, SC-300 and ISO 27701 named, no phone, no expiry dates.
