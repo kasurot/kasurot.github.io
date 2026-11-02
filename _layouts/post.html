@@ -7,7 +7,8 @@ layout: default
   .post-hero img {
     display: block;
     width: 100%;
-    height: clamp(190px, 27vw, 290px);
+    aspect-ratio: 5 / 2;
+    max-height: 290px;
     object-fit: cover;
     object-position: 50% 45%;
     border-radius: 4px;
@@ -15,7 +16,8 @@ layout: default
   }
   .post-hero figcaption { margin-top: .6rem; font-size: .85rem; color: var(--text-gray); font-style: italic; }
   @media (prefers-color-scheme: dark) { body:not(.light-mode) .post-hero img { outline: 1px solid rgba(226,232,240,.12); outline-offset: -1px; } }
-  @media print { .post-hero img { height: 2.2in; } }
+  @media (max-width: 768px) { .post-hero img { aspect-ratio: 2 / 1; max-height: 200px; } }
+  @media print { .post-hero img { aspect-ratio: auto; height: 2.2in; } }
 </style>
 <article class="post">
   <div class="post-nav">
