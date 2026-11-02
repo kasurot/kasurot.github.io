@@ -453,7 +453,7 @@
                 color: var(--text-gray);
                 font-size: 10px;
                 font-weight: 600;
-                padding: 4px 12px;
+                padding: 4px 6px;
                 transition: color 0.2s;
             }
             .bottom-tab svg {
@@ -468,6 +468,9 @@
             }
             .floating-linkedin { display: none !important; }
             .resume-container { padding-bottom: 70px; }
+            /* The bottom tab bar is the mobile navigation; the footer row repeats it */
+            .footer-links { display: none; }
+            .footer-inner { justify-content: center; }
         }
 
         .competency-column h3 {
@@ -620,6 +623,10 @@
         <a href="{{ '/about/' | relative_url }}" class="bottom-tab {% if page.url == '/about/' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
             <span>About</span>
+        </a>
+        <a href="{{ '/resume/' | relative_url }}" class="bottom-tab {% if page.url == '/resume/' %}active{% endif %}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span>Resume</span>
         </a>
         <a href="{{ '/briefs.html' | relative_url }}" class="bottom-tab {% if page.url == '/briefs.html' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
