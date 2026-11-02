@@ -4,17 +4,17 @@ Written 2026-11-02 after the About/Capabilities overlap became confusing.
 
 ## What exists today
 
-Public and linked:
-
 - `/` Home: positioning, trust chips, the ten most recent briefs
-- `/about/` Bio, a two-column "What I Do" grid, "Where I've Been", credentials, education
+- `/about/` Bio, a pointer to Capabilities, "Where I've Been", credentials, education
+- `/capabilities/` Five service areas, who they fit, contact through GCA Technology Services
 - `/resume/` Full experience, competencies, certifications, education
 - `/briefs.html` Index of every brief, filterable by tag
 - `/briefs/<Slug>/` Ten individual briefs
+- `/engage/` Redirect to `/capabilities/`, noindex, out of the sitemap
 
-Public but unlinked:
-
-- `/engage/` Capability page: five service areas, who it fits, contact through GCA. `noindex`, absent from the nav, footer and sitemap. Reachable only by typing the URL.
+Navigation: Home, About, Capabilities, Executive Briefs (four items, plus LinkedIn).
+Footer buttons (desktop): Home, About, Capabilities, Resume, Briefs, LinkedIn.
+Mobile tab bar: Home, About, Capabilities, Briefs, LinkedIn. Resume is one tap from About.
 
 ## Why it is confusing
 

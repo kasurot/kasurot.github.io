@@ -7,6 +7,7 @@ sitemap: false
   <url><loc>{{ '/' | absolute_url }}</loc><priority>1.0</priority></url>
   <url><loc>{{ '/about/' | absolute_url }}</loc><priority>0.8</priority></url>
   <url><loc>{{ '/resume/' | absolute_url }}</loc><priority>0.8</priority></url>
+  <url><loc>{{ '/capabilities/' | absolute_url }}</loc><priority>0.7</priority></url>
   <url><loc>{{ '/briefs.html' | absolute_url }}</loc><priority>0.7</priority></url>
 {% for b in site.briefs %}
   <url><loc>{{ b.url | absolute_url }}</loc><lastmod>{{ b.date | date: "%Y-%m-%d" }}</lastmod><priority>0.6</priority></url>{% endfor %}
