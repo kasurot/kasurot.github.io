@@ -4,29 +4,11 @@ sitemap: false
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://the-armstrongs.org/</loc>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://the-armstrongs.org/about/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://the-armstrongs.org/resume/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://the-armstrongs.org/engage/</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://the-armstrongs.org/briefs.html</loc>
-    <priority>0.7</priority>
-  </url>{% for b in site.briefs %}
-  <url>
-    <loc>https://the-armstrongs.org{{ b.url }}</loc>
-    <lastmod>{{ b.date | date: "%Y-%m-%d" }}</lastmod>
-    <priority>0.6</priority>
-  </url>{% endfor %}
+  <url><loc>{{ '/' | absolute_url }}</loc><priority>1.0</priority></url>
+  <url><loc>{{ '/about/' | absolute_url }}</loc><priority>0.8</priority></url>
+  <url><loc>{{ '/resume/' | absolute_url }}</loc><priority>0.8</priority></url>
+  <url><loc>{{ '/engage/' | absolute_url }}</loc><priority>0.5</priority></url>
+  <url><loc>{{ '/briefs.html' | absolute_url }}</loc><priority>0.7</priority></url>
+{% for b in site.briefs %}
+  <url><loc>{{ b.url | absolute_url }}</loc><lastmod>{{ b.date | date: "%Y-%m-%d" }}</lastmod><priority>0.6</priority></url>{% endfor %}
 </urlset>
