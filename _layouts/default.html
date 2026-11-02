@@ -546,27 +546,39 @@
             align-items: center;
             gap: 12px;
         }
-        .footer-links {
+        /* Footer navigation as buttons, matching the mobile tab bar instead of a
+           row of plain text links. */
+        .footer-tabs {
             display: flex;
-            gap: 16px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            font-size: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
         }
-        .footer-links a {
+        .footer-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 16px;
+            border: 1px solid var(--border-medium);
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
             color: var(--text-gray);
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
         }
-        .footer-links a:hover { color: var(--accent-gold); }
+        .footer-tab:hover,
+        .footer-tab.active {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        .footer-tab:hover { transform: translateY(-1px); }
+        .footer-tab svg { width: 16px; height: 16px; }
 
-        /* Mobile: the bottom tab bar is the only navigation surface, so the footer
-           link row would just repeat it. Declared after the base rules above so it
-           wins the cascade. */
+        /* Phone: the fixed five-button bar at the bottom already is this row. */
         @media (max-width: 768px) {
-            .footer-links { display: none; }
-            .footer-inner { justify-content: center; }
+            .footer-tabs { display: none; }
         }
         .footer-social {
             display: flex;
