@@ -45,4 +45,5 @@ Alternative: fold the five service areas into About beneath the bio and delete `
 
 ## Changelog
 
-- 2026-11-02: map written; overlap between About and /engage/ identified; proposal recorded but not implemented pending a decision.
+- 2026-11-02: map written; overlap between About and /engage/ identified; proposal recorded.
+- 2026-11-02: five-seat roundtable run (positioning, buyer, employer-marketing, information architecture, skeptic). Four of five recommend the separate linked page; weighted average B 82.8, A 67.9, D 65.6, C 38.8 out of 100. Recommendation: B, but About's "What I Do" grid is deleted outright rather than summarised, Resume moves out of the top nav into the footer buttons, and the capability page is reworded before it is indexed. Awaiting Kevin's decision.
