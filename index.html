@@ -14,10 +14,6 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
     <p class="hero-bio">
         Director of Professional Services at GCA Technology Services. 20+ years leading IT transformation across identity, security, and infrastructure.
     </p>
-    <div class="hero-ctas">
-        <a href="{{ '/briefs.html' | relative_url }}" class="cta-btn cta-primary">Read the executive briefs &rarr;</a>
-        <a href="{{ '/about/' | relative_url }}" class="cta-btn cta-secondary">About my practice &rarr;</a>
-    </div>
 </section>
 
 <section class="trust-ribbon">
@@ -105,11 +101,6 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
         font-style: italic;
         max-width: 600px;
         margin-bottom: 0;
-    }
-    .hero-ctas {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
     }
     .cta-btn {
         display: inline-block;
@@ -289,11 +280,7 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
         height: 24px;
         fill: #fff;
     }
-    /* Mobile: the tab bar already carries About, so the secondary CTA is one
-       tap away twice over. Keep the primary action, drop the duplicate. */
     @media (max-width: 768px) {
-        .hero-ctas .cta-secondary { display: none; }
-        .hero-ctas .cta-primary { display: block; text-align: center; }
         .brief-filters { display: none; }
         .filter-dropdown { display: block; margin-bottom: 16px; }
         .post-item { padding: 16px !important; }
