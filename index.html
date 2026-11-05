@@ -254,32 +254,6 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
     .posts-list.filtering .post-item.matched {
         display: block !important;
     }
-    /* Floating LinkedIn button (mobile) */
-    .floating-linkedin {
-        display: none;
-        position: fixed;
-        bottom: 24px;
-        right: 20px;
-        background: #0077B5;
-        color: #fff;
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-        z-index: 200;
-        text-decoration: none;
-        transition: transform 0.2s;
-    }
-    .floating-linkedin:hover {
-        transform: scale(1.1);
-    }
-    .floating-linkedin svg {
-        width: 24px;
-        height: 24px;
-        fill: #fff;
-    }
     @media (max-width: 768px) {
         .brief-filters { display: none; }
         .filter-dropdown { display: block; margin-bottom: 16px; }
@@ -290,7 +264,7 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
         .hero-sub { font-size: 15px !important; }
     }
     @media print {
-        .cta-btn, .trust-ribbon, .brief-filters, .filter-dropdown, .floating-linkedin { display: none; }
+        .cta-btn, .trust-ribbon, .brief-filters, .filter-dropdown
         .hero-section { border-bottom: none; margin-bottom: 0; }
     }
 </style>
