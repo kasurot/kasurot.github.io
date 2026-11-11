@@ -14,7 +14,9 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
-    {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">
+    {% if page.og_image %}<meta property="og:image" content="{{ page.og_image | absolute_url }}">
+    <meta name="twitter:card" content="summary_large_image">
+    {% elsif page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">
     <meta name="twitter:card" content="summary_large_image">{% endif %}
 
     <!-- Google Analytics -->
