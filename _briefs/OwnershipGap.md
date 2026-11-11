@@ -15,7 +15,7 @@ Ask one question in your next identity review: who owns the app registration who
 
 Not who created it. Not which team deployed it. Who owns it, and who carries the risk.
 
-If the answer takes a pause rather than a name, the answer is nobody. At an insurance brokerage that had absorbed several acquisitions, the count came back at 1,697 service principals, many with permissions nobody could explain and no one accountable. The number was not unusual. It was the first time anyone had counted.
+If the answer takes a pause rather than a name, the answer is nobody. On an estate assembled through acquisition, the count came back at nearly two thousand service principals, many with permissions nobody could explain and no one accountable. The number was not unusual. It was the first time anyone had counted.
 
 The cause is structural rather than cultural. We modeled ownership as a directory permission, and in Entra that permission is an escalation path, so no owner was ever written down anywhere that binds.
 
@@ -37,7 +37,7 @@ The measurement that matters is drift. Every role assignment, credential additio
 
 The fastest-growing identity population in your estate is the one your review process cannot see, because nobody is accountable for the population, so nobody scoped a campaign to include it.
 
-A review covers only the object types someone remembered to add to the campaign. Microsoft's reviews for service principals cover privileged role assignments. They do not cover the credentials an application carries or the permissions it has been granted, and they require Microsoft Entra Workload ID Premium on top of Entra ID P2 or Governance, a license most organizations I assess never bought.
+A review covers only the object types someone remembered to add to the campaign. Microsoft's reviews for service principals cover privileged role assignments. They do not cover the credentials an application carries or the permissions it has been granted, and they require [Microsoft Entra Workload ID Premium](https://learn.microsoft.com/entra/workload-id/workload-identities-faqs) on top of Entra ID P2 or Governance, a license many organizations never buy.
 
 A managed identity is harder still. There is no application object to manage, the directory object cannot be modified, and the security boundary is the Azure resource it is attached to. The owners collection exists on every service principal and is inert here, because a non-admin owner is allowed to modify an object that cannot be modified. So the only reviewable question is whether the resource should still hold the role, and no accountable owner is recorded anywhere.
 
@@ -53,11 +53,11 @@ The number to argue is not cost per identity. Take annual identity spend, includ
 
 Ownership without a second name is not ownership. It is a single point of failure with a salary.
 
-Microsoft recommends at least two owners per application, and nothing enforces it. The test is not whether the leader can do the work, but whether it still happens when they are on leave or hired away. Who signs the access review in week three of a vacation? What evidence shows the team authored the work rather than waited for instruction? A team that authors its own work and has it reviewed survives an audit and survives attrition. A team that waits for instructions survives neither.
+[Microsoft recommends at least two owners per application](https://learn.microsoft.com/entra/identity/enterprise-apps/overview-assign-app-owners#faq), and nothing enforces it. The test is not whether the leader can do the work, but whether it still happens when they are on leave or hired away. Who signs the access review in week three of a vacation? What evidence shows the team authored the work rather than waited for instruction? A team that authors its own work and has it reviewed survives an audit and survives attrition. A team that waits for instructions survives neither.
 
 ### The One Cause
 
-The cause is narrower than the word ownership suggests. We modeled ownership as a directory permission, and in Entra that permission is an escalation path: the owner of an app registration can add a credential and act as the application. Microsoft's own documentation warns that an application owner can create or update objects while impersonating the application. So the permission was never granted, and no record took its place.
+The cause is narrower than the word ownership suggests. We modeled ownership as a directory permission, and in Entra that permission is an escalation path: the owner of an app registration can add a credential and act as the application. [Microsoft's own documentation warns](https://learn.microsoft.com/entra/identity/enterprise-apps/overview-assign-app-owners) that an application owner can create or update objects while impersonating the application. So the permission was never granted, and no record took its place.
 
 Ownership is a record, not a right.
 
