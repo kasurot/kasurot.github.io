@@ -1,0 +1,32 @@
+{% comment %}
+Dense figure for executive briefs.
+
+Renders a figure as HTML/CSS instead of an image, so its text reflows and keeps
+a fixed, readable size at every container width (716px desktop, 350px mobile).
+No JavaScript. No build step beyond Jekyll.
+
+Usage in a brief:
+
+  {% capture fig_body %}
+    <ul class="dense-figure__grid dense-figure__grid--3">
+      <li class="dense-figure__card">
+        <p class="dense-figure__card-title">Set above the loss</p>
+        <p class="dense-figure__card-body">Ceiling clears settlement and payroll.</p>
+      </li>
+      ...
+    </ul>
+    <ul class="dense-figure__list">
+      <li><strong>Enforced in the engine</strong> - bank side of the trust boundary.</li>
+    </ul>
+  {% endcapture %}
+  {% include dense-figure.html title="A limit that exists is not a limit that binds"
+     caption="Read top to bottom; the arrow is convergence." body=fig_body %}
+
+Available body classes: dense-figure__grid (with --2/--3/--4), dense-figure__card,
+dense-figure__card-title, dense-figure__card-body, dense-figure__list.
+{% endcomment %}
+<figure class="dense-figure">
+  {% if include.title %}<p class="dense-figure__title">{{ include.title }}</p>{% endif %}
+  <div class="dense-figure__body">{{ include.body }}</div>
+  {% if include.caption %}<figcaption class="dense-figure__caption">{{ include.caption }}</figcaption>{% endif %}
+</figure>

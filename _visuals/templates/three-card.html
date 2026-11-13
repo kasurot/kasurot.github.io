@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<style>
+  :root {
+    --ink: #0f172a; --muted: #475569; --accent: #b45309;
+    --bg: #ffffff; --light: #e2e8f0; --band: #0f172a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); }
+  .wrap { width: 100%; padding: 40px 48px; }
+  .kicker { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin: 0 0 .6rem; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 1.5rem; font-weight: 700; margin: 0 0 1.2rem; line-height: 1.25; color: var(--ink); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; list-style: none; padding: 0; margin: 0; }
+  .card { border: 1px solid var(--light); border-radius: 6px; padding: 1rem 1.1rem; background: var(--bg); }
+  .card h2 { font-family: Georgia, serif; font-size: 1rem; font-weight: 700; margin: 0 0 .35rem; color: var(--accent); line-height: 1.25; }
+  .card p { font-size: .9rem; line-height: 1.45; color: var(--muted); margin: 0; }
+  .foot { margin-top: 1rem; font-size: .75rem; color: var(--muted); font-style: italic; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .wrap { padding: 24px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">{{KICKER}}</p>
+  <h1>{{TITLE}}</h1>
+  <ul class="grid">
+    <li class="card"><h2>{{CARD1_H}}</h2><p>{{CARD1_B}}</p></li>
+    <li class="card"><h2>{{CARD2_H}}</h2><p>{{CARD2_B}}</p></li>
+    <li class="card"><h2>{{CARD3_H}}</h2><p>{{CARD3_B}}</p></li>
+  </ul>
+  <p class="foot">{{CAPTION}}</p>
+</div>
+</body>
+</html>

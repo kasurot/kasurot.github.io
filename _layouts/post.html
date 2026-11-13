@@ -19,6 +19,66 @@ layout: default
   @media (prefers-color-scheme: dark) { body:not(.light-mode) .post-hero img { outline: 1px solid rgba(226,232,240,.12); outline-offset: -1px; } }
   @media (max-width: 768px) { .post-hero img { aspect-ratio: 2 / 1; max-height: 200px; } }
   @media print { .post-hero img { aspect-ratio: auto; height: 2.2in; } }
+
+  /* Dense figure: rendered as HTML/CSS, not an image. Text keeps a fixed,
+     readable size at every container width because it reflows. */
+  .dense-figure { margin: 2.4rem 0 2.6rem; }
+  .dense-figure__title {
+    font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', Georgia, serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--header-blue);
+    margin: 0 0 .75rem; line-height: 1.3;
+  }
+  .dense-figure__body { margin: 0; }
+  .dense-figure__grid {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .dense-figure__grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .dense-figure__grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .dense-figure__grid--4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 768px) {
+    .dense-figure__grid--2,
+    .dense-figure__grid--3,
+    .dense-figure__grid--4 { grid-template-columns: 1fr; }
+  }
+  .dense-figure__card {
+    border: 1px solid var(--border-light); border-radius: 6px;
+    padding: 1rem; background: var(--container-bg);
+  }
+  .dense-figure__card-title {
+    font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', Georgia, serif;
+    font-size: 1rem; font-weight: 700; color: var(--header-blue);
+    margin: 0 0 .4rem; line-height: 1.3;
+  }
+  .dense-figure__card-body {
+    font-size: .95rem; line-height: 1.55; color: var(--text-body); margin: 0;
+  }
+  .dense-figure__list {
+    list-style: none; margin: 1.2rem 0 0; padding: 0;
+    border-top: 1px solid var(--border-light);
+  }
+  .dense-figure__list li {
+    padding: .6rem 0; border-bottom: 1px solid var(--border-light);
+    font-size: .95rem; line-height: 1.55; color: var(--text-body);
+  }
+  .dense-figure__list li:last-child { border-bottom: none; }
+  .dense-figure__caption {
+    margin-top: .75rem; font-size: .85rem; color: var(--text-gray);
+    font-style: italic; text-align: center;
+  }
+  /* Dark mode: cards already use variables; add a subtle outline for depth. */
+  @media (prefers-color-scheme: dark) {
+    body:not(.light-mode) .dense-figure__card { border-color: var(--border-medium); }
+  }
+  body.dark-mode .dense-figure__card { border-color: var(--border-medium); }
+
+  /* Print: keep the figure and its cards intact; keep the desktop grid so the
+     printed page matches what the reader saw. */
+  @media print {
+    .dense-figure { break-inside: avoid; page-break-inside: avoid; margin: 1.5rem 0; }
+    .dense-figure__card { break-inside: avoid; page-break-inside: avoid; }
+  }
 </style>
 <article class="post">
   <div class="post-nav">

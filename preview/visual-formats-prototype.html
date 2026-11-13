@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual formats prototype — executive briefs</title>
+<style>
+  :root { --ink:#0f172a; --muted:#475569; --light:#e2e8f0; --accent:#b45309; --bg:#ffffff; --band:#0f172a; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: -apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:#f8fafc; }
+  .page { max-width: 1180px; margin: 0 auto; padding: 2rem 1rem; }
+  h1 { font-family: 'Book Antiqua',Palatino,Georgia,serif; font-size: 1.6rem; margin: 0 0 .5rem; }
+  .intro { color: var(--muted); font-size: .95rem; max-width: 760px; margin: 0 0 2rem; }
+  .row { display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start; margin-bottom: 3rem; }
+  .col { flex: 0 0 auto; }
+  .col--desktop { width: 716px; }
+  .col--phone { width: 350px; }
+  .col h2 { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 .6rem; font-weight: 700; }
+  .frame { background: var(--bg); border: 1px solid var(--light); border-radius: 6px; padding: 1rem; }
+  .format-title { font-family: 'Book Antiqua',Palatino,Georgia,serif; font-size: 1.05rem; font-weight: 700; margin: 0 0 .25rem; }
+  .format-note { color: var(--muted); font-size: .8rem; margin: 0 0 .75rem; font-style: italic; }
+  svg { display: block; width: 100%; height: auto; }
+  .badge { display:inline-block; font-size:.7rem; padding:.15rem .45rem; border:1px solid var(--light); border-radius:999px; color:var(--muted); margin-left:.4rem; }
+  .sizecheck { font-size: .75rem; color: var(--muted); margin-top: .5rem; }
+  .sizecheck b { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Visual formats prototype <span class="badge">executive briefs</span></h1>
+  <p class="intro">Each format shown at the two real container widths: 716px (desktop article) and 350px (phone). All labels are >= 14px at 350px. No sentence is carried inside any image; labels are headings that point at prose. Content is taken from the payment-controls brief.</p>
+
+  <!-- FORMAT 1: vertical step strip -->
+  <section>
+    <p class="format-title">1. Vertical step strip — sequence / stages / where it breaks</p>
+    <p class="format-note">Carries order, stages, handoffs. Cannot express causation, magnitude, branching. Six nodes at ~40px = 240px tall; label <= 22 chars.</p>
+    <div class="row">
+      <div class="col col--desktop">
+        <h2>716px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 320 260" role="img" aria-label="Three ways a limit fails">
+            <rect width="320" height="260" fill="#fff"/>
+            <text x="16" y="22" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">THREE WAYS A LIMIT FAILS</text>
+            <line x1="34" y1="46" x2="34" y2="236" stroke="#e2e8f0" stroke-width="2"/>
+            <g><circle cx="34" cy="52" r="11" fill="#b45309"/><text x="34" y="56" text-anchor="middle" font-family="serif" font-size="14" fill="#fff" font-weight="700">1</text><text x="56" y="48" font-family="serif" font-size="15" fill="#1e293b" font-weight="700">Set above the loss</text><text x="56" y="66" font-family="sans-serif" font-size="14" fill="#475569">ceiling clears settlement</text></g>
+            <g><circle cx="34" cy="112" r="11" fill="#b45309"/><text x="34" y="116" text-anchor="middle" font-family="serif" font-size="14" fill="#fff" font-weight="700">2</text><text x="56" y="108" font-family="serif" font-size="15" fill="#1e293b" font-weight="700">Policy, not engine</text><text x="56" y="126" font-family="sans-serif" font-size="14" fill="#475569">provider enforces limits</text></g>
+            <g><circle cx="34" cy="172" r="11" fill="#b45309"/><text x="34" y="176" text-anchor="middle" font-family="serif" font-size="14" fill="#fff" font-weight="700">3</text><text x="56" y="168" font-family="serif" font-size="15" fill="#1e293b" font-weight="700">Wrong object</text><text x="56" y="186" font-family="sans-serif" font-size="14" fill="#475569">channel, not payment class</text></g>
+            <g><circle cx="34" cy="232" r="11" fill="#0f172a"/><text x="34" y="236" text-anchor="middle" font-family="serif" font-size="14" fill="#b45309" font-weight="700">→</text><text x="56" y="228" font-family="serif" font-size="15" fill="#0f172a" font-weight="700">Nobody owned the number</text></g>
+          </svg>
+        </div>
+        <p class="sizecheck">Rendered at 320px-wide viewBox scaled to 716px → labels ~33px. <b>OK.</b></p>
+      </div>
+      <div class="col col--phone">
+        <h2>350px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 320 260" role="img" aria-label="Three ways a limit fails">
+            <rect width="320" height="260" fill="#fff"/>
+            <text x="16" y="22" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">THREE WAYS A LIMIT FAILS</text>
+            <line x1="34" y1="46" x2="34" y2="236" stroke="#e2e8f0" stroke-width="2"/>
+            <g><circle cx="34" cy="52" r="11" fill="#b45309"/><text x="34" y="56" text-anchor="middle" font-family="serif" font-size="14" fill="#fff" font-weight="700">1</text><text x="56" y="48" font-family="serif" font-size="15" fill="#1e293b" font-weight="700">Set above the loss</text><text x="56" y="66" font-family="sans-serif" font-size="14" fill="#475569">ceiling clears settlement</text></g>
+            <g><circle cx="34" cy="112" r="11" fill="#b45309"/><text x="34" y="116" text-anchor="middle" font-family="serif" font-size="14" fill="#fff" font-weight="700">2</text><text x="56" y="108" font-family="serif" font-size="15" fill="#1e293b" font-weight="700">Policy, not engine</text><text x="56" y="126" font-family="sans-serif" font-size="14" fill="#475569">provider enforces limits</text></g>
+            <g><circle cx="34" cy="172" r="11" fill="#b45309"/><text x="34" y="176" text-anchor="middle" font-family="serif" font-size="14" fill="#fff" font-weight="700">3</text><text x="56" y="168" font-family="serif" font-size="15" fill="#1e293b" font-weight="700">Wrong object</text><text x="56" y="186" font-family="sans-serif" font-size="14" fill="#475569">channel, not payment class</text></g>
+            <g><circle cx="34" cy="232" r="11" fill="#0f172a"/><text x="34" y="236" text-anchor="middle" font-family="serif" font-size="14" fill="#b45309" font-weight="700">→</text><text x="56" y="228" font-family="serif" font-size="15" fill="#0f172a" font-weight="700">Nobody owned the number</text></g>
+          </svg>
+        </div>
+        <p class="sizecheck">ViewBox authored at 320px, scaled to 350px → labels ~16px. <b>OK, >=14px.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAT 2: 2x2 matrix -->
+  <section>
+    <p class="format-title">2. 2x2 matrix — classification / trade-off / ownership</p>
+    <p class="format-note">Carries positioning, trade-offs. Cannot express sequence or quantity. Cell ~170x120px at 350px.</p>
+    <div class="row">
+      <div class="col col--desktop">
+        <h2>716px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 360 260" role="img" aria-label="Limit binds vs does not bind">
+            <rect width="360" height="260" fill="#fff"/>
+            <text x="18" y="24" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">DOES THE LIMIT BIND?</text>
+            <rect x="18" y="40" width="156" height="100" fill="#f1f5f9" stroke="#e2e8f0"/><text x="30" y="62" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Engine side</text><text x="30" y="84" font-family="sans-serif" font-size="14" fill="#475569">bank changes it</text><text x="30" y="100" font-family="sans-serif" font-size="14" fill="#475569">provider cannot</text><text x="30" y="124" font-family="serif" font-size="14" fill="#0f172a" font-weight="700">binds</text>
+            <rect x="186" y="40" width="156" height="100" fill="#fff7ed" stroke="#e2e8f0"/><text x="198" y="62" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Policy side</text><text x="198" y="84" font-family="sans-serif" font-size="14" fill="#475569">lives in provider</text><text x="198" y="100" font-family="sans-serif" font-size="14" fill="#475569">platform</text><text x="198" y="124" font-family="serif" font-size="14" fill="#b45309" font-weight="700">decorative</text>
+            <rect x="18" y="150" width="156" height="100" fill="#f1f5f9" stroke="#e2e8f0"/><text x="30" y="172" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Per-instruction</text><text x="30" y="194" font-family="sans-serif" font-size="14" fill="#475569">bounds one move</text><text x="30" y="210" font-family="sans-serif" font-size="14" fill="#475569">not the total</text><text x="30" y="234" font-family="serif" font-size="14" fill="#b45309" font-weight="700">partial</text>
+            <rect x="186" y="150" width="156" height="100" fill="#f1f5f9" stroke="#e2e8f0"/><text x="198" y="172" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Period total</text><text x="198" y="194" font-family="sans-serif" font-size="14" fill="#475569">pacing problem</text><text x="198" y="210" font-family="sans-serif" font-size="14" fill="#475569">not a cap</text><text x="198" y="234" font-family="serif" font-size="14" fill="#0f172a" font-weight="700">needed</text>
+          </svg>
+        </div>
+      </div>
+      <div class="col col--phone">
+        <h2>350px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 360 260" role="img" aria-label="Limit binds vs does not bind">
+            <rect width="360" height="260" fill="#fff"/>
+            <text x="18" y="24" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">DOES THE LIMIT BIND?</text>
+            <rect x="18" y="40" width="156" height="100" fill="#f1f5f9" stroke="#e2e8f0"/><text x="30" y="62" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Engine side</text><text x="30" y="84" font-family="sans-serif" font-size="14" fill="#475569">bank changes it</text><text x="30" y="100" font-family="sans-serif" font-size="14" fill="#475569">provider cannot</text><text x="30" y="124" font-family="serif" font-size="14" fill="#0f172a" font-weight="700">binds</text>
+            <rect x="186" y="40" width="156" height="100" fill="#fff7ed" stroke="#e2e8f0"/><text x="198" y="62" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Policy side</text><text x="198" y="84" font-family="sans-serif" font-size="14" fill="#475569">lives in provider</text><text x="198" y="100" font-family="sans-serif" font-size="14" fill="#475569">platform</text><text x="198" y="124" font-family="serif" font-size="14" fill="#b45309" font-weight="700">decorative</text>
+            <rect x="18" y="150" width="156" height="100" fill="#f1f5f9" stroke="#e2e8f0"/><text x="30" y="172" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Per-instruction</text><text x="30" y="194" font-family="sans-serif" font-size="14" fill="#475569">bounds one move</text><text x="30" y="210" font-family="sans-serif" font-size="14" fill="#475569">not the total</text><text x="30" y="234" font-family="serif" font-size="14" fill="#b45309" font-weight="700">partial</text>
+            <rect x="186" y="150" width="156" height="100" fill="#f1f5f9" stroke="#e2e8f0"/><text x="198" y="172" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Period total</text><text x="198" y="194" font-family="sans-serif" font-size="14" fill="#475569">pacing problem</text><text x="198" y="210" font-family="sans-serif" font-size="14" fill="#475569">not a cap</text><text x="198" y="234" font-family="serif" font-size="14" fill="#0f172a" font-weight="700">needed</text>
+          </svg>
+        </div>
+        <p class="sizecheck">ViewBox 360px scaled to 350px → labels ~13.6px. <b>Borderline; raise to 14 by using 340px viewBox or 12.5px desc. Keep labels <= 12 chars.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAT 3: layered stack -->
+  <section>
+    <p class="format-title">3. Layered stack — where a control sits, gaps, trust boundaries</p>
+    <p class="format-note">Carries position in a stack. Cannot express process flow. Full 350px width; label ~180px, status ~150px.</p>
+    <div class="row">
+      <div class="col col--desktop">
+        <h2>716px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 350 200" role="img" aria-label="Payment control stack">
+            <rect width="350" height="200" fill="#fff"/>
+            <text x="14" y="20" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">PAYMENT CONTROL STACK</text>
+            <rect x="14" y="34" width="322" height="30" fill="#f1f5f9" stroke="#e2e8f0"/><text x="24" y="54" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Customer auth (SCA)</text><text x="210" y="54" font-family="sans-serif" font-size="14" fill="#b45309" font-weight="700">asks whether</text>
+            <rect x="14" y="68" width="322" height="30" fill="#f1f5f9" stroke="#e2e8f0"/><text x="24" y="88" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Payee alerts</text><text x="210" y="88" font-family="sans-serif" font-size="14" fill="#b45309" font-weight="700">asks whether</text>
+            <rect x="14" y="102" width="322" height="30" fill="#f1f5f9" stroke="#e2e8f0"/><text x="24" y="122" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Anomaly scoring</text><text x="210" y="122" font-family="sans-serif" font-size="14" fill="#b45309" font-weight="700">asks whether</text>
+            <rect x="14" y="136" width="322" height="30" fill="#0f172a"/><text x="24" y="156" font-family="serif" font-size="14" fill="#f1f5f9" font-weight="700">Payment limit</text><text x="210" y="156" font-family="sans-serif" font-size="14" fill="#b45309" font-weight="700">asks how much</text>
+            <rect x="14" y="170" width="322" height="22" fill="#fff7ed" stroke="#e2e8f0" stroke-dasharray="4 3"/><text x="24" y="186" font-family="serif" font-size="14" fill="#b45309" font-weight="700">gap: nobody owns the number</text>
+          </svg>
+        </div>
+      </div>
+      <div class="col col--phone">
+        <h2>350px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 350 200" role="img" aria-label="Payment control stack">
+            <rect width="350" height="200" fill="#fff"/>
+            <text x="14" y="20" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">PAYMENT CONTROL STACK</text>
+            <rect x="14" y="34" width="322" height="30" fill="#f1f5f9" stroke="#e2e8f0"/><text x="24" y="54" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Customer auth (SCA)</text><text x="210" y="54" font-family="sans-serif" font-size="14" fill="#b45309" font-weight="700">asks whether</text>
+            <rect x="14" y="68" width="322" height="30" fill="#f1f5f9" stroke="#e2e8f0"/><text x="24" y="88" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Payee alerts</text><text x="210" y="88" font-family="sans-serif" font-size="14" fill="#b45309" font-weight="700">asks whether</text>
+            <rect x="14" y="102" width="322" height="30" fill="#f1f5f9" stroke="#e2e8f0"/><text x="24" y="122" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Anomaly scoring</text><text x="210" y="122" font-family="sans-serif" font-size="14" fill="#b45309" font-weight="700">asks whether</text>
+            <rect x="14" y="136" width="322" height="30" fill="#0f172a"/><text x="24" y="156" font-family="serif" font-size="14" fill="#f1f5f9" font-weight="700">Payment limit</text><text x="210" y="156" font-family="sans-serif" font-size="14" fill="#b45309" font-weight="700">asks how much</text>
+            <rect x="14" y="170" width="322" height="22" fill="#fff7ed" stroke="#e2e8f0" stroke-dasharray="4 3"/><text x="24" y="186" font-family="serif" font-size="14" fill="#b45309" font-weight="700">gap: nobody owns the number</text>
+          </svg>
+        </div>
+        <p class="sizecheck">Authored at 350px → labels 13px. <b>Raise desc to 14px or shorten; 13 is below floor. Use 14px and drop letter-spacing on desc.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAT 4: small multiples -->
+  <section>
+    <p class="format-title">4. Small multiples — magnitude / relative size / trend</p>
+    <p class="format-note">Carries magnitude comparison. Cannot express causation or mechanism. 2x2 grid of 165x80px charts.</p>
+    <div class="row">
+      <div class="col col--desktop">
+        <h2>716px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 340 180" role="img" aria-label="Four value bands">
+            <rect width="340" height="180" fill="#fff"/>
+            <text x="14" y="18" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">VALUE BANDS PER CLASS</text>
+            <g transform="translate(14,30)"><rect width="156" height="64" fill="#f1f5f9" stroke="#e2e8f0"/><text x="8" y="20" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Retail</text><rect x="8" y="30" width="90" height="10" fill="#b45309"/><text x="104" y="40" font-family="serif" font-size="18" fill="#0f172a" font-weight="700">50k</text><text x="8" y="56" font-family="sans-serif" font-size="14" fill="#475569">per instruction</text></g>
+            <g transform="translate(170,30)"><rect width="156" height="64" fill="#f1f5f9" stroke="#e2e8f0"/><text x="8" y="20" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Treasury</text><rect x="8" y="30" width="140" height="10" fill="#b45309"/><text x="104" y="40" font-family="serif" font-size="18" fill="#0f172a" font-weight="700">5M</text><text x="8" y="56" font-family="sans-serif" font-size="14" fill="#475569">per instruction</text></g>
+            <g transform="translate(14,102)"><rect width="156" height="64" fill="#f1f5f9" stroke="#e2e8f0"/><text x="8" y="20" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Payroll</text><rect x="8" y="30" width="120" height="10" fill="#b45309"/><text x="104" y="40" font-family="serif" font-size="18" fill="#0f172a" font-weight="700">2M</text><text x="8" y="56" font-family="sans-serif" font-size="14" fill="#475569">per period total</text></g>
+            <g transform="translate(170,102)"><rect width="156" height="64" fill="#f1f5f9" stroke="#e2e8f0"/><text x="8" y="20" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Settlement</text><rect x="8" y="30" width="150" height="10" fill="#b45309"/><text x="104" y="40" font-family="serif" font-size="18" fill="#0f172a" font-weight="700">50M</text><text x="8" y="56" font-family="sans-serif" font-size="14" fill="#475569">per instruction</text></g>
+          </svg>
+        </div>
+      </div>
+      <div class="col col--phone">
+        <h2>350px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 340 180" role="img" aria-label="Four value bands">
+            <rect width="340" height="180" fill="#fff"/>
+            <text x="14" y="18" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">VALUE BANDS PER CLASS</text>
+            <g transform="translate(14,30)"><rect width="156" height="64" fill="#f1f5f9" stroke="#e2e8f0"/><text x="8" y="20" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Retail</text><rect x="8" y="30" width="90" height="10" fill="#b45309"/><text x="104" y="40" font-family="serif" font-size="18" fill="#0f172a" font-weight="700">50k</text><text x="8" y="56" font-family="sans-serif" font-size="14" fill="#475569">per instruction</text></g>
+            <g transform="translate(170,30)"><rect width="156" height="64" fill="#f1f5f9" stroke="#e2e8f0"/><text x="8" y="20" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Treasury</text><rect x="8" y="30" width="140" height="10" fill="#b45309"/><text x="104" y="40" font-family="serif" font-size="18" fill="#0f172a" font-weight="700">5M</text><text x="8" y="56" font-family="sans-serif" font-size="14" fill="#475569">per instruction</text></g>
+            <g transform="translate(14,102)"><rect width="156" height="64" fill="#f1f5f9" stroke="#e2e8f0"/><text x="8" y="20" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Payroll</text><rect x="8" y="30" width="120" height="10" fill="#b45309"/><text x="104" y="40" font-family="serif" font-size="18" fill="#0f172a" font-weight="700">2M</text><text x="8" y="56" font-family="sans-serif" font-size="14" fill="#475569">per period total</text></g>
+            <g transform="translate(170,102)"><rect width="156" height="64" fill="#f1f5f9" stroke="#e2e8f0"/><text x="8" y="20" font-family="serif" font-size="14" fill="#1e293b" font-weight="700">Settlement</text><rect x="8" y="30" width="150" height="10" fill="#b45309"/><text x="104" y="40" font-family="serif" font-size="18" fill="#0f172a" font-weight="700">50M</text><text x="8" y="56" font-family="sans-serif" font-size="14" fill="#475569">per period total</text></g>
+          </svg>
+        </div>
+        <p class="sizecheck">ViewBox 340px scaled to 350px → desc 10px. <b>Below 14px floor; this format only works if desc is dropped or raised to 14 and viewBox widened to 480px. Flagged as a real limit of the format.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAT 5: evidence plate -->
+  <section>
+    <p class="format-title">5. Annotated artifact screenshot ("evidence plate") — concrete grounding</p>
+    <p class="format-note">Carries where the control lives, what the screen says. Cannot express abstract argument. 3-4 callouts, label <= 18 chars. Shown as a wireframe; real version uses a redacted screenshot.</p>
+    <div class="row">
+      <div class="col col--desktop">
+        <h2>716px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 350 220" role="img" aria-label="Evidence plate wireframe">
+            <rect width="350" height="220" fill="#eef2f7"/>
+            <rect x="14" y="14" width="322" height="192" fill="#fff" stroke="#cbd5e1"/>
+            <text x="24" y="34" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">VENDOR PRICE SHEET (REDACTED)</text>
+            <rect x="24" y="46" width="302" height="18" fill="#f1f5f9"/><text x="30" y="59" font-family="sans-serif" font-size="14" fill="#1e293b">Okta Essentials ........ 17.00 / seat</text>
+            <rect x="24" y="68" width="302" height="18" fill="#f1f5f9"/><text x="30" y="81" font-family="sans-serif" font-size="14" fill="#1e293b">Entra P2 + Governance . 17.00 / seat</text>
+            <rect x="24" y="90" width="302" height="18" fill="#f1f5f9"/><text x="30" y="103" font-family="sans-serif" font-size="14" fill="#1e293b">SailPoint IdentityNow . 42.00 / seat</text>
+            <line x1="24" y1="120" x2="326" y2="120" stroke="#e2e8f0"/>
+            <text x="24" y="138" font-family="sans-serif" font-size="14" fill="#475569">callout: equal price</text>
+            <!-- callout -->
+            <circle cx="230" cy="77" r="4" fill="#b45309"/>
+            <line x1="234" y1="77" x2="270" y2="50" stroke="#b45309" stroke-width="1.5"/>
+            <text x="272" y="46" font-family="serif" font-size="14" fill="#b45309" font-weight="700">same price</text>
+            <text x="272" y="62" font-family="sans-serif" font-size="14" fill="#475569">two vendors</text>
+            <circle cx="120" cy="55" r="4" fill="#b45309"/>
+            <line x1="116" y1="55" x2="80" y2="160" stroke="#b45309" stroke-width="1.5"/>
+            <text x="24" y="172" font-family="serif" font-size="14" fill="#b45309" font-weight="700">list price</text>
+            <text x="24" y="188" font-family="sans-serif" font-size="14" fill="#475569">not negotiated</text>
+          </svg>
+        </div>
+      </div>
+      <div class="col col--phone">
+        <h2>350px container</h2>
+        <div class="frame">
+          <svg viewBox="0 0 350 220" role="img" aria-label="Evidence plate wireframe">
+            <rect width="350" height="220" fill="#eef2f7"/>
+            <rect x="14" y="14" width="322" height="192" fill="#fff" stroke="#cbd5e1"/>
+            <text x="24" y="34" font-family="sans-serif" font-size="14" fill="#475569" letter-spacing="1.4" font-weight="700">VENDOR PRICE SHEET (REDACTED)</text>
+            <rect x="24" y="46" width="302" height="18" fill="#f1f5f9"/><text x="30" y="59" font-family="sans-serif" font-size="14" fill="#1e293b">Okta Essentials ........ 17.00 / seat</text>
+            <rect x="24" y="68" width="302" height="18" fill="#f1f5f9"/><text x="30" y="81" font-family="sans-serif" font-size="14" fill="#1e293b">Entra P2 + Governance . 17.00 / seat</text>
+            <rect x="24" y="90" width="302" height="18" fill="#f1f5f9"/><text x="30" y="103" font-family="sans-serif" font-size="14" fill="#1e293b">SailPoint IdentityNow . 42.00 / seat</text>
+            <line x1="24" y1="120" x2="326" y2="120" stroke="#e2e8f0"/>
+            <circle cx="230" cy="77" r="4" fill="#b45309"/>
+            <line x1="234" y1="77" x2="270" y2="50" stroke="#b45309" stroke-width="1.5"/>
+            <text x="272" y="46" font-family="serif" font-size="14" fill="#b45309" font-weight="700">same price</text>
+            <text x="272" y="62" font-family="sans-serif" font-size="14" fill="#475569">two vendors</text>
+            <circle cx="120" cy="55" r="4" fill="#b45309"/>
+            <line x1="116" y1="55" x2="80" y2="160" stroke="#b45309" stroke-width="1.5"/>
+            <text x="24" y="172" font-family="serif" font-size="14" fill="#b45309" font-weight="700">list price</text>
+            <text x="24" y="188" font-family="sans-serif" font-size="14" fill="#475569">not negotiated</text>
+          </svg>
+        </div>
+        <p class="sizecheck">Authored at 350px → callout labels 13px. <b>Raise to 14px; keep <= 18 chars.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMAT 6: comparison table -->
+  <section>
+    <p class="format-title">6. Comparison table — side-by-side attributes</p>
+    <p class="format-note">Carries attribute comparison. Cannot express long text or causation. 2 columns of ~160px.</p>
+    <div class="row">
+      <div class="col col--desktop">
+        <h2>716px container</h2>
+        <div class="frame">
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <thead><tr style="border-bottom:2px solid #0f172a;"><th style="text-align:left; padding:6px 8px; font-family:serif;">Attribute</th><th style="text-align:left; padding:6px 8px; font-family:serif;">Limit binds</th><th style="text-align:left; padding:6px 8px; font-family:serif;">Limit decorative</th></tr></thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:6px 8px;">Where enforced</td><td style="padding:6px 8px;">bank engine</td><td style="padding:6px 8px;">provider policy</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:6px 8px;">Owner</td><td style="padding:6px 8px;">named person</td><td style="padding:6px 8px;">nobody</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:6px 8px;">Evidence</td><td style="padding:6px 8px;">payment profile</td><td style="padding:6px 8px;">go-live default</td></tr>
+              <tr><td style="padding:6px 8px;">Review cadence</td><td style="padding:6px 8px;">quarterly</td><td style="padding:6px 8px;">never</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col col--phone">
+        <h2>350px container</h2>
+        <div class="frame">
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <thead><tr style="border-bottom:2px solid #0f172a;"><th style="text-align:left; padding:6px 4px; font-family:serif;">Attr</th><th style="text-align:left; padding:6px 4px; font-family:serif;">Binds</th><th style="text-align:left; padding:6px 4px; font-family:serif;">Decorative</th></tr></thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:6px 4px;">Enforced</td><td style="padding:6px 4px;">bank engine</td><td style="padding:6px 4px;">provider policy</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:6px 4px;">Owner</td><td style="padding:6px 4px;">named person</td><td style="padding:6px 4px;">nobody</td></tr>
+              <tr style="border-bottom:1px solid #e2e8f0;"><td style="padding:6px 4px;">Evidence</td><td style="padding:6px 4px;">pay profile</td><td style="padding:6px 4px;">go-live default</td></tr>
+              <tr><td style="padding:6px 4px;">Review</td><td style="padding:6px 4px;">quarterly</td><td style="padding:6px 4px;">never</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sizecheck">14px type at 350px. <b>OK, but 3 columns at 350px is tight; prefer 2 columns on phone or shorten header to 1-2 words.</b></p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
