@@ -4,8 +4,14 @@ title: "Every Control Asked Whether. None Asked How Much."
 date: 2026-11-13
 description: "The payment limit that would have bounded this loss is already mandatory. What failed is that nobody owned the number."
 tags: [Third-Party Risk, Risk Management, Controls, Payments]
+image: /images/every-control-asked-whether.jpg
+image_width: 1600
+image_height: 640
+image_alt: "Blank cast steel ingots stacked two courses high on a rusty steel stillage in a dim plant room."
+og_image: /images/every-control-asked-whether-og.jpg
 approved: true
 ---
+
 
 
 On 4 November 2026, Crédit Mutuel Arkéa confirmed that attackers had moved money out of the bank through the platform of one of its service providers. The bank has not put a figure on the loss. It said it could validate the order of magnitude of press reports putting it at roughly 118 million euros, about 133 million dollars.
