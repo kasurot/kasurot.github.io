@@ -47,7 +47,7 @@ All three are the same failure wearing different clothes. The number was never o
 <style>
   .post-figure { margin: 2.4rem 0 2.6rem; }
   .post-figure img {
-    display: block; width: 100%; height: auto; max-width: 880px; margin: 0 auto;
+    display: block; width: 100%; height: auto; max-width: 560px; margin: 0 auto;
     border: 1px solid var(--border-light); border-radius: 6px; background: #ffffff;
   }
   .post-figure figcaption {
@@ -60,10 +60,10 @@ All three are the same failure wearing different clothes. The number was never o
 </style>
 
 <figure class="post-figure">
-  <img src="/images/every-control-asked-whether-diagram.svg" width="880" height="1130"
+  <img src="/images/every-control-asked-whether-diagram-mobile.svg" width="560" height="770"
        loading="lazy" decoding="async"
-       alt="Diagram: three ways a payment limit fails, converging on one cause (the number was never owned by anyone with the evidence to set it), then the four things that make a limit bind.">
-  <figcaption>The three ways a limit fails, the single cause they share, and what makes one bind. Every claim here is argued in the text above and below it.</figcaption>
+       alt="Diagram: a limit that exists is not a limit that binds. Three ways it fails (set above the loss, policy not the engine, attached to the wrong object), one shared cause (nobody owned the number), and four things that make it bind (engine not policy, period total, approval stays real, revocation tested live).">
+  <figcaption>Three ways a limit fails, the cause they share, and what makes one bind. Each label is a heading from the text; the argument behind it is in the paragraphs above and below.</figcaption>
 </figure>
 
 
