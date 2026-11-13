@@ -134,7 +134,7 @@ Now run it three times, because the tier decides the answer.
       </div>
       <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:100%"></span></span>
       <span class="sr-only">Bar length: 100 percent of the $17 maximum.</span>
-      <p class="cashfig__detail"><strong>$612,000 a year once it starts.</strong> Year one is <strong>-$90,000</strong>, because the move lands before any saving. Cumulative cash turns positive in month 14.</p>
+      <p class="cashfig__detail"><strong>$612,000 a year once it starts.</strong> Year one is <strong>-$90,000</strong>, because the move lands before any saving. Payback at <strong>14 months</strong>.</p>
     </li>
     <li class="cashfig__row">
       <div class="cashfig__head">
@@ -143,7 +143,7 @@ Now run it three times, because the tier decides the answer.
       </div>
       <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:41%"></span></span>
       <span class="sr-only">Bar length: 41 percent of the $17 maximum.</span>
-      <p class="cashfig__detail"><strong>$252,000 a year once it starts.</strong> Year one is <strong>-$90,000</strong>. Cumulative cash turns positive in month 16.</p>
+      <p class="cashfig__detail"><strong>$252,000 a year once it starts.</strong> Year one is <strong>-$90,000</strong>. Payback at <strong>16 months</strong>.</p>
     </li>
     <li class="cashfig__row">
       <div class="cashfig__head">
@@ -152,10 +152,10 @@ Now run it three times, because the tier decides the answer.
       </div>
       <span class="cashfig__track" aria-hidden="true"></span>
       <span class="sr-only">Bar length: 0 percent of the $17 maximum. No saving.</span>
-      <p class="cashfig__detail"><strong>Nothing comes out.</strong> P2 plus Governance is $17 a seat, exactly what Okta charges. Year one is <strong>-$90,000</strong> and it stays there. Licence governance to the subset that needs it and the case rests on control and capacity, not cash.</p>
+      <p class="cashfig__detail"><strong>Nothing comes out.</strong> P2 plus Governance is $17 a seat, exactly what Okta charges. Year one is <strong>-$90,000</strong> and there is no payback. Licence governance to the subset that needs it and the case rests on control and capacity, not cash.</p>
     </li>
   </ul>
-  <p class="cashfig__scale" aria-hidden="true"><span>$0</span><span>$17 saved per seat</span></p>
+  <p class="cashfig__scale" aria-hidden="true"><span>$0</span><span>$17 saved per seat / month</span></p>
   <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices: Okta Essentials $17, Entra ID P2 $10, the governance tier above P2 $7 per user per month. Figure is the composite example the brief labels as one. Your agreement will differ; the ratios are the point.</figcaption>
 </figure>
 
