@@ -118,6 +118,12 @@ Now run it three times, because the tier decides the answer.
     position:absolute; top:-3px; bottom:-3px; left:60%; width:2px;
     background:var(--accent-gold);
   }
+  /* Not applicable rather than zero: a hatch, so the never row cannot be read as a
+     short bar, which in this panel would mean the best outcome. */
+  .cashfig__track--never {
+    background: repeating-linear-gradient(45deg,
+      var(--border-medium) 0 4px, transparent 4px 9px);
+  }
   .cashfig__detail { font-size:.9rem; line-height:1.5; color:var(--text-body); margin:0; }
   .cashfig__detail strong { color:var(--header-blue); }
   .cashfig__scale {
@@ -125,6 +131,12 @@ Now run it three times, because the tier decides the answer.
     font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
     font-size:.74rem; color:var(--text-gray); margin:.1rem 0 0;
   }
+  .cashfig__axis { position:relative; height:1.05rem; margin:.1rem 0 0;
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    font-size:.74rem; color:var(--text-gray); }
+  .cashfig__axis span { position:absolute; top:0; }
+  .cashfig__axis .a-mid { left:60%; transform:translateX(-50%); color:var(--accent-gold); font-weight:700; }
+  .cashfig__axis .a-end { right:0; }
   .cashfig__caption { margin-top:1.2rem; font-size:.85rem; color:var(--text-gray); font-style:italic; }
   .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
   @media (prefers-color-scheme: dark) {
@@ -169,7 +181,7 @@ Now run it three times, because the tier decides the answer.
 
   <div class="cashfig__panel">
     <p class="cashfig__ptitle">When the cash comes back</p>
-    <p class="cashfig__psub">The move costs $90,000 before any saving lands, and nothing is recovered until the contract ends. The gold line marks month 12.</p>
+    <p class="cashfig__psub">Months until the cash is back, so <strong>shorter is better</strong>. The move costs $90,000 before any saving lands, and nothing is recovered until the contract ends. The gold line marks month 12.</p>
     <ul class="cashfig__rows">
       <li class="cashfig__row">
         <div class="cashfig__head">
@@ -200,12 +212,12 @@ Now run it three times, because the tier decides the answer.
           <span class="cashfig__who">Buy P2 plus governance</span>
           <span class="cashfig__val">never</span>
         </div>
-        <span class="cashfig__track" aria-hidden="true"><span class="cashfig__tick"></span></span>
+        <span class="cashfig__track cashfig__track--never" aria-hidden="true"><span class="cashfig__tick"></span></span>
         <span class="sr-only">No payback. Saving is zero, so the 90,000 dollar move never comes back on the subscription line.</span>
         <p class="cashfig__detail">Saving is zero, so <strong>the $90,000 never comes back</strong> on the subscription line. Licence governance to the subset that needs it and the case rests on control and capacity, not cash.</p>
       </li>
     </ul>
-    <p class="cashfig__scale" aria-hidden="true"><span>month 0</span><span>month 20</span></p>
+    <div class="cashfig__axis" aria-hidden="true"><span style="left:0">month 0</span><span class="a-mid">12</span><span class="a-end">20</span></div>
   </div>
 
   <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices: Okta Essentials $17, Entra ID P2 $10, the governance tier above P2 $7 per user per month. Figure is the composite example the brief labels as one. Your agreement will differ; the ratios are the point.</figcaption>
