@@ -47,9 +47,15 @@ All three are the same failure wearing different clothes. The number was never o
 <style>
   .post-figure { margin: 2.4rem 0 2.6rem; }
   .post-figure img {
-    display: block; width: 100%; height: auto; max-width: 560px; margin: 0 auto;
+    display: block; width: 100%; height: auto; margin: 0 auto;
+    max-width: 880px;
     border: 1px solid var(--border-light); border-radius: 6px; background: #ffffff;
   }
+  /* Two sources, because one asset cannot serve both sizes honestly.
+     Dense is authored at 880 and reads well at the 716px article width.
+     Compact is authored at 560 with larger relative type, for phones. */
+  @media (min-width: 640px) { .post-figure img { aspect-ratio: 880 / 1130; } }
+  @media (max-width: 639px) { .post-figure img { aspect-ratio: 560 / 770; max-width: 560px; } }
   .post-figure figcaption {
     margin-top: .75rem; font-size: .85rem; color: var(--text-gray);
     font-style: italic; text-align: center; max-width: 640px; margin-left: auto; margin-right: auto;
@@ -60,10 +66,13 @@ All three are the same failure wearing different clothes. The number was never o
 </style>
 
 <figure class="post-figure">
-  <img src="/images/every-control-asked-whether-diagram-mobile.svg" width="560" height="770"
-       loading="lazy" decoding="async"
-       alt="Diagram: a limit that exists is not a limit that binds. Three ways it fails (set above the loss, policy not the engine, attached to the wrong object), one shared cause (nobody owned the number), and four things that make it bind (engine not policy, period total, approval stays real, revocation tested live).">
-  <figcaption>Three ways a limit fails, the cause they share, and what makes one bind. Each label is a heading from the text; the argument behind it is in the paragraphs above and below.</figcaption>
+  <picture>
+    <source media="(min-width: 640px)" srcset="/images/every-control-asked-whether-diagram.svg" type="image/svg+xml">
+    <img src="/images/every-control-asked-whether-diagram-mobile.svg" width="560" height="770"
+         loading="lazy" decoding="async"
+         alt="Diagram: a limit that exists is not a limit that binds. Three ways it fails (set above the loss, in a policy not the engine, attached to the wrong object) converge on one cause, that the number was never owned by anyone with the evidence to set it. Four things make it bind: enforced in the engine, a period total, approval that stays real, and revocation tested live.">
+  </picture>
+  <figcaption>The three ways a limit fails, the single cause they share, and what makes one bind. Every claim in it is argued in the paragraphs around it, and the SWIFT and FFIEC citations are the ones the text already relies on.</figcaption>
 </figure>
 
 
