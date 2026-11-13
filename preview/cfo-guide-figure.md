@@ -80,22 +80,14 @@ Say the contract runs another twelve months and the migration takes nine, so the
 
 Now run it three times, because the tier decides the answer.
 
-On Microsoft 365 E5, P2 is already paid for, so the whole 612,000 comes out. Divide 90,000 by the monthly saving of 51,000 and you get under two months, which is how long recovery takes once the saving starts. It is not the payback period, because nothing is recovered until the old contract ends. From the day you begin it is fourteen months: twelve of waiting, then two of recovery.
-
-If P2 has to be bought, the replacement is 10 dollars a seat, or 252,000 a year here. The saving falls to 7 dollars a seat, about 21,000 a month, and payback is sixteen months.
-
-If the estate needs the governance tier as well, P2 plus Governance is 17 dollars a seat. That is exactly what Okta charges, so the cash saving is zero. The case does not fail, but it stops being a cost case and has to stand on capacity and defensibility alone.
-
-The license comparison, not the migration, decides whether there is a business case at all.
-
 <style>
   .cashfig { margin: 2.4rem 0 2.6rem; }
   .cashfig__title {
     font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif;
     font-size:1.18rem; font-weight:700; color:var(--header-blue);
-    margin:0 0 1.1rem; line-height:1.3;
+    margin:0 0 .5rem; line-height:1.3;
   }
-  .cashfig__legend { font-size:.88rem; color:var(--text-gray); margin:-.55rem 0 1.15rem; line-height:1.45; }
+  .cashfig__legend { font-size:.88rem; color:var(--text-gray); margin:0 0 1.15rem; line-height:1.45; }
   .cashfig__rows { list-style:none; margin:0; padding:0; }
   .cashfig__row { padding:1.05rem 0; border-top:1px solid var(--border-light); }
   .cashfig__row:first-child { border-top:none; padding-top:0; }
@@ -109,28 +101,31 @@ The license comparison, not the migration, decides whether there is a business c
     font-weight:700; font-size:1.3rem; color:var(--header-blue); white-space:nowrap;
   }
   .cashfig__rate small { font-family:inherit; font-weight:400; font-size:.82rem; color:var(--text-gray); }
-  .cashfig__rate--zero { color:var(--accent-gold); }
   .cashfig__track {
     display:block; width:100%; height:13px; margin:.6rem 0 .5rem;
     background:var(--border-light); border-radius:3px; overflow:hidden;
   }
   .cashfig__fill { display:block; height:100%; background:var(--header-blue); border-radius:3px; }
-  /* Empty by design: a dashed gold rule, so the zero row cannot be mistaken for a
-     failed render or a divider. */
-  .cashfig__track--zero { background:transparent; border:2px dashed var(--accent-gold); height:11px; }
-  .cashfig__detail { font-size:.92rem; line-height:1.5; color:var(--text-body); }
+  .cashfig__detail { font-size:.92rem; line-height:1.55; color:var(--text-body); margin:0; }
   .cashfig__detail strong { color:var(--header-blue); }
-  .cashfig__caption {
-    margin-top:1rem; font-size:.85rem; color:var(--text-gray); font-style:italic;
+  .cashfig__scale {
+    display:flex; justify-content:space-between;
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    font-size:.76rem; color:var(--text-gray); margin:.15rem 0 0;
+  }
+  .cashfig__caption { margin-top:1.1rem; font-size:.85rem; color:var(--text-gray); font-style:italic; }
+  .sr-only {
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
   }
   @media (prefers-color-scheme: dark) {
     body:not(.light-mode) .cashfig__detail strong { color:var(--text-dark); }
   }
 </style>
 
-<figure class="cashfig">
-  <p class="cashfig__title">The tier decides whether there is a case at all</p>
-  <p class="cashfig__legend">Bar length is the monthly cash saving per seat, against the $17 that Okta charges.</p>
+<figure class="cashfig" aria-labelledby="cashfig-title">
+  <p class="cashfig__title" id="cashfig-title">The three cases, by what you already own</p>
+  <p class="cashfig__legend">Bar length is the monthly cash saving per seat, against the $17 Okta charges.</p>
   <ul class="cashfig__rows">
     <li class="cashfig__row">
       <div class="cashfig__head">
@@ -138,7 +133,8 @@ The license comparison, not the migration, decides whether there is a business c
         <span class="cashfig__rate">$17 <small>saved per seat, per month</small></span>
       </div>
       <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:100%"></span></span>
-      <p class="cashfig__detail"><strong>$612,000 a year.</strong> Recovers the $90,000 move in under two months, and <strong>14 months from the day you begin</strong> once the remaining term is counted.</p>
+      <span class="sr-only">Bar length: 100 percent of the $17 maximum.</span>
+      <p class="cashfig__detail"><strong>$612,000 a year once it starts.</strong> Year one is <strong>-$90,000</strong>, because the move lands before any saving. Cumulative cash turns positive in month 14.</p>
     </li>
     <li class="cashfig__row">
       <div class="cashfig__head">
@@ -146,19 +142,31 @@ The license comparison, not the migration, decides whether there is a business c
         <span class="cashfig__rate">$7 <small>saved per seat, per month</small></span>
       </div>
       <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:41%"></span></span>
-      <p class="cashfig__detail"><strong>$252,000 a year.</strong> The saving falls to about $21,000 a month, and payback moves to <strong>16 months</strong>.</p>
+      <span class="sr-only">Bar length: 41 percent of the $17 maximum.</span>
+      <p class="cashfig__detail"><strong>$252,000 a year once it starts.</strong> Year one is <strong>-$90,000</strong>. Cumulative cash turns positive in month 16.</p>
     </li>
     <li class="cashfig__row">
       <div class="cashfig__head">
         <span class="cashfig__who">If the governance tier is needed too, $10 plus $7</span>
-        <span class="cashfig__rate cashfig__rate--zero">$0 <small>saved, at any volume</small></span>
+        <span class="cashfig__rate">$0 <small>saved per seat, per month</small></span>
       </div>
-      <span class="cashfig__track cashfig__track--zero" aria-hidden="true"><span class="cashfig__fill" style="width:0"></span></span>
-      <p class="cashfig__detail"><strong>Nothing comes out.</strong> P2 plus Governance is $17 a seat, exactly what Okta charges. The case does not fail, but it stops being a cost case and has to stand on capacity and defensibility alone.</p>
+      <span class="cashfig__track" aria-hidden="true"></span>
+      <span class="sr-only">Bar length: 0 percent of the $17 maximum. No saving.</span>
+      <p class="cashfig__detail"><strong>Nothing comes out.</strong> P2 plus Governance is $17 a seat, exactly what Okta charges. Year one is <strong>-$90,000</strong> and it stays there. Licence governance to the subset that needs it and the case rests on control and capacity, not cash.</p>
     </li>
   </ul>
-  <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices: Okta Essentials $17, Entra ID P2 $10, the governance tier above P2 $7 per user per month. Figures are the composite example the brief labels as one; your agreement will differ, and the ratios are the point.</figcaption>
+  <p class="cashfig__scale" aria-hidden="true"><span>$0</span><span>$17 saved per seat</span></p>
+  <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices: Okta Essentials $17, Entra ID P2 $10, the governance tier above P2 $7 per user per month. Figure is the composite example the brief labels as one. Your agreement will differ; the ratios are the point.</figcaption>
 </figure>
+
+
+On Microsoft 365 E5, P2 is already paid for, so the whole 612,000 comes out. Divide 90,000 by the monthly saving of 51,000 and you get under two months, which is how long recovery takes once the saving starts. It is not the payback period, because nothing is recovered until the old contract ends. From the day you begin it is fourteen months: twelve of waiting, then two of recovery.
+
+If P2 has to be bought, the replacement is 10 dollars a seat, or 252,000 a year here. The saving falls to 7 dollars a seat, about 21,000 a month, and payback is sixteen months.
+
+If the estate needs the governance tier as well, P2 plus Governance is 17 dollars a seat. That is exactly what Okta charges, so the cash saving is zero. The case does not fail, but it stops being a cost case and has to stand on capacity and defensibility alone.
+
+The license comparison, not the migration, decides whether there is a business case at all.
 
 
 ## What comes back, and what it costs
