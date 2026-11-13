@@ -123,6 +123,7 @@ Now run it three times, because the tier decides the answer.
   .cashfig__track--never {
     background: repeating-linear-gradient(45deg,
       var(--border-medium) 0 4px, transparent 4px 9px);
+    background-size: 40% 100%; background-position: 60% 0; background-repeat: no-repeat;
   }
   .cashfig__detail { font-size:.9rem; line-height:1.5; color:var(--text-body); margin:0; }
   .cashfig__detail strong { color:var(--header-blue); }
@@ -214,13 +215,13 @@ Now run it three times, because the tier decides the answer.
         </div>
         <span class="cashfig__track cashfig__track--never" aria-hidden="true"><span class="cashfig__tick"></span></span>
         <span class="sr-only">No payback. Saving is zero, so the 90,000 dollar move never comes back on the subscription line.</span>
-        <p class="cashfig__detail">Saving is zero, so <strong>the $90,000 never comes back</strong> on the subscription line. Licence governance to the subset that needs it and the case rests on control and capacity, not cash.</p>
+        <p class="cashfig__detail">Saving is zero, so <strong>the $90,000 never comes back</strong> on the subscription line. License governance to the subset that needs it and the case rests on control and capacity, not cash.</p>
       </li>
     </ul>
-    <div class="cashfig__axis" aria-hidden="true"><span style="left:0">month 0</span><span class="a-mid">12</span><span class="a-end">20</span></div>
+    <div class="cashfig__axis" aria-hidden="true"><span style="left:0">0</span><span class="a-mid">12</span><span class="a-end">20 months</span></div>
   </div>
 
-  <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices: Okta Essentials $17, Entra ID P2 $10, the governance tier above P2 $7 per user per month. Figure is the composite example the brief labels as one. Your agreement will differ; the ratios are the point.</figcaption>
+  <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices: Okta Essentials $17, Entra ID P2 $10, the governance tier above P2 $7 per user per month. A composite example, labeled as one in the brief. Your agreement will differ; the ratios are the point.</figcaption>
 </figure>
 
 
