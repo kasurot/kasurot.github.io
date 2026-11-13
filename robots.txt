@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Unlinked review pages. Not part of the site.
+Disallow: /preview/
+
 Sitemap: https://www.the-armstrongs.org/sitemap.xml

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 1130" width="880" height="1130" role="img" aria-labelledby="t d">
+<title id="t">A limit that exists is not a limit that binds</title>
+<desc id="d">Three ways a payment limit fails, the single cause they share, and the four things that make a limit bind.</desc>
+
+<style>
+  .bg  { fill:#ffffff; }
+  .h1  { font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif; font-size:27px; fill:#0f172a; font-weight:700; }
+  .sub { font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif; font-size:15.5px; fill:#475569; }
+  .lab { font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11.5px; fill:#475569; letter-spacing:1.6px; font-weight:700; }
+  .num { font-family:'Book Antiqua',Palatino,Georgia,serif; font-size:19px; fill:#b45309; font-weight:700; }
+  .ct  { font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif; font-size:18px; fill:#1e293b; font-weight:700; }
+  .cb  { font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif; font-size:14.5px; fill:#475569; }
+  .band{ font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif; font-size:18px; fill:#f1f5f9; font-weight:700; }
+  .bandb{font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif; font-size:14px; fill:#cbd5e1; }
+  .rt  { font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif; font-size:16.5px; fill:#1e293b; font-weight:700; }
+  .rb  { font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif; font-size:14px; fill:#475569; }
+  .src { font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11.5px; fill:#64748b; }
+  .card{ fill:#ffffff; stroke:#e2e8f0; stroke-width:1.5; }
+</style>
+
+<rect class="bg" x="0" y="0" width="880" height="1130"/>
+
+<!-- title -->
+<text class="h1"  x="48" y="58">A limit that exists is not a limit that binds</text>
+<text class="sub" x="48" y="88">Every control asked whether the payment was permitted.</text>
+<text class="sub" x="48" y="110">None of them asked how much could leave, or who owned that number.</text>
+
+<line x1="48" y1="132" x2="832" y2="132" stroke="#e2e8f0" stroke-width="1.5"/>
+
+<!-- section A -->
+<text class="lab" x="48" y="168">THREE WAYS A LIMIT FAILS</text>
+
+<!-- card 1 -->
+<rect class="card" x="48" y="184" width="784" height="92" rx="5"/>
+<text class="num" x="68" y="216">1</text>
+<text class="ct"  x="94" y="216">The limit was set above the loss</text>
+<text class="cb"  x="94" y="242">A ceiling high enough to clear legitimate settlement and payroll is</text>
+<text class="cb"  x="94" y="262">high enough to bound nothing.</text>
+
+<!-- card 2 -->
+<rect class="card" x="48" y="290" width="784" height="92" rx="5"/>
+<text class="num" x="68" y="322">2</text>
+<text class="ct"  x="94" y="322">The limit lived in a policy, not in the engine</text>
+<text class="cb"  x="94" y="348">If the ceiling lives inside the provider's platform, a compromised</text>
+<text class="cb"  x="94" y="368">provider is enforcing compromised limits.</text>
+
+<!-- card 3 -->
+<rect class="card" x="48" y="396" width="784" height="92" rx="5"/>
+<text class="num" x="68" y="428">3</text>
+<text class="ct"  x="94" y="428">The limit was attached to the wrong object</text>
+<text class="cb"  x="94" y="454">A ceiling on the channel rather than on the class of payment bounds</text>
+<text class="cb"  x="94" y="474">the door, not the money that walks through it.</text>
+
+<!-- convergence -->
+<path d="M440 492 L440 512" stroke="#b45309" stroke-width="2"/>
+<path d="M432 506 L440 516 L448 506" fill="none" stroke="#b45309" stroke-width="2"/>
+
+<!-- cause band -->
+<rect x="48" y="526" width="784" height="112" rx="5" fill="#0f172a"/>
+<rect x="48" y="526" width="5" height="112" fill="#b45309"/>
+<text class="band"  x="76" y="562">All three are the same failure wearing different clothes.</text>
+<text class="bandb" x="76" y="594">The number was never owned by anyone who had the evidence</text>
+<text class="bandb" x="76" y="616">to set it, and to say that holding a payment was correct.</text>
+
+<!-- section B -->
+<text class="lab" x="48" y="684">WHAT MAKES IT BIND</text>
+
+<!-- rows -->
+<g>
+  <rect x="48" y="700" width="4" height="52" fill="#b45309"/>
+  <text class="rt" x="70" y="722">Enforce the limit in the engine, not the policy</text>
+  <text class="rb" x="70" y="744">It has to sit on the bank's side of the trust boundary.</text>
+</g>
+<g>
+  <rect x="48" y="768" width="4" height="52" fill="#b45309"/>
+  <text class="rt" x="70" y="790">Add the period total, and be honest about what it does</text>
+  <text class="rb" x="70" y="812">It makes the attack a pacing problem. It does not cap the incident.</text>
+</g>
+<g>
+  <rect x="48" y="836" width="4" height="52" fill="#b45309"/>
+  <text class="rt" x="70" y="858">Keep ordinary payments out of the approval path</text>
+  <text class="rb" x="70" y="880">Past a few dozen per reviewer per day, approval becomes a rubber stamp.</text>
+</g>
+<g>
+  <rect x="48" y="904" width="4" height="52" fill="#b45309"/>
+  <text class="rt" x="70" y="926">Test the revocation live</text>
+  <text class="rb" x="70" y="948">Can one channel be cut this afternoon without stranding payments in flight?</text>
+</g>
+
+<line x1="48" y1="988" x2="832" y2="988" stroke="#e2e8f0" stroke-width="1.5"/>
+<text class="src" x="48" y="1012">The control is not new and not optional: SWIFT CSCF transaction business controls and FFIEC wholesale payment</text>
+<text class="src" x="48" y="1030">examination procedures both require it. The gap is not whether to have a limit, but whether it binds.</text>
+<text class="src" x="48" y="1068" font-style="italic">This is an argument about where the bound must sit. It is not an assessment of any institution's controls.</text>
+</svg>
