@@ -95,6 +95,7 @@ The license comparison, not the migration, decides whether there is a business c
     font-size:1.18rem; font-weight:700; color:var(--header-blue);
     margin:0 0 1.1rem; line-height:1.3;
   }
+  .cashfig__legend { font-size:.88rem; color:var(--text-gray); margin:-.55rem 0 1.15rem; line-height:1.45; }
   .cashfig__rows { list-style:none; margin:0; padding:0; }
   .cashfig__row { padding:1.05rem 0; border-top:1px solid var(--border-light); }
   .cashfig__row:first-child { border-top:none; padding-top:0; }
@@ -114,6 +115,9 @@ The license comparison, not the migration, decides whether there is a business c
     background:var(--border-light); border-radius:3px; overflow:hidden;
   }
   .cashfig__fill { display:block; height:100%; background:var(--header-blue); border-radius:3px; }
+  /* Empty by design: a dashed gold rule, so the zero row cannot be mistaken for a
+     failed render or a divider. */
+  .cashfig__track--zero { background:transparent; border:2px dashed var(--accent-gold); height:11px; }
   .cashfig__detail { font-size:.92rem; line-height:1.5; color:var(--text-body); }
   .cashfig__detail strong { color:var(--header-blue); }
   .cashfig__caption {
@@ -126,11 +130,12 @@ The license comparison, not the migration, decides whether there is a business c
 
 <figure class="cashfig">
   <p class="cashfig__title">The tier decides whether there is a case at all</p>
+  <p class="cashfig__legend">Bar length is the monthly cash saving per seat, against the $17 that Okta charges.</p>
   <ul class="cashfig__rows">
     <li class="cashfig__row">
       <div class="cashfig__head">
         <span class="cashfig__who">On Microsoft 365 E5, P2 already owned</span>
-        <span class="cashfig__rate">$17 <small>per seat / month</small></span>
+        <span class="cashfig__rate">$17 <small>saved per seat, per month</small></span>
       </div>
       <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:100%"></span></span>
       <p class="cashfig__detail"><strong>$612,000 a year.</strong> Recovers the $90,000 move in under two months, and <strong>14 months from the day you begin</strong> once the remaining term is counted.</p>
@@ -138,7 +143,7 @@ The license comparison, not the migration, decides whether there is a business c
     <li class="cashfig__row">
       <div class="cashfig__head">
         <span class="cashfig__who">If P2 has to be bought, at $10 a seat</span>
-        <span class="cashfig__rate">$7 <small>per seat / month</small></span>
+        <span class="cashfig__rate">$7 <small>saved per seat, per month</small></span>
       </div>
       <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:41%"></span></span>
       <p class="cashfig__detail"><strong>$252,000 a year.</strong> The saving falls to about $21,000 a month, and payback moves to <strong>16 months</strong>.</p>
@@ -146,13 +151,13 @@ The license comparison, not the migration, decides whether there is a business c
     <li class="cashfig__row">
       <div class="cashfig__head">
         <span class="cashfig__who">If the governance tier is needed too, $10 plus $7</span>
-        <span class="cashfig__rate cashfig__rate--zero">$0 <small>per seat / month</small></span>
+        <span class="cashfig__rate cashfig__rate--zero">$0 <small>saved, at any volume</small></span>
       </div>
-      <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:0"></span></span>
+      <span class="cashfig__track cashfig__track--zero" aria-hidden="true"><span class="cashfig__fill" style="width:0"></span></span>
       <p class="cashfig__detail"><strong>Nothing comes out.</strong> P2 plus Governance is $17 a seat, exactly what Okta charges. The case does not fail, but it stops being a cost case and has to stand on capacity and defensibility alone.</p>
     </li>
   </ul>
-  <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices: Okta Essentials $17, Entra ID P2 $10, the governance tier above P2 $7 per user per month. Bar length is the monthly cash saving per seat. Figures are the composite example the brief labels as one; your agreement will differ, and the ratios are the point.</figcaption>
+  <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices: Okta Essentials $17, Entra ID P2 $10, the governance tier above P2 $7 per user per month. Figures are the composite example the brief labels as one; your agreement will differ, and the ratios are the point.</figcaption>
 </figure>
 
 
