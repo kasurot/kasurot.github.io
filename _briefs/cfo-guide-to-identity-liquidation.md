@@ -113,14 +113,17 @@ Now run it three times, because the tier decides the answer.
   /* Month 12: the contract ends and saving can begin. Marked on every row so the wait is
      visible rather than buried in a sentence. */
   .cashfig__tick {
-    position:absolute; top:-3px; bottom:-3px; left:60%; width:2px;
+    position:absolute; top:-3px; bottom:-3px; left:60%; width:3px;
     background:var(--accent-gold);
   }
   /* Not applicable rather than zero: a hatch, so the never row cannot be read as a
      short bar, which in this panel would mean the best outcome. */
+  /* The hatch carries meaning, so it cannot use a border colour: at slate-300 on white it
+     washed out and read as an empty row. Its own token, darker in light mode. */
+  .cashfig { --hatch: #94a3b8; }
   .cashfig__track--never {
     background: repeating-linear-gradient(45deg,
-      var(--border-medium) 0 4px, transparent 4px 9px);
+      var(--hatch) 0 4px, transparent 4px 9px);
     background-size: 40% 100%; background-position: 60% 0; background-repeat: no-repeat;
   }
   .cashfig__detail { font-size:.9rem; line-height:1.5; color:var(--text-body); margin:0; }
@@ -130,9 +133,10 @@ Now run it three times, because the tier decides the answer.
     font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
     font-size:.74rem; color:var(--text-gray); margin:.1rem 0 0;
   }
-  .cashfig__axis { position:relative; height:1.05rem; margin:.1rem 0 0;
+  .cashfig__axis { position:relative; height:1.35rem; margin:.15rem 0 0;
+    padding-top:.25rem; border-top:1px solid var(--border-medium);
     font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-    font-size:.74rem; color:var(--text-gray); }
+    font-size:.8rem; color:var(--text-body); }
   .cashfig__axis span { position:absolute; top:0; }
   .cashfig__axis .a-mid { left:60%; transform:translateX(-50%); color:var(--accent-gold); font-weight:700; }
   .cashfig__axis .a-end { right:0; }
@@ -141,6 +145,7 @@ Now run it three times, because the tier decides the answer.
   @media (prefers-color-scheme: dark) {
     body:not(.light-mode) .cashfig__detail strong { color:var(--text-dark); }
     body:not(.light-mode) .cashfig__tick { background:var(--accent-gold); }
+    body:not(.light-mode) .cashfig { --hatch: #64748b; }
   }
 </style>
 
