@@ -78,6 +78,151 @@ Say the contract runs another twelve months and the migration takes nine, so the
 
 Now run it three times, because the tier decides the answer.
 
+<style>
+  .cashfig { margin: 2.4rem 0 2.6rem; }
+  .cashfig__title {
+    font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif;
+    font-size:1.18rem; font-weight:700; color:var(--header-blue);
+    margin:0 0 1.3rem; line-height:1.3;
+  }
+  .cashfig__panel + .cashfig__panel { margin-top:1.9rem; padding-top:1.6rem; border-top:2px solid var(--border-medium); }
+  .cashfig__ptitle {
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    font-size:.74rem; letter-spacing:1.5px; text-transform:uppercase;
+    font-weight:700; color:var(--text-gray); margin:0 0 .3rem;
+  }
+  .cashfig__psub { font-size:.9rem; color:var(--text-gray); margin:0 0 1rem; line-height:1.45; }
+  .cashfig__rows { list-style:none; margin:0; padding:0; }
+  .cashfig__row { padding:.85rem 0; border-top:1px solid var(--border-light); }
+  .cashfig__row:first-child { border-top:none; padding-top:0; }
+  .cashfig__head { display:flex; justify-content:space-between; align-items:baseline; gap:.5rem 1rem; flex-wrap:wrap; }
+  .cashfig__who {
+    font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif;
+    font-weight:700; font-size:.97rem; color:var(--header-blue); line-height:1.35;
+  }
+  .cashfig__val {
+    font-family:'Book Antiqua',Palatino,'Palatino Linotype',Georgia,serif;
+    font-weight:700; font-size:1.16rem; color:var(--header-blue); white-space:nowrap;
+  }
+  .cashfig__val small { font-family:inherit; font-weight:400; font-size:.8rem; color:var(--text-gray); }
+  .cashfig__track {
+    position:relative; display:block; width:100%; height:13px; margin:.55rem 0 .45rem;
+    background:var(--border-light); border-radius:3px; overflow:hidden;
+  }
+  .cashfig__fill { display:block; height:100%; background:var(--header-blue); border-radius:3px 0 0 3px; }
+  /* Month 12: the contract ends and saving can begin. Marked on every row so the wait is
+     visible rather than buried in a sentence. */
+  .cashfig__tick {
+    position:absolute; top:-3px; bottom:-3px; left:60%; width:2px;
+    background:var(--accent-gold);
+  }
+  /* Not applicable rather than zero: a hatch, so the never row cannot be read as a
+     short bar, which in this panel would mean the best outcome. */
+  .cashfig__track--never {
+    background: repeating-linear-gradient(45deg,
+      var(--border-medium) 0 4px, transparent 4px 9px);
+    background-size: 40% 100%; background-position: 60% 0; background-repeat: no-repeat;
+  }
+  .cashfig__detail { font-size:.9rem; line-height:1.5; color:var(--text-body); margin:0; }
+  .cashfig__detail strong { color:var(--header-blue); }
+  .cashfig__scale {
+    display:flex; justify-content:space-between;
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    font-size:.74rem; color:var(--text-gray); margin:.1rem 0 0;
+  }
+  .cashfig__axis { position:relative; height:1.05rem; margin:.1rem 0 0;
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    font-size:.74rem; color:var(--text-gray); }
+  .cashfig__axis span { position:absolute; top:0; }
+  .cashfig__axis .a-mid { left:60%; transform:translateX(-50%); color:var(--accent-gold); font-weight:700; }
+  .cashfig__axis .a-end { right:0; }
+  .cashfig__caption { margin-top:1.2rem; font-size:.85rem; color:var(--text-gray); font-style:italic; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  @media (prefers-color-scheme: dark) {
+    body:not(.light-mode) .cashfig__detail strong { color:var(--text-dark); }
+    body:not(.light-mode) .cashfig__tick { background:var(--accent-gold); }
+  }
+</style>
+
+<figure class="cashfig" aria-labelledby="cashfig-title">
+  <p class="cashfig__title" id="cashfig-title">What you save, and when it comes back</p>
+
+  <div class="cashfig__panel">
+    <p class="cashfig__ptitle">What you save each month, per seat</p>
+    <p class="cashfig__psub">Against the $17 Okta charges. This is the line the tier decides.</p>
+    <ul class="cashfig__rows">
+      <li class="cashfig__row">
+        <div class="cashfig__head">
+          <span class="cashfig__who">E5, P2 already owned</span>
+          <span class="cashfig__val">$17</span>
+        </div>
+        <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:100%"></span></span>
+        <span class="sr-only">Bar length: 100 percent of the $17 maximum. Saves 17 dollars per seat per month.</span>
+      </li>
+      <li class="cashfig__row">
+        <div class="cashfig__head">
+          <span class="cashfig__who">Buy P2 at $10</span>
+          <span class="cashfig__val">$7</span>
+        </div>
+        <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:41%"></span></span>
+        <span class="sr-only">Bar length: 41 percent of the $17 maximum. Saves 7 dollars per seat per month.</span>
+      </li>
+      <li class="cashfig__row">
+        <div class="cashfig__head">
+          <span class="cashfig__who">Buy P2 plus governance, $10 and $7</span>
+          <span class="cashfig__val">$0</span>
+        </div>
+        <span class="cashfig__track" aria-hidden="true"></span>
+        <span class="sr-only">No saving. Zero percent of the $17 maximum.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cashfig__panel">
+    <p class="cashfig__ptitle">When the cash comes back</p>
+    <p class="cashfig__psub">Months until the cash is back, so <strong>shorter is better</strong>. The move costs $90,000 before any saving lands, and nothing is recovered until the contract ends. The gold line marks month 12.</p>
+    <ul class="cashfig__rows">
+      <li class="cashfig__row">
+        <div class="cashfig__head">
+          <span class="cashfig__who">E5, P2 already owned</span>
+          <span class="cashfig__val">14 <small>months</small></span>
+        </div>
+        <span class="cashfig__track" aria-hidden="true">
+          <span class="cashfig__fill" style="width:70%"></span>
+          <span class="cashfig__tick"></span>
+        </span>
+        <span class="sr-only">Payback at 14 months: 12 months waiting for the contract to end, then about 2 months of recovery.</span>
+        <p class="cashfig__detail">Twelve months of waiting, then <strong>two of recovery</strong>. Saves <strong>$612,000 a year</strong> once it starts.</p>
+      </li>
+      <li class="cashfig__row">
+        <div class="cashfig__head">
+          <span class="cashfig__who">Buy P2 at $10</span>
+          <span class="cashfig__val">16 <small>months</small></span>
+        </div>
+        <span class="cashfig__track" aria-hidden="true">
+          <span class="cashfig__fill" style="width:80%"></span>
+          <span class="cashfig__tick"></span>
+        </span>
+        <span class="sr-only">Payback at 16 months: 12 months waiting, then about 4 months of recovery.</span>
+        <p class="cashfig__detail">Twelve months of waiting, then <strong>four of recovery</strong>. Saves <strong>$252,000 a year</strong> once it starts.</p>
+      </li>
+      <li class="cashfig__row">
+        <div class="cashfig__head">
+          <span class="cashfig__who">Buy P2 plus governance</span>
+          <span class="cashfig__val">never</span>
+        </div>
+        <span class="cashfig__track cashfig__track--never" aria-hidden="true"><span class="cashfig__tick"></span></span>
+        <span class="sr-only">No payback. Saving is zero, so the 90,000 dollar move never comes back on the subscription line.</span>
+        <p class="cashfig__detail">Saving is zero, so <strong>the $90,000 never comes back</strong> on the subscription line. License governance to the subset that needs it and the case rests on control and capacity, not cash.</p>
+      </li>
+    </ul>
+    <div class="cashfig__axis" aria-hidden="true"><span style="left:0">0</span><span class="a-mid">12</span><span class="a-end">20 months</span></div>
+  </div>
+
+  <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices: Okta Essentials $17, Entra ID P2 $10, the governance tier above P2 $7 per user per month. A composite example, labeled as one in the brief. Your agreement will differ; the ratios are the point.</figcaption>
+</figure>
+
+
 On Microsoft 365 E5, P2 is already paid for, so the whole 612,000 comes out. Divide 90,000 by the monthly saving of 51,000 and you get under two months, which is how long recovery takes once the saving starts. It is not the payback period, because nothing is recovered until the old contract ends. From the day you begin it is fourteen months: twelve of waiting, then two of recovery.
 
 If P2 has to be bought, the replacement is 10 dollars a seat, or 252,000 a year here. The saving falls to 7 dollars a seat, about 21,000 a month, and payback is sixteen months.
