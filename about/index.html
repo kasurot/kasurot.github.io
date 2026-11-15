@@ -40,16 +40,34 @@ description: Director of Professional Services at GCA Technology Services. I lea
 </section>
 
 <section>
+    <h2 class="section-title">Technical</h2>
+    <div class="card-block">
+        <ul class="tech-list">
+            <li><strong>Identity platforms:</strong> Microsoft Entra ID, Okta, Ping Identity (PingFederate, PingDirectory, DaVinci), Active Directory, AD CS and PKI.</li>
+            <li><strong>Governance and lifecycle:</strong> Entra ID Governance and Okta Identity Governance, access reviews, entitlement packages, access request workflows, segregation of duties, joiner-mover-leaver lifecycle, and hundreds of HR-to-SaaS provisioning integrations.</li>
+            <li><strong>Access and privileged access:</strong> Conditional Access, PIM just-in-time activation, RBAC and ABAC through dynamic groups, SAML, OIDC, OAuth2, SCIM, FIDO2 security keys and passkeys; CyberArk, BeyondTrust and Delinea.</li>
+            <li><strong>Azure and automation:</strong> Azure RBAC and Policy guardrails, Resource Graph and Activity telemetry for entitlement analysis, Log Analytics and KQL, Azure DevOps and Bitbucket for source control and code review, PowerShell.</li>
+        </ul>
+    </div>
+</section>
+
+<section>
     <h2 class="section-title">Credentials</h2>
     <div class="card-block">
         <ul class="cert-highlight">
             <li><strong>CISSP</strong> &middot; Certified Information Systems Security Professional</li>
             <li><strong>ISACA CRISC</strong> &middot; Certified in Risk and Information Systems Control</li>
-            <li><strong>Microsoft Cybersecurity Architect Expert</strong> (SC-100)</li>
-            <li><strong>Azure Security Engineer</strong> (AZ-500) &middot; <strong>Information Security Administrator</strong> (SC-401)</li>
-            <li><strong>Identity and Access Administrator</strong> (SC-300) &middot; <strong>SailPoint Identity Security Engineer</strong> (ISE)</li>
+            <li><strong>Microsoft Cybersecurity Architect Expert</strong> (SC-100) &middot; <strong>Azure Solutions Architect Expert</strong> (AZ-305)</li>
+            <li><strong>Azure Security Engineer</strong> (AZ-500) &middot; <strong>Identity and Access Administrator</strong> (SC-300) &middot; <strong>Information Security Administrator</strong> (SC-401)</li>
+            <li><strong>SailPoint Identity Security Engineer</strong> (ISE) &middot; <strong>Okta Consultant</strong> &middot; <strong>CyberArk Defender and Sentry</strong> &middot; <strong>PingFederate Professional</strong></li>
         </ul>
-        <p class="cert-note">The full record, including the Microsoft portfolio, is on the <a href="{{ '/resume/' | relative_url }}" class="cta-link">resume</a>. The problems I take on are on <a href="{{ '/what-i-do/' | relative_url }}" class="cta-link">What I Do</a>.</p>
+        <p class="cert-note">
+            Fourteen current Microsoft role-based certifications, and thirty-four in total including the MCSE and
+            MCSA credentials from 2010 to 2016 (<a href="https://learn.microsoft.com/en-us/users/kevinarmstrong-0122/transcript/vmn6mtqmjy61m18" target="_blank" rel="noopener">verify the transcript on Microsoft Learn</a>).
+            Also ISO/IEC 27701 Lead Auditor, issued by Mastermind Assurance as a course certificate rather than a
+            proctored exam.
+        </p>
+        <p class="cert-note">The problems I take on are on <a href="{{ '/what-i-do/' | relative_url }}" class="cta-link">What I Do</a>.</p>
     </div>
 </section>
 
@@ -63,6 +81,10 @@ description: Director of Professional Services at GCA Technology Services. I lea
         <p>
             <strong>Bachelor of Science, Network and System Administration</strong><br>
             <em>Western Governors University</em>
+        </p>
+        <p>
+            <strong>Business Foundations Specialization</strong><br>
+            <em>University of Pennsylvania (Wharton Online)</em> | 2026
         </p>
     </div>
 </section>
@@ -94,6 +116,16 @@ description: Director of Professional Services at GCA Technology Services. I lea
         margin-bottom: 12px;
         line-height: 1.6;
     }
+    .tech-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+    .tech-list li { margin-bottom: 10px; }
+    .tech-list li:last-child { margin-bottom: 0; }
+    .tech-list strong { color: var(--header-blue); }
     .about-narrative p {
         margin-bottom: 12px;
     }
