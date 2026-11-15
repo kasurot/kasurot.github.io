@@ -1,47 +1,54 @@
 ---
 layout: post
-title: "M&A IT Integration: The Identity Cost Nobody Plans For"
+title: "M&A Integration: The Access Decision That Sets the Timeline"
 date: 2026-05-14
-description: "The deal team models revenue synergies and factors in IT integration costs. But identity governance, access continuity, and ownership accountability are the factors that determine whether the integration actually succeeds."
+description: "Integration models carry a line for technology. They carry none for the decision that actually moves the date, and it is the cheapest one to add."
 tags: [M & A, Identity Strategy, Capital Efficiency, Risk Management, Governance]
+approved: true
 ---
 
-Every M&A deal models IT integration. The financial model includes a line item for it. The deal team knows systems need to merge. That part is not ignored.
+Every integration model has a line for technology. None has a line for the decision that actually sets the date.
 
-What is ignored is the accountability layer underneath the technology: who owns the access, how do you maintain governance during the transition, and what happens to the cost when two identity platforms run in parallel longer than planned.
+At a multi-acquisition insurance brokerage I retired a workforce identity provider rather than renew it. At a telecom operator across five markets I consolidated five Active Directory domains into one tenant, moved ten thousand users, and sequenced the migration with a thirty-seven entry change register. In the largest estate I have run, I inventoried more than five thousand machine and service accounts, removed about two hundred that nothing used, and audited the hundred carrying advanced permissions. I have operated all three major privileged access platforms.
 
-### The Accountability Gap
-The deal team models IT integration as a cost with a timeline. The integration team discovers that the timeline is not determined by the technology. The directories are compatible. The platforms can be connected. The applications can be migrated.
+Here is what that work taught me, and what a deal model usually leaves out.
 
-The timeline is determined by the governance: consolidating two access review cycles, two audit trails, two compliance frameworks, and two sets of ownership accountability into one. The technology can be connected quickly. The governance consolidation is what actually takes time, because it requires decisions about ownership, access scope, and accountability that no vendor can make for you.
+## The date is set by a bundle, and access is the item without a line
 
-Most deal teams model the technology integration. Few model the governance decisions that determine how long it actually takes and what it actually costs.
+It would be neat to say technology is fast and governance is slow. Merging directories is hard technical work. Applications authenticate against the old directory in ways that cannot simply be re-pointed, and those applications pin the old estate in place long after the integration is declared complete.
 
-### Identity Is the Accountability Layer
-Merging two companies is a technology project, but it is not just a technology project. The identity layer is where accountability lives: who has access to what, who owns that access, and who is responsible when something goes wrong.
+The honest version is narrower and more useful. An integration date is set by a bundle: regulatory clearance, change-of-control consents, data migration, application rationalization, and access governance. Four of those five get a line in the model. Access governance does not, and it is the one that moves last, because it requires decisions that no vendor and no adviser can make on the buyer's behalf.
 
-Consider what identity governance actually requires during integration:
+The evidence for that is not my opinion. [PwC's 2026 integration survey](https://www.pwc.com/us/en/services/consulting/deals/library/ma-integration-survey.html) found that only about one in three acquirers fully achieve their deal thesis objectives, and it names the cause precisely: "The value gap is a decision gap." [KPMG's 2025 research](https://kpmg.com/us/en/articles/2025/ma-synergies-value-public-acquisitions.html), covering more than three thousand public deals worth over a hundred million dollars each between 2012 and 2022, found that 57.2 percent of acquirers destroyed shareholder value. It names two causes: acquirers overpay, and they fail to deliver the gains they projected because integration complexity is underestimated. Only one of those is fixed at the negotiating table.
 
-**Access ownership.** Two organizations mean two sets of access owners. During integration, ownership is ambiguous. The old organization's access owners are no longer responsible. The new organization's access owners don't yet exist. In that gap, access persists without accountability. Nobody owns it. Nobody reviews it. Nobody can answer the auditor's question.
+PwC then publishes the decisions it says must be resolved before day one: leadership, talent, customer, product, technology, tax and regulatory. Identity and access is not on that list. That omission is the gap this brief is about, and it is the one that closes with a decision rather than a payment.
 
-**Governance continuity.** The merged entity must demonstrate governance to regulators while the integration is in progress. Two access review cycles must run in parallel. Two audit trails must be maintained. The auditors do not pause for your merger. The governance burden doubles while the integration team is already at capacity.
+## Two decisions decide the risk, and neither is in the model
 
-**Service account accountability.** Hundreds of non-human identities. Each one with its own credentials, its own permissions, its own purpose. Most of them undocumented. During integration, nobody owns them. The old team owned them. The new team doesn't know they exist. They persist, ungoverned, accumulating permissions across two environments.
+**The seam between the two privileged estates.** At close you own two sets of administrators. The target's administrators still hold the highest privilege in systems you are now betting the company on, and they know where everything is buried. The moment anyone opens a path between the two estates, that path becomes the shortest route to your crown jewels, and your monitoring was not built for it. What leaves through it is customer data, employee records and intellectual property, and you learn about it from a notification letter rather than an alert. Orphaned credentials in the acquired estate, and whichever of the two directories is weaker once they are joined, become the path an external attacker takes. Every privileged access platform I have operated had the same gap, and closing it is a decision with an owner and a date, not a configuration task.
 
-**Access continuity.** The business cannot stop during integration. Users need access to both environments. Service accounts need to reach both directories. The identity layer must function across two partially merged environments for months, sometimes years, while the consolidation progresses. Every access decision during that period is a governance decision, not a technology decision.
+**The people who are leaving.** Integration means removing roles, and the removal is known before it happens. For months, a population with motive still holds access, and the people with the deepest access are often the most likely to be leaving. Revocation has to be tied to the reduction schedule rather than the migration schedule, and that population has to be watched as a higher risk group rather than as ordinary leavers.
 
-This is not a project plan. It is an accountability gap. And most deal teams do not model it.
+## Parallel running costs the reconciliation, not the double
 
-### The Permanent Cost
-The visible cost of M&A IT integration is the technology migration. The actual cost is the governance decisions that determine how long the migration takes and what it costs to sustain.
+Two estates mean two of everything that touches access: two review cycles, two evidence sets, two sets of owners. The cost is not double, which is the figure most models use. It is the buyer's mature process plus the target's immature one plus the reconciliation between them, and the reconciliation is where the labor goes, because one side is automated and the other is a spreadsheet maintained by hand.
 
-Two identity platforms running in parallel until governance is consolidated. Duplicate access review cycles running simultaneously. Two sets of audit evidence being maintained. Two sets of ownership accountability being tracked. Every one of these duplicated processes has a labor cost, and that cost persists until someone makes the governance decisions to consolidate them.
+The service account population is the clearest example, and the one standard already speaks to it. [NIST's account management control](https://csf.tools/reference/nist-sp-800-53/r5/ac/ac-2/) treats service accounts as a named account type that must be inventoried, given an owner, and reviewed on a schedule tied to personnel termination and transfer. Most estates do not meet it. [ISACA's journal](https://www.isaca.org/resources/isaca-journal/issues/2025/volume-3/mergers-and-acquisitions) makes the same point for mergers specifically: access rights have to be re-governed after the infrastructures are combined, or unapproved roles survive the integration.
 
-The synergy number assumed the integration would be a technology project with a defined timeline. The actual timeline is determined by governance decisions, not technology migration. And governance decisions take longer than technology migration because they require organizational alignment, not just technical configuration.
+The number is not portable between deals, and anyone offering a percentage is guessing. It has three inputs: how many applications must keep authenticating against the old directory, how many accounts have no current owner, and how many months the two estates run in parallel before the last of those is resolved. The first two can be measured in diligence. The third is set by how fast the ownership decisions are made, and no public benchmark exists for this specific metric, which is exactly why it has to be modeled per deal rather than assumed.
 
-### The Recommendation
-The path forward is not faster migration. It is earlier accountability planning.
+The value is not in the savings. It is in knowing, quarter by quarter, whether the thing you paid for is actually happening. Savings reported without the parallel-run duration are a claim, not a measurement.
 
-Model identity governance cost in the deal memo alongside the technology integration cost. Do not treat access ownership as a post-close detail. Treat it as a pre-close risk factor. The accountability layer determines whether the integration sustains itself or collapses under duplicated governance overhead.
+## Naming an owner does not fix culture or a clock
 
-The organizations that integrate well are the ones that assign access ownership during due diligence, not after the deal closes. The question is not whether the systems can merge. The question is who owns the access once they do.
+Naming an owner before close does not fix culture, retention or a regulatory clock. It does not make a difficult target easy, and it does not remove the technical work of merging directories. It only means that when the integration slips, you know which decision slipped and who owns it.
+
+## The board can decide this before it signs
+
+**The ask.** Before signing, the board directs management to name the executive accountable for access in the combined estate, and to accept no purchase agreement that does not warrant the target's account ownership coverage. From close, management reports the count of accounts without an attested owner to the audit committee every quarter until the two estates are collapsed to one.
+
+**The reporting.** The audit committee sees four numbers every quarter: accounts with no owner attested by a current employee, applications still authenticating against a directory scheduled for retirement, privileged accounts in the acquired estate not yet under the buyer's control, and months the two estates have run in parallel against plan. The self-test is a single question. If the first number is not falling, the integration is not happening, whatever the plan says.
+
+## One question separates a hard integration from an expensive one
+
+Ask the target's technology leadership one thing: who owns each account in this estate today, and can you show me the list. A name and a current document means the integration will be hard. A spreadsheet from three years ago usually means it will be expensive, and you now know that before you signed.
