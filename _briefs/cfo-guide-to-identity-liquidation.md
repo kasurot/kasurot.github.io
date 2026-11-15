@@ -169,18 +169,6 @@ Then run it twice, because the entitlement decides the answer.
     <ul class="cashfig__rows">
       <li class="cashfig__row">
         <div class="cashfig__head">
-          <span class="cashfig__who">E5, P2 already owned, best case</span>
-          <span class="cashfig__val">14 <small>months</small></span>
-        </div>
-        <span class="cashfig__track" aria-hidden="true">
-          <span class="cashfig__fill" style="width:70%"></span>
-          <span class="cashfig__tick"></span>
-        </span>
-        <span class="sr-only">Payback at 14 months: 12 months waiting for the contract to end, then about 2 months of recovery.</span>
-        <p class="cashfig__detail">Twelve months of waiting, then <strong>two of recovery</strong>. Saves <strong>$612,000 a year</strong> once it starts.</p>
-      </li>
-      <li class="cashfig__row">
-        <div class="cashfig__head">
           <span class="cashfig__who">Buy P2 at $10</span>
           <span class="cashfig__val">16 <small>months</small></span>
         </div>
@@ -198,13 +186,13 @@ Then run it twice, because the entitlement decides the answer.
   <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices as of November 2026: Okta Essentials $17 and Entra ID P2 $10 per user per month. A composite example, labeled as one in the brief. Your agreement will differ; the ratio is the point. Governance above P2 is a separate purchase that is quoted rather than listed, so it is not modeled here.</figcaption>
 </figure>
 
-The first case is the best case, and it holds only if P2's basic access reviews and basic entitlement management carry the governance you are retiring. Read it as the ceiling, not the expectation.
+If P2 is already paid for, the saving is the whole license: 612,000 a year at this size. Treat that as the ceiling rather than the expectation, because it holds only if P2's basic access reviews and basic entitlement management carry the governance you are retiring, and above P2 they do not.
 
-On Microsoft 365 E5, P2 is already paid for, so the whole 612,000 comes out. Divide 90,000 by the monthly saving of 51,000 and you get under two months, which is how long recovery takes once the saving starts. It is not the payback period, because nothing is recovered until the old contract ends. From the day you begin it is fourteen months: twelve of waiting, then two of recovery.
+The case that survives that check is the one where P2 has to be bought. The replacement is 10 dollars a seat, or 360,000 a year. The saving falls to 7 dollars a seat, about 21,000 a month and 252,000 a year.
 
-If P2 has to be bought, the replacement is 10 dollars a seat, or 360,000 a year. The saving falls to 7 dollars a seat, about 21,000 a month and 252,000 a year, and payback is sixteen months.
+Now the payback, done properly. The move costs 90,000 and nothing is recovered until the old contract ends. Divide 90,000 by the monthly saving of 21,000 and you get about four months, which is how long recovery takes once the saving starts. That is not the payback period. Say the contract runs another twelve months and the migration takes nine, so the work finishes first. From the day you begin it is sixteen months: twelve of waiting, then four of recovery.
 
-Both of those assume the surviving platform carries the governance capability you are retiring. Above P2 it does not, and that is the one number you cannot get from a vendor page. Governance sits in a separate product that Microsoft prices by agreement rather than by list, and the published suite that contains it needs P1 underneath and is quoted differently again for P2 and E5 customers. Quote it before you model it. At this size every dollar a seat costs 36,000 a year. Against the 17-dollar baseline, four dollars of governance cost removes about a quarter of the saving and seven removes about 40 percent. Against the 7-dollar baseline in the second case, four dollars roughly halves it and seven removes it entirely.
+That case assumes the surviving platform carries the governance capability you are retiring. Above P2 it does not, and that is the one number you cannot get from a vendor page. Governance sits in a separate product that Microsoft prices by agreement rather than by list, and the published suite that contains it needs P1 underneath and is quoted differently again for P2 and E5 customers. Quote it before you model it. At this size every dollar a seat costs 36,000 a year. Against the 7-dollar baseline, four dollars of governance cost roughly halves the saving and seven removes it entirely. Against the 17-dollar ceiling, four dollars removes about a quarter and seven about 40 percent.
 
 The tier, not the migration, decides whether there is a business case at all.
 

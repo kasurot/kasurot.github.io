@@ -18,7 +18,9 @@ The second number is available in seconds. It is on the dashboard, trending up. 
 
 That asymmetry is not a measurement problem. It is an attestation problem: every privileged access program reports what it vaulted, none reports what it missed, and the executive signs a coverage claim with no denominator. The artifact that surfaces it is the auditor's request list or the representation letter, and neither will accept a figure that counts only what entered the tool.
 
-Neither number in this brief is a coverage figure. The vault count is a floor. So is the gap count, because discovery cannot see the vendor's account inside a tenancy you do not administer, or the key in a repository nobody indexed. What changes is not completeness. It is assignability: a floor that can be assigned, dated and chased is worth more than a coverage claim that cannot be argued with.
+Neither number in this brief is a coverage figure. The vault count is a floor. So is the gap count, because discovery cannot see the vendor's account inside a tenancy you do not administer, or the key in a repository nobody indexed. What changes is not completeness. It is assignability: a vaulted count moves only when you add or retire a secret and cannot be argued with or escalated, while a floor that can be assigned, dated and chased is worth more than a coverage claim that cannot be challenged.
+
+The standard is testable on one application before it is imposed on an estate. Name the person who answers for every credential that system uses to reach another. The ones you cannot name are your coverage gap, and they are almost certainly not in your vault.
 
 ### A vault is a container, not an inventory
 
@@ -42,42 +44,62 @@ Three things gate a privileged credential, and only the last is about ownership.
 
 ### The number you report is a floor, and you should say so
 
-What you require is two numbers, not one.
+Report two numbers. First, privileged credentials discovered but not vaulted, split owned from unowned, because the unowned rows are the point. Second, the age of that population as a distribution, run from first discovery and never from the most recent scan, because a single oldest figure resets the moment somebody retires a row. The privileged platform and the secrets store do not enumerate the same object; unless both resolve to one credential identity, you are reporting two numerators with no shared denominator.
 
-The first is the count of privileged credentials discovered but not yet vaulted, split into owned and unowned, because the unowned rows are the point. The register must key to an owner, and the owner sits with the application, because an application survives the host rebuilds and renames that reset a host-keyed list and gives the age clock a spine. Application is not the whole of it: shared platform accounts, infrastructure accounts on devices and hypervisors, and vendor support accounts carry owners of their own, or they fall out of the register on the day it is built.
+The schema that makes both numbers hold up is in <a class="regpop" href="#register-data-model">the register data model<span class="regpop__panel">The register keys to an owner who sits with the application, because an application survives the host rebuilds and renames that reset a host-keyed list. First discovery is tied to a credential identity that persists across scans: an address, an account name and an owning application. Full schema in the appendix below.</span></a>, at the end of this brief.
 
-The second is the age of the unvaulted population, reported as a distribution rather than a single oldest figure, because a single number resets the moment somebody retires one row. Age must run from first discovery, never from the most recent scan. That holds only if first discovery is tied to a credential identity that persists across scans, an address, an account name and an owning application, so that a re-imaged host or a renamed service account cannot quietly restart the clock.
+The owner column cannot be discovered at all. It has to be assigned, and the assignment has to mean something: the named owner is the person who would be paged when that secret breaks. Rows nobody claims age. Past a threshold, the application owner is asked to claim, and if they decline the gap becomes a named risk acceptance signed by the accountable executive for that business line, recorded and reviewed at the identity steering committee, with an expiry date and a named individual against it. A committee records risk; only a person can accept it.
 
-The population spans more than one system, and the two do not enumerate the same object: an account name in the privileged access platform, a key thumbprint in the secrets store. Counting both means binding them to one credential identity, or the report is two numerators with no shared denominator. A claim that counts one system is a count of whichever the reviewer happened to open first.
+The gap does not close inside security. It closes when each business owner accepts that the service account behind their application is theirs to name, rotate and answer for. Security can build the register and run the escalation. It cannot accept the risk on somebody else's behalf. Credentials held inside a vendor's tenancy are accepted by whoever owns the contract.
 
-The owner column cannot be discovered at all. It has to be assigned, and the assignment has to mean something: the named owner is the person who would be paged when that secret breaks. Rows nobody claims age. Past a threshold, the application owner is asked to claim, and if they decline the gap becomes a named risk acceptance signed by the accountable executive for that business line, recorded and reviewed at the identity steering committee, with an expiry date and a named individual against it. A committee records risk; only a person can accept it. A standard with no consequence for refusal is a reporting ritual.
-
-The gap does not close inside security. It closes when each business owner accepts that the service account behind their application is theirs to name, rotate and answer for. Security can build the register and run the escalation. It cannot accept the risk on somebody else's behalf. Credentials held inside a vendor's tenancy are accepted by whoever owns the contract, which is where the risk acceptance and the right to audit meet.
-
-The standard can be tested on one application before it is imposed on the estate. Name the person who answers for every credential that system uses to reach another. The ones you cannot name are your real coverage gap, and they are almost certainly not in your vault.
-
-### The instrument is a floor, not a coverage guarantee
-
-The two numbers are a management instrument, not a coverage guarantee, and the obvious criticism is that discovery has the same flaw as the vault. It does. A scan enumerates what the scanner can reach, and it will miss the vendor's account inside a SaaS tenancy you do not administer, the key in a repository nobody indexed. So the gap count is a numerator over a denominator it cannot see. A program that reports it as coverage has repeated the original error with more steps and a longer runbook.
-
-What changes is not completeness. It is assignability. A vaulted count moves only when you add or retire a secret, and it cannot be argued with or escalated. A gap list can be assigned, dated and chased, and every row that is assigned a claimant has entered the accountable set for the first time, whether or not that claimant has yet accepted it. The residue is that the denominator stays wrong. Report it as a floor: at least this many credentials sit outside the vault, and this is the oldest one.
-
-### The claim fails on a fully enumerated estate
-
-The claim fails on an estate that is fully enumerated, with every row carrying a named owner and the vault count equal to the population. If those estates are common, the gap is already closed and this paper describes a laggard. They are rare, and the reason is structural rather than cultural: the enumeration has to be redone as the estate changes, and nobody has been given that job.
-
-### What you are asking to be approved
+### The resolution
 
 One resolution: adopt the two numbers as the standing coverage report, adopt named and expiring risk acceptance as the mechanism for refusal, and name the accountable function and the date of the first standing report. Expect the first reading to look worse than the last dashboard. It is the first honest one, and the prior number was a floor labelled as coverage.
 
 The work is not a new function. It runs on the discovery data the privileged access platform already produces, on the inventory control that is already required, and on the analysts already employed to read them. The incremental cost is hours per application per quarter, not a headcount. What is new is the assignment, and that is a decision each application owner makes, not a project security runs on their behalf.
 
-### What the identity steering committee sees each quarter
-
-Both numbers against the prior quarter, with the reach of the discovery behind them, so the committee can tell a falling floor from a widening one. The oldest unvaulted credential. The count of owners who declined and were escalated to signed acceptance. The first two describe the estate. The third describes whether the model is working, because a register in which nobody ever declines is a register nobody is reading.
-
-### What you sign is the standard you set
-
-Contracts have owners. Budget lines have owners. The credentials behind them are the one population nobody is asked to account for.
+The identity steering committee sees both numbers against the prior quarter each time, with the reach of the discovery behind them, so it can tell a falling floor from a widening one. It sees the oldest unvaulted credential, and the count of owners who declined and were escalated to signed acceptance. The first two describe the estate. The third describes whether the model is working, because a register in which nobody ever declines is a register nobody is reading.
 
 Report the floor and name the gap. Sign nothing that presents the count as coverage.
+
+<style>
+  .regpop {
+    position: relative; color: inherit; text-decoration: none;
+    border-bottom: 1px dotted var(--border-medium, #b9b2a4); cursor: help;
+  }
+  .regpop:focus-visible { outline: 2px solid var(--accent-gold, #b8892b); outline-offset: 2px; border-radius: 2px; }
+  .regpop__panel {
+    position: absolute; left: 0; bottom: 100%; z-index: 40;
+    display: block; width: min(30rem, 86vw); margin-bottom: .6rem; padding: .85rem 1rem;
+    background: var(--bg-card, #fdfcf9); color: var(--text-body, #2a2a2a);
+    border: 1px solid var(--border-medium, #b9b2a4); border-radius: 4px;
+    box-shadow: 0 8px 26px rgba(0,0,0,.18);
+    font-size: .84rem; line-height: 1.5; text-align: left; font-style: normal;
+    opacity: 0; visibility: hidden; transform: translateY(4px);
+    transition: opacity .14s ease, transform .14s ease, visibility .14s;
+    pointer-events: none;
+  }
+  .regpop:hover .regpop__panel,
+  .regpop:focus .regpop__panel,
+  .regpop:focus-within .regpop__panel {
+    opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
+  }
+  @media (max-width: 640px) {
+    .regpop__panel { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .regpop__panel { transition: none; }
+  }
+</style>
+
+### Appendix: the register data model
+
+This detail is for the people who will build the register. It is not needed to take the decision above.
+
+<a id="register-data-model"></a>
+
+The register must key to an owner, and the owner sits with the application, because an application survives the host rebuilds and renames that reset a host-keyed list and gives the age clock a spine. Application is not the whole of it: shared platform accounts, infrastructure accounts on devices and hypervisors, and vendor support accounts carry owners of their own, or they fall out of the register on the day it is built.
+
+Age must run from first discovery, never from the most recent scan. That holds only if first discovery is tied to a credential identity that persists across scans, an address, an account name and an owning application, so that a re-imaged host or a renamed service account cannot quietly restart the clock.
+
+The population spans more than one system, and the two do not enumerate the same object: an account name in the privileged access platform, a key thumbprint in the secrets store. Counting both means binding them to one credential identity, or the report is two numerators with no shared denominator. A claim that counts one system is a count of whichever the reviewer happened to open first.
