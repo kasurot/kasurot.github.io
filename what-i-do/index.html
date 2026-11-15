@@ -84,11 +84,21 @@ description: Identity and privileged access programs, the practice and commercia
 <style>
     /* The shell is wide for consistency; the prose inside keeps a reading measure. */
     main > section { max-width: 68ch; margin-left: auto; margin-right: auto; }
+
+    /* The layout carries a global `p { font-size: 13px }` from its resume origins.
+       Body prose here has to be set explicitly or it inherits that, which is below
+       the reading size the briefs and About both use. */
+    main > section p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+
     /* The lead needs to read as an introduction, not as the first body paragraph.
        --header-blue resolves to the same value as the headings in both themes, so
        differentiation has to come from size and space rather than colour. */
     .what-i-do-lead {
-        font-size: 1.18em;
+        font-size: 1.25rem;
         line-height: 1.55;
         margin-bottom: 2.75rem;
     }
