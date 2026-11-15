@@ -68,26 +68,18 @@ description: Director of Professional Services at GCA Technology Services. I lea
             proctored exam.
         </p>
         <p class="cert-note">The problems I take on are on <a href="{{ '/what-i-do/' | relative_url }}" class="cta-link">What I Do</a>.</p>
+        <div class="card-divider"></div>
+        <p class="card-subhead">Education</p>
+        <p><strong>Master of Science, Information Technology Management</strong><br>
+            <em>Western Governors University</em> | 2026</p>
+        <p><strong>Bachelor of Science, Network and System Administration</strong><br>
+            <em>Western Governors University</em></p>
+        <p><strong>Business Foundations Specialization</strong><br>
+            <em>University of Pennsylvania (Wharton Online)</em> | 2026</p>
     </div>
 </section>
 
-<section>
-    <h2 class="section-title">Education</h2>
-    <div class="card-block">
-        <p>
-            <strong>Master of Science, Information Technology Management</strong><br>
-            <em>Western Governors University</em> | 2026
-        </p>
-        <p>
-            <strong>Bachelor of Science, Network and System Administration</strong><br>
-            <em>Western Governors University</em>
-        </p>
-        <p>
-            <strong>Business Foundations Specialization</strong><br>
-            <em>University of Pennsylvania (Wharton Online)</em> | 2026
-        </p>
-    </div>
-</section>
+
 
 <style>
     .about-hero {
@@ -101,11 +93,11 @@ description: Director of Professional Services at GCA Technology Services. I lea
         text-align: center;
     }
     .headshot {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid var(--border-medium);
+        width: 180px;
+        height: auto;
+        border-radius: 4px;
+        border: 1px solid var(--border-medium);
+        display: block;
     }
     .about-intro {
         flex: 1;
@@ -136,6 +128,19 @@ description: Director of Professional Services at GCA Technology Services. I lea
     .about-narrative p:last-child {
         font-weight: 600;
         color: var(--header-blue);
+    }
+    .card-divider {
+        border-top: 1px solid var(--border-light);
+        margin: 1.25rem 0 1rem;
+    }
+    .card-subhead {
+        font-family: var(--font-ui);
+        font-size: .75rem;
+        font-weight: 700;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: var(--accent-gold);
+        margin: 0 0 .75rem;
     }
     .cert-note a {
         color: var(--link);

@@ -39,6 +39,7 @@ description: Executive briefs on identity, risk and IT leadership from Kevin Arm
 </section>
 
 <style>
+    /* Page-specific: the home standfirst, the standing line and the button. */
     .home-intro {
         padding: 0 0 1.4rem;
         border-bottom: 1px solid var(--border-light);
@@ -52,16 +53,19 @@ description: Executive briefs on identity, risk and IT leadership from Kevin Arm
         max-width: 60ch;
     }
     .home-standing {
+        font-family: var(--font-ui);
         font-size: .8125rem;
         letter-spacing: .04em;
         color: var(--text-gray);
         margin: 0;
     }
+    .featured-briefs { margin-bottom: 20px; }
     .cta-btn {
         display: inline-block;
         padding: 10px 24px;
         border-radius: 6px;
         text-decoration: none;
+        font-family: var(--font-ui);
         font-weight: 700;
         font-size: 14px;
         transition: all 0.2s ease;
@@ -73,82 +77,5 @@ description: Executive briefs on identity, risk and IT leadership from Kevin Arm
     .cta-secondary:hover {
         border-color: var(--accent-gold);
         color: var(--accent-gold);
-    }
-    .featured-briefs { margin-bottom: 20px; }
-
-    .topic-block { margin-bottom: 3rem; }
-    .topic-heading {
-        font-size: 1.35rem;
-        color: var(--header-blue);
-        margin: 0 0 1.25rem;
-        padding-bottom: .5rem;
-        border-bottom: 2px solid var(--border-medium);
-        font-weight: 700;
-    }
-    .topic-more { margin: .75rem 0 0; font-size: .875rem; }
-    .topic-more a {
-        color: var(--accent-gold);
-        text-decoration: underline;
-        text-underline-offset: 2px;
-    }
-    .posts-list {
-        display: grid;
-        gap: 1.25rem;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        align-items: stretch;
-    }
-    @media (max-width: 720px) {
-        .posts-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 460px) {
-        .posts-list { grid-template-columns: minmax(0, 1fr); }
-    }
-    .post-item {
-        border: 1px solid var(--border-light);
-        border-radius: 8px;
-        padding: 1rem 1.05rem;
-        background: var(--card-bg);
-        display: flex;
-        flex-direction: column;
-    }
-    .posts-list .post-item .post-eyebrow {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: .5rem;
-        margin: 0 0 .5rem;
-        font-size: .75rem;
-        color: var(--text-gray);
-    }
-    .post-eyebrow .post-topic {
-        font-weight: 700;
-        letter-spacing: .04em;
-        text-transform: uppercase;
-        color: var(--accent-gold);
-    }
-    .post-eyebrow .sep { opacity: .5; }
-    .post-item h4 {
-        margin: 0 0 .5rem;
-        font-size: 1.2rem;
-        line-height: 1.3;
-        font-weight: 600;
-    }
-    .post-item h4 a { color: var(--header-blue); text-decoration: none; }
-    .post-item h4 a:hover { text-decoration: underline; }
-    .post-description {
-        margin: 0;
-        color: var(--text-body);
-        font-size: .95rem;
-        line-height: 1.55;
-    }
-    .view-all-link { margin-top: 2rem; text-align: center; }
-
-    @media (max-width: 640px) {
-        .post-item { padding: 1rem 1.1rem; }
-        .post-item h4 { font-size: 1.1rem; }
-        .topic-block { margin-bottom: 2.25rem; }
-    }
-    @media print {
-        .cta-btn { display: none; }
     }
 </style>

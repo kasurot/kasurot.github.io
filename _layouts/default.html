@@ -53,6 +53,9 @@
             --link: #7A4800;
             --link-hover: #5C3600;
             --link-visited: #6A3D6E;
+            /* Interface text: nav, metadata, buttons, labels. Book Antiqua owns prose
+               and headings; it goes soft and mushy at 11-13px, which is where chrome lives. */
+            --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             color-scheme: light dark;
         }
 
@@ -329,6 +332,7 @@
             gap: 20px;
         }
         .nav-links a {
+            font-family: var(--font-ui);
             text-decoration: none;
             color: var(--text-gray);
             font-weight: 600;
@@ -365,19 +369,24 @@
 
         h1 {
             color: var(--header-blue);
-            font-size: 28px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 5px;
+            font-size: 40px;
+            text-transform: none;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 8px;
         }
 
+        /* The tagline is a full clause with a verb in it. Uppercasing a sentence
+           flattens its rhythm and demotes the thesis to a slogan sticker. */
         h2 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--text-gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
+            font-size: 19px;
+            font-weight: 400;
+            color: var(--text-body);
+            text-transform: none;
+            letter-spacing: 0;
+            line-height: 1.45;
+            max-width: 34ch;
+            margin-bottom: 12px;
         }
 
         .contact-info {
@@ -402,16 +411,19 @@
             font-weight: 600;
         }
 
+        /* One heading language site-wide: this is the same treatment the briefs
+           index uses for its topic headings, promoted to the page-level heading. */
         .section-title {
             color: var(--header-blue);
-            font-size: 14px;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--border-medium);
-            padding-bottom: 4px;
-            margin-top: 20px;
-            margin-bottom: 12px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
+            font-size: 1.35rem;
+            text-transform: none;
+            border-bottom: 2px solid var(--border-medium);
+            padding-bottom: .5rem;
+            margin-top: 2.25rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0;
+            line-height: 1.3;
         }
 
         /* Collapsible Section Styling */
@@ -546,18 +558,15 @@
         .cert-items .sep { color: var(--text-gray); }
         .pending-cert { color: var(--text-gray); font-style: italic; font-size: 12px; }
 
+        /* One card definition site-wide, identical to the brief card on the listings.
+           It was --bg-color, which made it sink into the panel while a brief card
+           stood up off it, so the same object read two opposite ways. */
         .job-block, .card-block {
             margin-bottom: 20px;
             padding: 20px;
             border: 1px solid var(--border-light);
             border-radius: 8px;
-            background-color: var(--bg-color);
-            transition: all 0.2s ease;
-        }
-        .card-block:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: var(--accent-gold);
+            background-color: var(--card-bg);
         }
         .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
         .job-title { font-weight: 700; font-size: 14px; color: var(--header-blue); }
@@ -601,26 +610,27 @@
             gap: 10px;
             margin-bottom: 16px;
         }
+        /* The top nav is underlined text links; the footer was outlined icon pills,
+           which is a second navigation idiom on the same page. One idiom now. */
         .footer-tab {
             display: inline-flex;
             align-items: center;
-            gap: 7px;
-            padding: 9px 16px;
-            border: 1px solid var(--border-medium);
-            border-radius: 999px;
+            gap: 6px;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            font-family: var(--font-ui);
             font-size: 13px;
             font-weight: 600;
             color: var(--text-gray);
             text-decoration: none;
-            transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            transition: color 0.2s ease, border-color 0.2s ease;
         }
-        .footer-tab:hover,
+        .footer-tab:hover { color: var(--header-blue); }
         .footer-tab.active {
-            color: var(--accent-gold);
-            border-color: var(--accent-gold);
+            color: var(--header-blue);
+            border-bottom-color: var(--accent-gold);
         }
-        .footer-tab:hover { transform: translateY(-1px); }
-        .footer-tab svg { width: 16px; height: 16px; }
+        .footer-tab svg { width: 15px; height: 15px; }
 
         /* Phone: the fixed five-button bar at the bottom already is this row. */
         @media (max-width: 768px) {
@@ -652,6 +662,79 @@
             details { display: block; }
             summary { display: none; }
             div { animation: none !important; }
+        }
+
+        /* ---- Brief cards: ONE definition, shared by the home page and the index ---- */
+        .topic-block { margin-bottom: 2.5rem; }
+        .topic-heading {
+            font-size: 1.05rem;
+            color: var(--header-blue);
+            margin: 0 0 1rem;
+            padding-bottom: .4rem;
+            border-bottom: 1px solid var(--border-medium);
+            font-weight: 700;
+        }
+        .topic-more { margin: .5rem 0 0; font-family: var(--font-ui); font-size: .875rem; }
+        .topic-more a { color: var(--accent-gold); text-decoration: underline; text-underline-offset: 2px; }
+        .posts-list {
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: stretch;
+        }
+        @media (max-width: 720px) { .posts-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (max-width: 460px) { .posts-list { grid-template-columns: minmax(0, 1fr); } }
+        .post-item {
+            margin-bottom: 0;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.25rem;
+            background: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+        }
+        .posts-list .post-item .post-eyebrow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: .5rem;
+            margin: 0 0 .5rem;
+            font-family: var(--font-ui);
+            font-size: .75rem;
+            color: var(--text-gray);
+        }
+        .post-eyebrow .post-topic {
+            font-family: var(--font-ui);
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+        }
+        .post-eyebrow .sep { opacity: .5; }
+        .post-item h4 {
+            margin: 0 0 .5rem;
+            font-size: 1.2rem;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+        .post-item h4 a { color: var(--header-blue); text-decoration: none; }
+        .post-item h4 a:hover { text-decoration: underline; }
+        .post-description {
+            margin: 0;
+            color: var(--text-body);
+            font-size: .95rem;
+            line-height: 1.55;
+            /* Equal-height cards hollowed out when a description ran short. */
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .view-all-link { margin-top: 2rem; text-align: center; }
+        @media (max-width: 640px) {
+            .post-item { padding: 1rem; }
+            .post-item h4 { font-size: 1.1rem; }
+            .topic-block { margin-bottom: 2rem; }
         }
     </style>
 </head>
