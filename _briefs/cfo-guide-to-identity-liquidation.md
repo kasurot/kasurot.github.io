@@ -7,7 +7,7 @@ tags: [Capital Efficiency, Identity Strategy, Vendor Management]
 image: /images/identity-liquidation.jpg
 image_width: 1600
 image_height: 640
-image_alt: ""
+image_alt: "A plant room with two parallel pipe runs crossing the frame. The upper run is wrapped in pale grey insulation held by metal banding. Below it a bare steel pipe runs rusted and flaking, fitted with an open cast iron valve dripping onto the concrete floor."
 og_image: /images/identity-liquidation-og.jpg
 approved: true
 ---
