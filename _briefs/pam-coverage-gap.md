@@ -69,8 +69,8 @@ Report the floor and name the gap. Sign nothing that presents the count as cover
   }
   .regpop:focus-visible { outline: 2px solid var(--accent-gold, #b8892b); outline-offset: 2px; border-radius: 2px; }
   .regpop__panel {
-    position: absolute; left: 0; bottom: 100%; z-index: 40;
-    display: block; width: min(30rem, 86vw); margin-bottom: .6rem; padding: .85rem 1rem;
+    position: absolute; right: 0; left: auto; bottom: 100%; z-index: 40;
+    display: block; width: min(24rem, calc(100vw - 3rem)); margin-bottom: .6rem; padding: .85rem 1rem;
     background: var(--bg-card, #fdfcf9); color: var(--text-body, #2a2a2a);
     border: 1px solid var(--border-medium, #b9b2a4); border-radius: 4px;
     box-shadow: 0 8px 26px rgba(0,0,0,.18);
