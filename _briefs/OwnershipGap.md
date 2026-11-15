@@ -5,9 +5,10 @@ date: 2026-11-02
 description: "Your identity program can pass an audit and leave credentials nobody will ever revoke. Five failures, one cause, and the test that separates an owner from a signature."
 tags: [Identity Strategy, Ownership, Governance, Risk Management]
 image: /images/ownership-gap.jpg
-image_width: 1080
-image_height: 1350
-image_alt: ""
+image_width: 1600
+image_height: 640
+image_alt: "A wall in a plant room covered with tarnished brass asset plaques of varying size and age, screwed into chipped green-grey paint. Right of centre, one holder is bright and blank, holding four screws and no plaque."
+og_image: /images/ownership-gap-og.jpg
 approved: true
 ---
 
