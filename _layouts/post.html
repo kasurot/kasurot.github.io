@@ -91,7 +91,16 @@ layout: default
 
   {% if page.image %}
   <figure class="post-hero">
-    <img src="{{ page.image | relative_url }}"{% if page.image_width %} width="{{ page.image_width }}" height="{{ page.image_height }}"{% endif %} loading="eager" fetchpriority="high" decoding="async" alt="{{ page.image_alt | escape }}">
+    <picture>
+      <source type="image/webp"
+        srcset="{{ page.image | replace: '.jpg', '-716.webp' | relative_url }} 716w, {{ page.image | replace: '.jpg', '-1432.webp' | relative_url }} 1432w"
+        sizes="(max-width: 768px) 100vw, 716px">
+      <img src="{{ page.image | replace: '.jpg', '-716.jpg' | relative_url }}"
+        srcset="{{ page.image | replace: '.jpg', '-716.jpg' | relative_url }} 716w, {{ page.image | replace: '.jpg', '-1432.jpg' | relative_url }} 1432w"
+        sizes="(max-width: 768px) 100vw, 716px"
+        {% if page.image_width %}width="{{ page.image_width }}" height="{{ page.image_height }}"{% endif %}
+        loading="eager" decoding="async" alt="{{ page.image_alt | escape }}">
+    </picture>
     {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
   </figure>
   {% endif %}

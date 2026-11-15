@@ -47,7 +47,7 @@ Three things gate a privileged credential, and only the last is about ownership.
 
 Report two numbers. First, privileged credentials discovered but not vaulted, split owned from unowned, because the unowned rows are the point. Second, the age of that population as a distribution, run from first discovery and never from the most recent scan, because a single oldest figure resets the moment somebody retires a row. The privileged platform and the secrets store do not enumerate the same object; unless both resolve to one credential identity, you are reporting two numerators with no shared denominator.
 
-The schema that makes both numbers hold up is in <a class="regpop" href="#register-data-model">the register data model<span class="regpop__panel">The register keys to an owner who sits with the application, because an application survives the host rebuilds and renames that reset a host-keyed list. First discovery is tied to a credential identity that persists across scans: an address, an account name and an owning application. Full schema in the appendix below.</span></a>, at the end of this brief.
+The schema that makes both numbers hold up is in the appendix at the end of this brief.
 
 The owner column cannot be discovered at all. It has to be assigned, and the assignment has to mean something: the named owner is the person who would be paged when that secret breaks. Rows nobody claims age. Past a threshold, the application owner is asked to claim, and if they decline the gap becomes a named risk acceptance signed by the accountable executive for that business line, recorded and reviewed at the identity steering committee, with an expiry date and a named individual against it. A committee records risk; only a person can accept it.
 
@@ -63,41 +63,9 @@ The identity steering committee sees both numbers against the prior quarter each
 
 Report the floor and name the gap. Sign nothing that presents the count as coverage.
 
-<style>
-  .regpop {
-    position: relative; color: inherit; text-decoration: none;
-    border-bottom: 1px dotted var(--border-medium, #b9b2a4); cursor: help;
-  }
-  .regpop:focus-visible { outline: 2px solid var(--accent-gold, #b8892b); outline-offset: 2px; border-radius: 2px; }
-  .regpop__panel {
-    position: absolute; right: 0; left: auto; bottom: 100%; z-index: 40;
-    display: block; width: min(24rem, calc(100vw - 3rem)); margin-bottom: .6rem; padding: .85rem 1rem;
-    background: var(--container-bg, #ffffff); color: var(--text-body, #334155);
-    border: 1px solid var(--border-medium, #cbd5e1); border-radius: 4px;
-    box-shadow: 0 8px 26px rgba(0,0,0,.18);
-    font-size: .84rem; line-height: 1.5; text-align: left; font-style: normal;
-    opacity: 0; visibility: hidden; transform: translateY(4px);
-    transition: opacity .14s ease, transform .14s ease, visibility .14s;
-    pointer-events: none;
-  }
-  .regpop:hover .regpop__panel,
-  .regpop:focus .regpop__panel,
-  .regpop:focus-within .regpop__panel {
-    opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
-  }
-  @media (max-width: 640px) {
-    .regpop__panel { display: none; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .regpop__panel { transition: none; }
-  }
-</style>
-
 ### Appendix: the register data model
 
 This detail is for the people who will build the register. It is not needed to take the decision above.
-
-<a id="register-data-model"></a>
 
 The register must key to an owner, and the owner sits with the application, because an application survives the host rebuilds and renames that reset a host-keyed list and gives the age clock a spine. Application is not the whole of it: shared platform accounts, infrastructure accounts on devices and hypervisors, and vendor support accounts carry owners of their own, or they fall out of the register on the day it is built.
 

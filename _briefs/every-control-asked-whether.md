@@ -5,11 +5,6 @@ date: 2026-11-13
 description: "The payment limit that would have bounded this loss is already mandatory. What failed is that nobody owned the number."
 tags: [Third-Party Risk, Risk Management, Controls, Payments]
 topic: "Risk & Governance"
-image: /images/every-control-asked-whether.jpg
-image_width: 1600
-image_height: 640
-image_alt: "Blank cast steel ingots stacked two courses high on a rusty steel stillage in a dim plant room."
-og_image: /images/every-control-asked-whether-og.jpg
 approved: true
 ---
 
