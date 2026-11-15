@@ -377,15 +377,17 @@
         }
 
         /* The tagline is a full clause with a verb in it. Uppercasing a sentence
-           flattens its rhythm and demotes the thesis to a slogan sticker. */
-        h2 {
+           flattens its rhythm and demotes the thesis to a slogan sticker.
+           Scoped to header h2: as a bare h2 rule it also capped every section
+           heading at 34ch, which is why their rules rendered 367px wide. */
+        header h2 {
             font-size: 19px;
             font-weight: 400;
             color: var(--text-body);
             text-transform: none;
             letter-spacing: 0;
             line-height: 1.45;
-            max-width: 34ch;
+            max-width: 48ch;
             margin-bottom: 12px;
         }
 
@@ -680,7 +682,9 @@
             display: grid;
             gap: 1.25rem;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            align-items: stretch;
+            /* Natural heights. Stretch plus a line clamp cut three deks mid-sentence;
+               ragged bottoms are honest, a truncated dek is not. */
+            align-items: start;
         }
         @media (max-width: 720px) { .posts-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
         @media (max-width: 460px) { .posts-list { grid-template-columns: minmax(0, 1fr); } }
@@ -724,11 +728,6 @@
             color: var(--text-body);
             font-size: .95rem;
             line-height: 1.55;
-            /* Equal-height cards hollowed out when a description ran short. */
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
         }
         .view-all-link { margin-top: 2rem; text-align: center; }
         @media (max-width: 640px) {
