@@ -84,5 +84,12 @@ description: Identity and privileged access programs, the practice and commercia
 <style>
     /* The shell is wide for consistency; the prose inside keeps a reading measure. */
     main > section { max-width: 68ch; margin-left: auto; margin-right: auto; }
-    .what-i-do-lead { font-size: 1.05em; color: var(--header-blue); line-height: 1.6; }
+    /* The lead needs to read as an introduction, not as the first body paragraph.
+       --header-blue resolves to the same value as the headings in both themes, so
+       differentiation has to come from size and space rather than colour. */
+    .what-i-do-lead {
+        font-size: 1.18em;
+        line-height: 1.55;
+        margin-bottom: 2.75rem;
+    }
 </style>
