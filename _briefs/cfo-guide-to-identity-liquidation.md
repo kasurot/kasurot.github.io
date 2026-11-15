@@ -14,7 +14,7 @@ approved: true
 
 Your renewal quote will arrive with one number on it. That number is real. You negotiated hard for it. It is also the smallest number in the decision.
 
-I have retired identity platforms twice. At a multi-acquisition insurance brokerage I retired a workforce identity provider rather than renew it, and at a telecom operator across five markets I consolidated five Active Directory domains into one tenant. Neither was a rip and replace, and both cut where an access decision is made.
+I have retired identity platforms. At a multi-acquisition insurance brokerage I retired a workforce identity provider rather than renew it, and at a telecom operator across five markets I consolidated five Active Directory domains into one tenant. Neither was a rip and replace, and both cut where an access decision is made.
 
 Liquidation means retiring a platform whose function has moved somewhere else. Not a license negotiation. A planned exit with a date on it.
 
