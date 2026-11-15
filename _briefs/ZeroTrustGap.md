@@ -2,7 +2,7 @@
 layout: post
 title: "You Think You Have Zero Trust. You Don't."
 date: 2026-02-19
-description: "Most organizations deployed conditional access and called it Zero Trust. That is one control in one layer. The gap between perception and reality is the liability."
+description: "Most organizations deployed conditional access and called it Zero Trust. That is one control in one layer. The gap between belief and reality is the liability."
 tags: [Zero Trust, Risk Management, Capital Efficiency, Governance]
 topic: "Identity & Access"
 approved: true
