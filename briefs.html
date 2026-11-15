@@ -5,173 +5,93 @@ description: Executive briefs and strategic insights on identity architecture, s
 ---
 <section>
     <h2 class="section-title">Executive Briefs</h2>
-    <div class="brief-filters">
-        <button class="filter-btn active" data-tag="all" aria-pressed="true">All</button>
-        {% assign allowed_tags = "Risk Management,Capital Efficiency,Identity Strategy,Governance,AI,Vendor Strategy,Zero Trust,M & A" | split: "," %}
-        {% for tag in allowed_tags %}
-            {% assign count = 0 %}
-            {% for brief in site.briefs %}
-                {% if brief.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}
-            {% endfor %}
-            <button class="filter-btn" data-tag="{{ tag }}" aria-pressed="false">{{ tag }} <span class="tag-count">{{ count }}</span></button>
+
+    {% assign topic_order = "Identity & Access,Risk & Governance,Capital & Vendors" | split: "," %}
+
+    {% for topic in topic_order %}
+      {% assign in_topic = site.briefs | where: "topic", topic | sort: "date" | reverse %}
+      {% if in_topic.size > 0 %}
+      <div class="topic-block">
+        <h3 class="topic-heading">{{ topic }}</h3>
+        <div class="posts-list">
+          {% for brief in in_topic limit: 3 %}
+            {% include brief-card.html brief=brief %}
+          {% endfor %}
+        </div>
+        {% if in_topic.size > 3 %}
+        <p class="topic-more"><a href="#all-briefs">{{ in_topic.size }} briefs in {{ topic }}</a></p>
+        {% endif %}
+      </div>
+      {% endif %}
+    {% endfor %}
+
+    <div class="latest-block" id="all-briefs">
+      <h3 class="topic-heading">Latest</h3>
+      <div class="posts-list">
+        {% assign all = site.briefs | sort: "date" | reverse %}
+        {% for brief in all %}
+          {% include brief-card.html brief=brief %}
         {% endfor %}
-    </div>
-    <div class="filter-dropdown">
-        <label for="tag-filter-select" class="sr-only">Filter by tag</label>
-        <select id="tag-filter-select">
-            <option value="all">All Briefs</option>
-            {% for tag in allowed_tags %}
-            {% assign count = 0 %}
-            {% for brief in site.briefs %}
-                {% if brief.tags contains tag %}{% assign count = count | plus: 1 %}{% endif %}
-            {% endfor %}
-            <option value="{{ tag }}">{{ tag }} ({{ count }})</option>
-            {% endfor %}
-        </select>
-    </div>
-    <div class="posts-list">
-        {% assign briefs = site.briefs | sort: 'date' %}
-        {% for brief in briefs reversed %}
-          <div class="post-item" data-tags="{{ brief.tags | join: ',' }}">
-              <h3><a href="{{ brief.url | relative_url }}">{{ brief.title }}</a></h3>
-              <p class="post-meta">{{ brief.date | date: "%B %-d, %Y" }}</p>
-              <p class="post-description">{{ brief.description }}</p>
-              {% if brief.tags.size > 0 %}
-              <div class="post-tags">
-                  {% for tag in brief.tags %}
-                  <span class="post-tag">{{ tag }}</span>
-                  {% endfor %}
-              </div>
-              {% endif %}
-          </div>
-        {% endfor %}
+      </div>
     </div>
 </section>
 
 <style>
-    .brief-filters {
+    .topic-block { margin-bottom: 3rem; }
+    .topic-heading {
+        font-size: 1.35rem;
+        color: var(--header-blue);
+        margin: 0 0 1.25rem;
+        padding-bottom: .5rem;
+        border-bottom: 2px solid var(--border-medium);
+        font-weight: 700;
+    }
+    .latest-block { margin-top: 4rem; }
+    .topic-more {
+        margin: .25rem 0 0;
+        font-size: .875rem;
+    }
+    .topic-more a {
+        color: var(--accent-gold);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+    .post-item { margin-bottom: 2rem; }
+    .post-eyebrow {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 16px;
-    }
-    .filter-dropdown {
-        display: none;
-    }
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0,0,0,0);
-        border: 0;
-    }
-    .filter-dropdown select {
-        width: 100%;
-        padding: 10px 14px;
-        border: 1px solid var(--border-medium);
-        border-radius: 8px;
-        background: var(--bg-color);
-        color: var(--text-dark);
-        font-size: 14px;
-        font-weight: 600;
-        font-family: inherit;
-        cursor: pointer;
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23475569' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-    }
-    .filter-dropdown select:focus {
-        outline: none;
-        border-color: var(--accent-gold);
-    }
-    .filter-btn {
-        background: var(--bg-color);
-        border: 1px solid var(--border-medium);
-        border-radius: 999px;
-        padding: 5px 14px;
-        font-size: 12px;
-        font-weight: 600;
+        align-items: baseline;
+        gap: .5rem;
+        margin: 0 0 .4rem;
+        font-size: .8125rem;
         color: var(--text-gray);
-        cursor: pointer;
-        transition: all 0.2s ease;
     }
-    .filter-btn:hover,
-    .filter-btn.active {
-        border-color: var(--accent-gold);
+    .post-eyebrow .post-topic {
+        font-weight: 700;
+        letter-spacing: .04em;
+        text-transform: uppercase;
         color: var(--accent-gold);
     }
-    .tag-count {
-        display: inline-block;
-        background: var(--border-light);
-        color: var(--text-gray);
-        font-size: 10px;
-        font-weight: 700;
-        padding: 1px 5px;
-        border-radius: 999px;
-        margin-left: 3px;
+    .post-eyebrow .sep { opacity: .5; }
+    .post-item h4 {
+        margin: 0 0 .45rem;
+        font-size: 1.35rem;
         line-height: 1.3;
+        font-weight: 600;
     }
-    .filter-btn.active .tag-count {
-        background: var(--accent-gold);
-        color: #fff;
+    .post-item h4 a {
+        color: var(--header-blue);
+        text-decoration: none;
     }
+    .post-item h4 a:hover { text-decoration: underline; }
     .post-description {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        margin: 0;
+        color: var(--text-body);
+        font-size: 1rem;
+        line-height: 1.55;
     }
-    .post-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin-top: 10px;
-    }
-    .post-tag {
-        font-size: 11px;
-        background: var(--bg-color);
-        border: 1px solid var(--border-light);
-        border-radius: 999px;
-        padding: 2px 8px;
-        color: var(--text-gray);
-    }
-    @media (max-width: 768px) {
-        .brief-filters { display: none; }
-        .filter-dropdown { display: block; margin-bottom: 16px; }
+    @media (max-width: 640px) {
+        .post-item h4 { font-size: 1.2rem; }
+        .topic-block { margin-bottom: 2.25rem; }
     }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const filters = document.querySelectorAll('.filter-btn');
-    const dropdown = document.getElementById('tag-filter-select');
-    const posts = document.querySelectorAll('.post-item');
-
-    function applyFilter(tag) {
-        filters.forEach(f => { f.classList.remove('active'); f.setAttribute('aria-pressed', 'false'); });
-        const activeBtn = document.querySelector(`.filter-btn[data-tag="${tag}"]`);
-        if (activeBtn) { activeBtn.classList.add('active'); activeBtn.setAttribute('aria-pressed', 'true'); }
-        if (dropdown) dropdown.value = tag;
-        posts.forEach(post => {
-            if (tag === 'all') {
-                post.style.display = '';
-            } else {
-                const postTags = (post.dataset.tags || '').split(',');
-                post.style.display = postTags.includes(tag) ? '' : 'none';
-            }
-        });
-    }
-
-    filters.forEach(btn => {
-        btn.addEventListener('click', () => applyFilter(btn.dataset.tag));
-    });
-
-    if (dropdown) {
-        dropdown.addEventListener('change', () => applyFilter(dropdown.value));
-    }
-});
-</script>

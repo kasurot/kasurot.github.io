@@ -3,6 +3,8 @@ title: "Marketing is Not Arts & Crafts: It's Unit Economics"
 date: 2026-04-23
 description: "Marketing solved the Last Mile Problem decades ago. IT still hasn't. Applying systems engineering to marketing: solving the 'Last Mile Problem' and understanding the distribution tax of access friction."
 tags: [Capital Efficiency]
+topic: "Capital & Vendors"
+approved: true
 ---
 
 Marketing solved the Last Mile Problem decades ago. IT still hasn't.

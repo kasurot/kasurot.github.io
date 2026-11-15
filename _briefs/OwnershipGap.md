@@ -4,6 +4,7 @@ title: "Five Identity Failures, One Cause: Nobody Owns the Estate"
 date: 2026-11-02
 description: "Your identity program can pass an audit and leave credentials nobody will ever revoke. Five failures, one cause, and the test that separates an owner from a signature."
 tags: [Identity Strategy, Ownership, Governance, Risk Management]
+topic: "Identity & Access"
 image: /images/ownership-gap.jpg
 image_width: 1600
 image_height: 640

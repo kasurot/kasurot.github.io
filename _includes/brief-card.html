@@ -1,0 +1,14 @@
+{% assign wc = include.brief.content | number_of_words %}
+{% assign mins = wc | divided_by: 200 %}
+{% if mins < 1 %}{% assign mins = 1 %}{% endif %}
+<div class="post-item">
+  <p class="post-eyebrow">
+    <span class="post-topic">{{ include.brief.topic }}</span>
+    <span class="sep">&middot;</span>
+    <span class="post-date">{{ include.brief.date | date: "%B %-d, %Y" }}</span>
+    <span class="sep">&middot;</span>
+    <span class="post-read">{{ mins }} min read</span>
+  </p>
+  <h4><a href="{{ include.brief.url | relative_url }}">{{ include.brief.title }}</a></h4>
+  <p class="post-description">{{ include.brief.description }}</p>
+</div>

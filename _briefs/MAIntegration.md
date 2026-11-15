@@ -4,6 +4,7 @@ title: "M&A Integration: The Access Decision That Sets the Timeline"
 date: 2026-05-14
 description: "Integration models carry a line for technology. They carry none for the decision that actually moves the date, and it is the cheapest one to add."
 tags: [M & A, Identity Strategy, Capital Efficiency, Risk Management, Governance]
+topic: "Identity & Access"
 image: /images/identity-integration.jpg
 image_width: 1600
 image_height: 640

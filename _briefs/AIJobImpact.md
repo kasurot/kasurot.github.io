@@ -3,6 +3,8 @@ title: "The Structural Repricing of Professional Value"
 date: 2026-04-02
 description: "AI is automating junior execution and depreciating the 'translation layer' of architecture. The new premium is on indemnity and risk ownership."
 tags: [AI, Risk Management]
+topic: "Capital & Vendors"
+approved: true
 ---
 
 The prevailing narrative in IT strategy is that AI will automate the drudgery, freeing humans to move "up the stack" to higher-value strategic work.
