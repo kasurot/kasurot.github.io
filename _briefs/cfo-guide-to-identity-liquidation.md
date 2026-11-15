@@ -14,7 +14,7 @@ approved: true
 
 Your renewal quote will arrive with one number on it. That number is real. You negotiated hard for it. It is also the smallest number in the decision.
 
-I have retired identity platforms. At a multi-acquisition insurance brokerage I retired a workforce identity provider rather than renew it, and at a telecom operator across five markets I consolidated five Active Directory domains into one tenant. Neither was a rip and replace, and both cut where an access decision is made.
+Identity platforms do get retired rather than renewed. A workforce identity provider reaches its renewal after the function has already moved somewhere else, or five Active Directory domains consolidate into one tenant across five markets. Neither is a rip and replace, and both cut where an access decision is made.
 
 Liquidation means retiring a platform whose function has moved somewhere else. Not a license negotiation. A planned exit with a date on it.
 
@@ -52,6 +52,16 @@ This cost hides because the bundled entitlement appears as a productivity licens
 
 The bundle is not a complete substitute. Okta's application catalog is deeper than most, its neutrality matters outside a Microsoft shop, and customer identity is a separate category neither bundle replaces well. That is the part worth paying for. The rest is duplication with a support contract, and the test is whether the applications that genuinely need the specialist justify a separate platform.
 
+## The decision, before the arithmetic
+
+The arithmetic later in this brief supports a direction you can take before it. Take the direction first: which platforms go, on what notice date, against what justification. Ratify each retirement once the governance tier is quoted, because that is the one input that can reverse the case.
+
+**The ask.** The board directs management to consolidate to one platform per job and to bring the next technology and risk committee a liquidation list naming each platform's non-renewal notice date and planned retirement quarter, with no duplicative platform renewed absent documented justification.
+
+**The reporting.** That committee sees four numbers every quarter: platforms held per job, license spend per platform and the spend on duplicate capability, platforms with a recorded notice date and a dated retirement decision, and capacity hours returned. The self-test is a two-quarter rule. Any job category still holding more than one platform for two consecutive quarters without a documented non-overlap justification escalates to the board.
+
+That is a direction a board can record without ever seeing a payback calculation. The ratification is where the arithmetic belongs, and the rest of this brief is the working that shows what the arithmetic has to survive.
+
 ## Separate the subscription from the work
 
 The subscription is the line on the invoice; the work around it never appears there.
@@ -64,7 +74,7 @@ Then phase it. The move cost divided by the monthly saving is not a payback peri
 
 A composite example, labeled as one: three thousand seats already running both platforms.
 
-Okta publishes 17 dollars per user per month for its Essentials suite, which bundles single sign-on, lifecycle management and access governance. Microsoft publishes [10 dollars for Entra ID P2](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing), whose own feature list includes basic entitlement management and basic access reviews. Both are list prices as of November 2026. Your agreement will differ from list, but the ratio is the point.
+Okta publishes [17 dollars per user per month for its Essentials suite](https://www.okta.com/pricing/), which bundles single sign-on, lifecycle management and access governance. Microsoft publishes [10 dollars for Entra ID P2](https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing), whose own feature list includes basic entitlement management and basic access reviews. Both are list prices as of November 2026. Your agreement will differ from list, but the ratio is the point.
 
 At three thousand seats Okta Essentials is 612,000 a year. The people who run it cost another 110,000, roughly two fully loaded engineers, but they redeploy rather than leave, so that is capacity, not cash. The cash saving is the subscription.
 
@@ -136,7 +146,7 @@ Then run it twice, because the entitlement decides the answer.
     <ul class="cashfig__rows">
       <li class="cashfig__row">
         <div class="cashfig__head">
-          <span class="cashfig__who">E5, P2 already owned</span>
+          <span class="cashfig__who">E5, P2 already owned, best case</span>
           <span class="cashfig__val">$17</span>
         </div>
         <span class="cashfig__track" aria-hidden="true"><span class="cashfig__fill" style="width:100%"></span></span>
@@ -159,7 +169,7 @@ Then run it twice, because the entitlement decides the answer.
     <ul class="cashfig__rows">
       <li class="cashfig__row">
         <div class="cashfig__head">
-          <span class="cashfig__who">E5, P2 already owned</span>
+          <span class="cashfig__who">E5, P2 already owned, best case</span>
           <span class="cashfig__val">14 <small>months</small></span>
         </div>
         <span class="cashfig__track" aria-hidden="true">
@@ -188,11 +198,13 @@ Then run it twice, because the entitlement decides the answer.
   <figcaption class="cashfig__caption">Three thousand seats. Vendor list prices as of November 2026: Okta Essentials $17 and Entra ID P2 $10 per user per month. A composite example, labeled as one in the brief. Your agreement will differ; the ratio is the point. Governance above P2 is a separate purchase that is quoted rather than listed, so it is not modeled here.</figcaption>
 </figure>
 
+The first case is the best case, and it holds only if P2's basic access reviews and basic entitlement management carry the governance you are retiring. Read it as the ceiling, not the expectation.
+
 On Microsoft 365 E5, P2 is already paid for, so the whole 612,000 comes out. Divide 90,000 by the monthly saving of 51,000 and you get under two months, which is how long recovery takes once the saving starts. It is not the payback period, because nothing is recovered until the old contract ends. From the day you begin it is fourteen months: twelve of waiting, then two of recovery.
 
 If P2 has to be bought, the replacement is 10 dollars a seat, or 360,000 a year. The saving falls to 7 dollars a seat, about 21,000 a month and 252,000 a year, and payback is sixteen months.
 
-Both of those assume the surviving platform carries the governance capability you are retiring. Above P2 it does not, and that is the one number you cannot get from a vendor page. Governance sits in a separate product that Microsoft prices by agreement rather than by list, and the published suite that contains it needs P1 underneath and is quoted differently again for P2 and E5 customers. Quote it before you model it. At this size every dollar a seat costs 36,000 a year, so four dollars roughly halves the saving and seven removes it.
+Both of those assume the surviving platform carries the governance capability you are retiring. Above P2 it does not, and that is the one number you cannot get from a vendor page. Governance sits in a separate product that Microsoft prices by agreement rather than by list, and the published suite that contains it needs P1 underneath and is quoted differently again for P2 and E5 customers. Quote it before you model it. At this size every dollar a seat costs 36,000 a year. Against the 17-dollar baseline, four dollars of governance cost removes about a quarter of the saving and seven removes about 40 percent. Against the 7-dollar baseline in the second case, four dollars roughly halves it and seven removes it entirely.
 
 The tier, not the migration, decides whether there is a business case at all.
 
@@ -217,12 +229,6 @@ Vendor concentration. Retiring platforms hands pricing power to the survivor, wh
 No vendor deadline will force this, and you should not wait for one. Consolidation is cheapest when a renewal is already in front of you, because the notice date is the only point at which you can decline to renew at no cost. Once it passes you have bought another year of the thing you were trying to remove.
 
 So put every identity platform's notice date on one page and work from the earliest. That is your window, and your contracts set it.
-
-## The ask, and what gets reported
-
-**The ask.** The board directs management to consolidate to one platform per job and to bring the next technology and risk committee a liquidation list naming each platform's non-renewal notice date and planned retirement quarter, with no duplicative platform renewed absent documented justification.
-
-**The reporting.** That committee sees four numbers every quarter: platforms held per job, license spend per platform and the spend on duplicate capability, platforms with a recorded notice date and a dated retirement decision, and capacity hours returned. The self-test is a two-quarter rule. Any job category still holding more than one platform for two consecutive quarters without a documented non-overlap justification escalates to the board.
 
 ## The question to ask
 

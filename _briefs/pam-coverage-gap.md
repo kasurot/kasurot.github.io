@@ -18,6 +18,8 @@ The second number is available in seconds. It is on the dashboard, trending up. 
 
 That asymmetry is not a measurement problem. It is an attestation problem: every privileged access program reports what it vaulted, none reports what it missed, and the executive signs a coverage claim with no denominator. The artifact that surfaces it is the auditor's request list or the representation letter, and neither will accept a figure that counts only what entered the tool.
 
+Neither number in this brief is a coverage figure. The vault count is a floor. So is the gap count, because discovery cannot see the vendor's account inside a tenancy you do not administer, or the key in a repository nobody indexed. What changes is not completeness. It is assignability: a floor that can be assigned, dated and chased is worth more than a coverage claim that cannot be argued with.
+
 ### A vault is a container, not an inventory
 
 Every platform reports the same thing: managed accounts. That number is a floor: it describes what was onboarded, not what exists.
@@ -25,6 +27,8 @@ Every platform reports the same thing: managed accounts. That number is a floor:
 This is not a vendor defect. CyberArk, BeyondTrust and Delinea can all enumerate accounts they have discovered but do not manage, and that list arrives without an owner. The scan is real; the register around it is what is missing, because a scan produces candidates, not an owner, a date or a cadence.
 
 Coverage requires knowing the population, and nobody maintains it, because the population is not a list. It is local administrator accounts, service accounts whose passwords have not changed since creation, vendor accounts opened so a support call could close, API keys sitting in configuration files, and certificate private keys on unmanaged shares.
+
+An unvaulted credential is not a reporting omission. It is a working key. It authenticates, it grants whatever the account was given, and because no owner holds its rotation, it is the one credential in the estate whose last change date nobody can produce. When it is used, the use is attributable to the account and not to a person, which is why an incident that begins with a service account is harder to scope to an individual than one that begins with a login. The exposure is not that the credential is unknown. It is that the credential works and nobody is watching it.
 
 The control that already exists is an inventory, not a vault. CIS Control 5.1 requires an inventory of accounts, and 5.5 an inventory of service accounts, both maintained rather than produced once ([CIS Critical Security Controls v8.1](https://www.cisecurity.org/controls/v8-1)).
 
@@ -65,6 +69,8 @@ The claim fails on an estate that is fully enumerated, with every row carrying a
 ### What you are asking to be approved
 
 One resolution: adopt the two numbers as the standing coverage report, adopt named and expiring risk acceptance as the mechanism for refusal, and name the accountable function and the date of the first standing report. Expect the first reading to look worse than the last dashboard. It is the first honest one, and the prior number was a floor labelled as coverage.
+
+The work is not a new function. It runs on the discovery data the privileged access platform already produces, on the inventory control that is already required, and on the analysts already employed to read them. The incremental cost is hours per application per quarter, not a headcount. What is new is the assignment, and that is a decision each application owner makes, not a project security runs on their behalf.
 
 ### What the identity steering committee sees each quarter
 

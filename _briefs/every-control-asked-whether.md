@@ -24,15 +24,13 @@ A control that tests whether a request is legitimate cannot fail a request that 
 
 ## Every control asked the same question
 
-Strong customer authentication verifies that a customer's payment is the customer's. Payee alerts warn a customer about a new beneficiary. Customer anomaly scoring flags a payment that does not fit a customer's history. According to the Cloud Security Alliance's analysis of the incident, protections of that kind were unlikely to have been in play, because they cover customer accounts and not transfers out of a bank's own treasury or settlement account.
+Strong customer authentication verifies that a customer's payment is the customer's. Payee alerts warn a customer about a new beneficiary. Customer anomaly scoring flags a payment that does not fit a customer's history. According to the [Cloud Security Alliance's analysis of the incident](https://labs.cloudsecurityalliance.org/research/csa-research-note-credit-mutuel-arkea-provider-platform-risk/), protections of that kind were unlikely to have been in play, because they cover customer accounts and not transfers out of a bank's own treasury or settlement account.
 
 The third-party program is the same story told differently. The contract, the certification, the questionnaire, the register of information the regulator requires. Every one of them describes the provider. None of them states what the connection is permitted to do.
 
 Detection is the same story a third time. Transaction monitoring does have deterministic rules as well as statistical baselines: a new counterparty, an unusual amount, a burst of instructions. Those rules exist, and what they ask is whether this payment matches the pattern of permitted activity. That is another form of whether.
 
-Three programs, three teams, three reasons. One question.
-
-## The control that was missing is one the bank was already required to have
+## The control most worth checking is one you are already required to have
 
 A payment limit is not a new idea and it is not optional. SWIFT's Customer Security Controls Framework makes transaction business controls mandatory at control 2.9, and the control's stated objective is to ensure outbound transaction activity stays within the expected bounds of normal business. The framework's own risk scenario for it is transactions not limited to normal business hours or amounts, resulting in an unnoticed fraudulent transaction ([CSCF v2026, control 2.9](https://www2.swift.com/knowledgecentre/rest/v1/publications/cscf_dd/70.0/CSCF_v2026_202507015.pdf), 1 July 2025). The FFIEC's examination procedures for wholesale payment systems go further: examiners are directed to confirm that release authority lists state the amount of funds each individual is authorized to release, to assess whether there is adequate dual control over payment orders, and to check that the institution routinely reviews and updates both institution and customer limits as well as officer approval authority ([FFIEC IT Examination Handbook, Wholesale Payment Systems, Tier II Examination Objectives and Procedures](https://ithandbook.ffiec.gov/it-booklets/wholesale-payment-systems/appendix-a-examination-procedures/tier-ii-examination-objectives-and-procedures), updated February 2026).
 
@@ -54,7 +52,7 @@ The work is therefore not invention. It is four specific things.
 
 **Add the period total, and be honest about what it does.** A per-instruction limit without a period total bounds how much one instruction may carry, not how much leaves. An attacker who learns the number sends many. The period total turns that into a pacing problem rather than a single-move problem. It does not cap the incident, because an attacker who waits for the period to reset starts again. What caps the incident is detection and revocation outrunning the period. Both are needed and neither is sufficient on its own.
 
-**Keep ordinary payments out of the approval path.** Out-of-band confirmation only works while a reviewer can give each instruction real attention. Operational experience generally puts that ceiling at a few dozen high-value payments per reviewer per day, and past it the approval becomes a rubber stamp, which is worse than no control because it produces evidence of review. Set the threshold where the volume stays inside that envelope. And approve a new beneficiary once, at onboarding, through an allowlist with a call-back, rather than re-approving it on every payment.
+**Keep ordinary payments out of the approval path.** Out-of-band confirmation only works while a reviewer can give each instruction real attention. That attention has a limit, and past it the approval becomes a rubber stamp, which is worse than no control because it produces evidence of review. Set the threshold where the volume stays inside it. And approve a new beneficiary once, at onboarding, through an allowlist with a call-back, rather than re-approving it on every payment.
 
 **Test the revocation live.** Cutting one channel's credential takes minutes. Cutting it out of the payment engine configuration is a change-board ticket. If the second is the only available route, the first does not help. The test is whether one channel can be cut this afternoon without stranding payments already in flight.
 
@@ -78,7 +76,7 @@ And it does not replace detection or the third-party program, both of which rema
 
 **The ask.** Before any change to a payment release path, each institution names the owner of every payment authority limit, records the payment profile that sets each number, and fixes a review date. A limit without all three is not a limit. It is a default nobody chose.
 
-**The reporting.** The risk committee sees three numbers per payment class every quarter: the largest single instruction the authority permits, the largest single instruction actually released in the period, and the count of exceptions granted. The self-test is one comparison. If the permitted maximum is larger than the loss the business would call material, the limit is decorative no matter what the policy says.
+**The reporting.** The risk committee sees three numbers per payment class every quarter: the largest single instruction the authority permits, the largest single instruction actually released in the period, and the count of exceptions granted. The self-test is one comparison. If the permitted maximum is larger than the loss the business would call material, meaning the threshold the risk appetite statement should already name and the CFO should already own, the limit is decorative no matter what the policy says.
 
 ## The question to ask on Monday
 
