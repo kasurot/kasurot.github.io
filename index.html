@@ -34,11 +34,11 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
       <div class="topic-block">
         <h3 class="topic-heading">{{ topic }}</h3>
         <div class="posts-list">
-          {% for brief in in_topic limit: 2 %}
+          {% for brief in in_topic limit: 3 %}
             {% include brief-card.html brief=brief %}
           {% endfor %}
         </div>
-        {% if in_topic.size > 2 %}
+        {% if in_topic.size > 3 %}
         <p class="topic-more"><a href="{{ '/briefs.html' | relative_url }}">{{ in_topic.size }} briefs in {{ topic }}</a></p>
         {% endif %}
       </div>
@@ -136,14 +136,20 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
     }
     .posts-list {
         display: grid;
-        gap: 1.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        gap: 1.25rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: start;
+    }
+    @media (max-width: 720px) {
+        .posts-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 460px) {
+        .posts-list { grid-template-columns: minmax(0, 1fr); }
     }
     .post-item {
         border: 1px solid var(--border-light);
         border-radius: 8px;
-        padding: 1.25rem 1.35rem;
+        padding: 1rem 1.05rem;
         background: var(--container-bg);
         display: flex;
         flex-direction: column;

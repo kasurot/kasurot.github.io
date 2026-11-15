@@ -56,20 +56,26 @@ description: Executive briefs and strategic insights on identity architecture, s
         text-decoration: underline;
         text-underline-offset: 2px;
     }
+    .posts-list {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+    }
+    @media (max-width: 720px) {
+        .posts-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 460px) {
+        .posts-list { grid-template-columns: minmax(0, 1fr); }
+    }
     .post-item {
         margin-bottom: 0;
         border: 1px solid var(--border-light);
         border-radius: 8px;
-        padding: 1.25rem 1.35rem;
+        padding: 1rem 1.05rem;
         background: var(--container-bg);
         display: flex;
         flex-direction: column;
-    }
-    .posts-list {
-        display: grid;
-        gap: 1.5rem 1.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-        align-items: start;
     }
     .post-eyebrow {
         display: flex;
