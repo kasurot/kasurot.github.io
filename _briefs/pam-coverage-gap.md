@@ -4,6 +4,11 @@ title: "Every PAM Program Measures What It Vaulted. None Measures What It Missed
 date: 2026-11-14
 description: "Every privileged access program reports what it vaulted. That number is a floor, and the gap above it is the one you are being asked to sign."
 tags: [Privileged Access, Identity Strategy, Ownership, Risk Management]
+image: /images/pam-coverage-gap.jpg
+image_width: 1600
+image_height: 640
+image_alt: "A long aisle of steel cantilever shelving in a records centre, loaded with archive cartons. Some bays hold uniform tan cartons in squared courses, others hold mismatched water-stained cartons, one carton leans off a shelf edge into the aisle, and one bay stands empty."
+og_image: /images/pam-coverage-gap-og.jpg
 approved: true
 ---
 
