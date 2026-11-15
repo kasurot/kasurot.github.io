@@ -147,11 +147,11 @@
 
         /* Post Listing Styles */
         .posts-list .post-item {
-            margin-bottom: 20px;
+            margin-bottom: 0;
             padding: 20px;
             border: 1px solid var(--border-light);
             border-radius: 8px;
-            background-color: var(--bg-color);
+            background-color: var(--container-bg);
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
         
@@ -160,11 +160,6 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             border-color: var(--accent-gold);
-        }
-
-        /* Dark mode specific card adjustment */
-        body.dark-mode .posts-list .post-item {
-            background-color: rgba(255, 255, 255, 0.03);
         }
 
         .posts-list .post-item:last-child { border-bottom: 1px solid var(--border-light); }
