@@ -34,7 +34,7 @@ Three programs, three teams, three reasons. One question.
 
 ## The control that was missing is one the bank was already required to have
 
-A payment limit is not a new idea and it is not optional. SWIFT's Customer Security Controls Framework includes transaction business controls as a mandatory requirement, and they exist to detect, protect and validate business transactions within the parameters of normal business. The FFIEC's examination procedures for wholesale payment systems direct examiners to confirm that release authority lists state the amount of funds each individual is authorized to release, and to assess whether there is adequate dual control over payment orders.
+A payment limit is not a new idea and it is not optional. SWIFT's Customer Security Controls Framework makes transaction business controls mandatory at control 2.9, and they exist to detect, protect and validate business transactions within the parameters of normal business ([CSCF control list](https://www.bottomline.com/cdn/8417/5943/6867/Swift_Customer_Security_Programme_CSP_Guide_825.pdf)). The FFIEC's examination procedures for wholesale payment systems go further: examiners are directed to confirm that release authority lists state the amount of funds each individual is authorized to release, to assess whether there is adequate dual control over payment orders, and to check that the institution routinely reviews and updates both institution and customer limits as well as officer approval authority ([FFIEC IT Examination Handbook, Wholesale Payment Systems, Tier II Examination Objectives and Procedures](https://ithandbook.ffiec.gov/it-booklets/wholesale-payment-systems/appendix-a-examination-procedures/tier-ii-examination-objectives-and-procedures), updated February 2026).
 
 None of this is an assessment of what Arkéa did or did not have in place. The public record does not say, and it does not need to. The point is that the control is mandatory, so the interesting question is not whether a bank has a limit. It is why a limit that exists on paper can fail to bound anything at all.
 
@@ -73,6 +73,12 @@ It does not prevent the provider from being compromised, and nothing on the bank
 It does not make a legitimate request look suspicious, because the request was correct. A control that needs the attacker to do something wrong will not catch an attacker who does nothing wrong.
 
 And it does not replace detection or the third-party program, both of which remain necessary. The limit bounds one period. Detection and revocation bound how many periods there are.
+
+## The ask, and what gets reported
+
+**The ask.** Before any change to a payment release path, each institution names the owner of every payment authority limit, records the payment profile that sets each number, and fixes a review date. A limit without all three is not a limit. It is a default nobody chose.
+
+**The reporting.** The risk committee sees three numbers per payment class every quarter: the largest single instruction the authority permits, the largest single instruction actually released in the period, and the count of exceptions granted. The self-test is one comparison. If the permitted maximum is larger than the loss the business would call material, the limit is decorative no matter what the policy says.
 
 ## The question to ask on Monday
 

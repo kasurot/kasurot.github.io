@@ -26,9 +26,9 @@ This is not a vendor defect. CyberArk, BeyondTrust and Delinea can all enumerate
 
 Coverage requires knowing the population, and nobody maintains it, because the population is not a list. It is local administrator accounts, service accounts whose passwords have not changed since creation, vendor accounts opened so a support call could close, API keys sitting in configuration files, and certificate private keys on unmanaged shares.
 
-The control that already exists is an inventory, not a vault. CIS Control 5.1 requires an inventory of accounts, and 5.5 an inventory of service accounts, both maintained rather than produced once (CIS Critical Security Controls v8.1).
+The control that already exists is an inventory, not a vault. CIS Control 5.1 requires an inventory of accounts, and 5.5 an inventory of service accounts, both maintained rather than produced once ([CIS Critical Security Controls v8.1](https://www.cisecurity.org/controls/v8-1)).
 
-The population outside the tool's view is visible in aggregate even where it is not enumerable. Orchid Security's Identity Gap Report found that 67 percent of non-human accounts are created directly inside the application rather than through the identity system (Orchid Security, Identity Gap: 2026 Snapshot, May 2026). That is a vendor selling a fix for the problem it describes, so treat the figure as directional. It gives a share, not a count.
+The population outside the tool's view is visible in aggregate even where it is not enumerable. Orchid Security's Identity Gap report found that two-thirds of non-human identities are authenticated and authorized locally, inside applications, with no directory, no IdP and no central oversight ([Orchid Security, Identity Gap: 2026 Snapshot](https://www.orchid.security/reports/the-identity-gap-2026-snapshot-identity-insight-straight-from-the-source), May 2026). That is a vendor selling a fix for the problem it describes, so treat the figure as directional. It gives a share, not a count.
 
 ### Vaulting needs a decision only an owner can make
 
