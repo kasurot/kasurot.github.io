@@ -22,17 +22,6 @@ description: Executive briefs and strategic insights on identity architecture, s
       {% endif %}
     {% endfor %}
 
-    {% assign ungrouped = site.briefs | where_exp: "b", "b.topic == nil or b.topic == ''" %}
-    {% if ungrouped.size > 0 %}
-    <div class="topic-block">
-      <h3 class="topic-heading">Other</h3>
-      <div class="posts-list">
-        {% for brief in ungrouped %}
-          {% include brief-card.html brief=brief show_topic=true %}
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
 </section>
 
 
