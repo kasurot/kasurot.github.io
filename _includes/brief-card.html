@@ -1,5 +1,5 @@
 {% assign wc = include.brief.content | strip_html | number_of_words %}
-{% assign mins = wc | divided_by: 200 %}
+{% assign mins = wc | plus: 199 | divided_by: 200 %}
 {% if mins < 1 %}{% assign mins = 1 %}{% endif %}
 <div class="post-item">
   <p class="post-eyebrow">
