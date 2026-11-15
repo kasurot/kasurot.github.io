@@ -120,10 +120,14 @@ description: Director of Professional Services at GCA Technology Services. I lea
         list-style: none;
         margin: 0;
         padding: 0;
+    }
+    /* The layout carries a global `li { font-size: 13px }`, so the size has to be
+       set on the items themselves rather than inherited from the list. */
+    .tech-list li {
         font-size: 15px;
         line-height: 1.65;
+        margin-bottom: 10px;
     }
-    .tech-list li { margin-bottom: 10px; }
     .tech-list li:last-child { margin-bottom: 0; }
     .tech-list strong { color: var(--header-blue); }
     .about-narrative p {
