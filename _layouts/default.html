@@ -227,18 +227,18 @@
         }
 
         /* Prose links. Gold carries the hue, the underline carries the affordance. */
-        .post-content a:not(.regpop) {
+        .post-content a {
             color: var(--link);
             text-decoration: underline;
             text-underline-offset: 2px;
             text-decoration-thickness: 1px;
         }
-        .post-content a:not(.regpop):hover {
+        .post-content a:hover {
             color: var(--link-hover);
             text-decoration-thickness: 2px;
         }
-        .post-content a:not(.regpop):visited { color: var(--link-visited); }
-        .post-content a:not(.regpop):focus-visible {
+        .post-content a:visited { color: var(--link-visited); }
+        .post-content a:focus-visible {
             color: var(--link-hover);
             outline: 2px solid var(--link);
             outline-offset: 2px;
