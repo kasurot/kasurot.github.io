@@ -3,8 +3,10 @@
 {% if mins < 1 %}{% assign mins = 1 %}{% endif %}
 <div class="post-item">
   <p class="post-eyebrow">
+    {% if include.show_topic and include.brief.topic %}
     <span class="post-topic">{{ include.brief.topic }}</span>
     <span class="sep">&middot;</span>
+    {% endif %}
     <span class="post-date">{{ include.brief.date | date: "%B %-d, %Y" }}</span>
     <span class="sep">&middot;</span>
     <span class="post-read">{{ mins }} min read</span>

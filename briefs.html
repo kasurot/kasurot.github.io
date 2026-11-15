@@ -30,7 +30,7 @@ description: Executive briefs and strategic insights on identity architecture, s
       <div class="posts-list">
         {% assign all = site.briefs | sort: "date" | reverse %}
         {% for brief in all %}
-          {% include brief-card.html brief=brief %}
+          {% include brief-card.html brief=brief show_topic=true %}
         {% endfor %}
       </div>
     </div>
@@ -63,7 +63,7 @@ description: Executive briefs and strategic insights on identity architecture, s
         display: grid;
         gap: 1.25rem;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        align-items: start;
+        align-items: stretch;
     }
     @media (max-width: 720px) {
         .posts-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
