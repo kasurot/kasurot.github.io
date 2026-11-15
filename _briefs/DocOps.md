@@ -1,7 +1,7 @@
 ---
 title: "Governance as Code: The Cost of Knowledge Debt"
 date: 2026-01-29
-description: "Knowledge debt turns into audit failures, fines, and incident response delays. The strategic shift is towards DocOps: versioned, auditable, code-based documentation."
+description: "Knowledge debt becomes audit failures, fines and delayed incident response. The shift is to DocOps: versioned, auditable, code-based documentation."
 tags: [Governance, Risk Management]
 topic: "Risk & Governance"
 approved: true

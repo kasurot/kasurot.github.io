@@ -2,7 +2,7 @@
 layout: post
 title: "The Shock Doctrine of IT: Moving from Crisis to Capital Allocation"
 date: 2026-03-12
-description: "Disaster architecture turns breach response into a full-suite purchase you can't operationalize. The Panic Premium is the tax you pay for skipping governance."
+description: "Disaster architecture turns breach response into a full-suite purchase you cannot operationalize. The Panic Premium is what you pay for skipping governance."
 tags: [Risk Management, Capital Efficiency, Vendor Strategy]
 topic: "Risk & Governance"
 approved: true

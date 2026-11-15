@@ -2,7 +2,7 @@
 layout: post
 title: "Every PAM Program Measures What It Vaulted. None Measures What It Missed."
 date: 2026-11-14
-description: "Every privileged access program reports what it vaulted. That number is a floor, and the gap above it is the one you are being asked to sign."
+description: "Every privileged access program reports what it vaulted. That number is a floor, and the gap above it is the one you are being asked to sign for."
 tags: [Privileged Access, Identity Strategy, Ownership, Risk Management]
 topic: "Identity & Access"
 image: /images/pam-coverage-gap.jpg

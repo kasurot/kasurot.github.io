@@ -2,7 +2,7 @@
 layout: post
 title: "You Think You Have Zero Trust. You Don't."
 date: 2026-02-19
-description: "Most organizations have deployed conditional access and called it Zero Trust. That's one control in one layer. Zero Trust is an end-to-end architecture, and the gap between perception and reality is the liability you don't know you're carrying."
+description: "Most organizations deployed conditional access and called it Zero Trust. That is one control in one layer. The gap between perception and reality is the liability."
 tags: [Zero Trust, Risk Management, Capital Efficiency, Governance]
 topic: "Identity & Access"
 approved: true

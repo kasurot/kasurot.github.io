@@ -1,27 +1,18 @@
 ---
-layout: default
-title: Executive Briefs | Kevin Armstrong
-description: Executive briefs and strategic insights on identity architecture, security leadership, AI strategy, and capital efficiency from Kevin Armstrong.
+layout: null
+permalink: /briefs.html
+sitemap: false
 ---
-<section>
-    <h2 class="section-title">Executive Briefs</h2>
-
-    {% assign topic_order = "Identity & Access,Risk & Governance,Capital & Vendors" | split: "," %}
-
-    {% for topic in topic_order %}
-      {% assign in_topic = site.briefs | where: "topic", topic | sort: "date" | reverse %}
-      {% if in_topic.size > 0 %}
-      <div class="topic-block">
-        <h3 class="topic-heading">{{ topic }}</h3>
-        <div class="posts-list">
-          {% for brief in in_topic %}
-            {% include brief-card.html brief=brief %}
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
-    {% endfor %}
-
-</section>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executive Briefs | Kevin Armstrong</title>
+<link rel="canonical" href="https://www.the-armstrongs.org/">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=/">
+</head>
+<body>
+<p>The briefs are on the <a href="/">home page</a>.</p>
+</body>
+</html>

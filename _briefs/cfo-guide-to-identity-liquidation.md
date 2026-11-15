@@ -2,7 +2,7 @@
 layout: post
 title: "Identity Liquidation: The Four Costs Your Renewal Quote Never Shows"
 date: 2026-11-11
-description: "A renewal quote is one number. The decision is five, and only one of them is on the page."
+description: "A renewal quote is one number. The decision behind it is five, and only one of those appears on the page you were sent. Here is the arithmetic."
 tags: [Capital Efficiency, Identity Strategy, Vendor Management]
 topic: "Capital & Vendors"
 image: /images/identity-liquidation.jpg

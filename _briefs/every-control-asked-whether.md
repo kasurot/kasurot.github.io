@@ -2,7 +2,7 @@
 layout: post
 title: "Every Control Asked Whether. None Asked How Much."
 date: 2026-11-13
-description: "The payment limit that would have bounded this loss is already mandatory. What failed is that nobody owned the number."
+description: "The payment limit that would have bounded this loss is already mandatory. What failed is that nobody owned the number, so the control existed on paper."
 tags: [Third-Party Risk, Risk Management, Controls, Payments]
 topic: "Risk & Governance"
 approved: true

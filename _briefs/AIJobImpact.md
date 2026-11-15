@@ -1,7 +1,7 @@
 ---
 title: "The Structural Repricing of Professional Value"
 date: 2026-04-02
-description: "AI is automating junior execution and depreciating the 'translation layer' of architecture. The new premium is on indemnity and risk ownership."
+description: "AI is automating junior execution and depreciating architecture's translation layer. The new premium is on indemnity and owning the risk."
 tags: [AI, Risk Management]
 topic: "Capital & Vendors"
 approved: true

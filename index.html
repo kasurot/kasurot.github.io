@@ -18,22 +18,13 @@ description: Executive briefs on identity, risk and IT leadership from Kevin Arm
       <div class="topic-block">
         <h3 class="topic-heading">{{ topic }}</h3>
         <div class="posts-list">
-          {% for brief in in_topic limit: 3 %}
+          {% for brief in in_topic %}
             {% include brief-card.html brief=brief %}
           {% endfor %}
         </div>
-        {% if in_topic.size > 3 %}
-        <p class="topic-more"><a href="{{ '/briefs.html' | relative_url }}">{{ in_topic.size }} briefs in {{ topic }}</a></p>
-        {% endif %}
       </div>
       {% endif %}
     {% endfor %}
-
-    <div class="view-all-link">
-        <a href="{{ '/briefs.html' | relative_url }}" class="cta-btn cta-secondary">
-            View all executive briefs &rarr;
-        </a>
-    </div>
 </section>
 
 <style>
