@@ -1,26 +1,12 @@
 ---
 layout: default
-title: Kevin Armstrong | Strategic IT Executive & Systems Architect
-description: Kevin Armstrong, Director of Professional Services at GCA Technology Services. Identity architecture, non-human identity governance, and turning technical debt into high-margin, scalable assets.
+title: Kevin Armstrong | Executive briefs on identity, risk and IT leadership
+description: Executive briefs on identity, risk and IT leadership from Kevin Armstrong, Director of Professional Services at GCA Technology Services.
 ---
 
-<section class="hero-section">
-    <h1 class="hero-headline">
-        Turning Technical Debt Into High-Margin, Scalable Assets
-    </h1>
-    <p class="hero-sub">
-        IT as a revenue driver, not a cost center. Strategy grounded in identity architecture, security, and capital efficiency.
-    </p>
-    <p class="hero-bio">
-        Director of Professional Services at GCA Technology Services. 20+ years leading IT transformation across identity, security, and infrastructure.
-    </p>
-</section>
-
-<section class="trust-ribbon">
-    <span>CISSP &bull; CRISC &bull; SC-100</span>
-    <span>Entra, Okta, Ping, SailPoint</span>
-    <span>MSIT, WGU 2026</span>
-    <span>10K+ Users Delivered</span>
+<section class="home-intro">
+    <p class="home-standfirst">Weekly executive briefs on identity, risk and IT leadership.</p>
+    <p class="home-standing">CISSP &middot; CRISC &middot; SC-100</p>
 </section>
 
 <section class="featured-briefs">
@@ -53,32 +39,23 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
 </section>
 
 <style>
-    .hero-section {
-        padding: 32px 0 18px;
-        border-bottom: 2px solid var(--accent-gold);
-        margin-bottom: 32px;
+    .home-intro {
+        padding: 0 0 1.4rem;
+        border-bottom: 1px solid var(--border-light);
+        margin-bottom: 2.25rem;
     }
-    .hero-headline {
-        text-transform: none;
-        letter-spacing: 0;
-        font-size: 32px;
-        margin-bottom: 12px;
-        line-height: 1.2;
-        text-wrap: balance;
-    }
-    .hero-sub {
-        font-size: 16px;
-        color: var(--text-gray);
-        max-width: 600px;
-        margin-bottom: 12px;
+    .home-standfirst {
+        font-size: 1.05rem;
         line-height: 1.6;
+        color: var(--text-body);
+        margin: 0 0 .45rem;
+        max-width: 60ch;
     }
-    .hero-bio {
-        font-size: 14px;
+    .home-standing {
+        font-size: .8125rem;
+        letter-spacing: .04em;
         color: var(--text-gray);
-        font-style: italic;
-        max-width: 600px;
-        margin-bottom: 0;
+        margin: 0;
     }
     .cta-btn {
         display: inline-block;
@@ -96,26 +73,6 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
     .cta-secondary:hover {
         border-color: var(--accent-gold);
         color: var(--accent-gold);
-    }
-    .trust-ribbon {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px 12px;
-        justify-content: flex-start;
-        padding: 14px 0 20px;
-        font-size: 12px;
-        letter-spacing: 0.3px;
-        color: var(--text-gray);
-        border-bottom: 1px solid var(--border-light);
-        margin-bottom: 28px;
-    }
-    .trust-ribbon span {
-        background: var(--bg-color);
-        border: 1px solid var(--border-medium);
-        border-radius: 999px;
-        padding: 4px 10px;
-        font-weight: 600;
-        white-space: nowrap;
     }
     .featured-briefs { margin-bottom: 20px; }
 
@@ -187,16 +144,11 @@ description: Kevin Armstrong, Director of Professional Services at GCA Technolog
     .view-all-link { margin-top: 2rem; text-align: center; }
 
     @media (max-width: 640px) {
-        .hero-section { padding: 20px 0 24px; margin-bottom: 20px; }
-        .hero-headline { font-size: 24px; }
-        .hero-sub { font-size: 15px; }
-        .trust-ribbon { padding: 8px 0 14px; }
         .post-item { padding: 1rem 1.1rem; }
         .post-item h4 { font-size: 1.1rem; }
         .topic-block { margin-bottom: 2.25rem; }
     }
     @media print {
-        .cta-btn, .trust-ribbon { display: none; }
-        .hero-section { border-bottom: none; margin-bottom: 0; }
+        .cta-btn { display: none; }
     }
 </style>
