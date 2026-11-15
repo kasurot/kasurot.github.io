@@ -56,14 +56,28 @@ description: Executive briefs and strategic insights on identity architecture, s
         text-decoration: underline;
         text-underline-offset: 2px;
     }
-    .post-item { margin-bottom: 2rem; }
+    .post-item {
+        margin-bottom: 0;
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 1.25rem 1.35rem;
+        background: var(--container-bg);
+        display: flex;
+        flex-direction: column;
+    }
+    .posts-list {
+        display: grid;
+        gap: 1.5rem 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        align-items: start;
+    }
     .post-eyebrow {
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
         gap: .5rem;
-        margin: 0 0 .4rem;
-        font-size: .8125rem;
+        margin: 0 0 .5rem;
+        font-size: .75rem;
         color: var(--text-gray);
     }
     .post-eyebrow .post-topic {
@@ -74,8 +88,8 @@ description: Executive briefs and strategic insights on identity architecture, s
     }
     .post-eyebrow .sep { opacity: .5; }
     .post-item h4 {
-        margin: 0 0 .45rem;
-        font-size: 1.35rem;
+        margin: 0 0 .5rem;
+        font-size: 1.2rem;
         line-height: 1.3;
         font-weight: 600;
     }
@@ -87,11 +101,12 @@ description: Executive briefs and strategic insights on identity architecture, s
     .post-description {
         margin: 0;
         color: var(--text-body);
-        font-size: 1rem;
+        font-size: .95rem;
         line-height: 1.55;
     }
     @media (max-width: 640px) {
-        .post-item h4 { font-size: 1.2rem; }
+        .post-item h4 { font-size: 1.1rem; }
         .topic-block { margin-bottom: 2.25rem; }
+        .post-item { padding: 1rem 1.1rem; }
     }
 </style>
