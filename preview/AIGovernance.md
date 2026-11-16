@@ -6,14 +6,14 @@ description: "Almost every AI agent reaches production with an identity and no o
 tags: [AI, Identity Strategy, Risk Management, Governance]
 topic: "Identity & Access"
 preview: true
-preview_note: "Rewritten to 1,579 words with four verified citations, an ask and a five-number reporting block. Reviewed by the C-suite round. Ready for your approval."
+preview_note: "Rewritten to 1,591 words with four verified citations, an ask and a five-number reporting block. Reviewed by the C-suite round. The opening now states the PAM scope finding instead of the platform credential. Ready for your approval."
 noindex: true
 permalink: /preview/AIGovernance/
 ---
 
 Almost every AI agent deployed to production receives an identity. Few receive a named owner. That ordering is the whole problem, and it is the one thing about AI you can fix without waiting for anyone.
 
-At a multi-acquisition insurance brokerage I inventoried 1,697 service principals in a single estate. About 200 were no longer used by anything, so they came out. Another 100 carried advanced permissions, so each was audited individually and the remainder were risk-ranked and deferred behind work that could hurt the business. Across client estates I have worked in more than five thousand machine identities, which is a floor rather than a total. I have implemented all three major privileged access platforms, and every one had the same blind spot: it could tell you what it had vaulted, and not what it had missed.
+At a multi-acquisition insurance brokerage I inventoried 1,697 service principals in a single estate. About 200 were no longer used by anything, so they came out. Another 100 carried advanced permissions, so each was audited individually and the remainder were risk-ranked and deferred behind work that could hurt the business. The service accounts had been out of scope for the privileged access platform and excluded from the quarterly access review, so the platform could tell you what it had vaulted and not what it had missed. Nobody had ever asked it to look.
 
 That work is why this brief exists. The AI agent problem is that problem on a faster clock.
 
@@ -23,7 +23,7 @@ The [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llmrisk/llm06202
 
 None of those three is about the model. They are the questions an identity practitioner asks about a service account, and OWASP arrived at them from the security side of the AI problem rather than the identity side. That is worth noticing, with one caution. The first two map cleanly onto identity work and the third does not, because autonomy is not ownership. An agent can carry a named owner and still act unsupervised. An agent can require approval on every call and still have nobody accountable for it. They are different properties, and OWASP's remedy for autonomy is a control rather than a register.
 
-The scale is not marginal. [Palo Alto Networks' 2026 Identity Security Landscape](https://www.paloaltonetworks.com/idira/idira-identity-security-landscape), a vendor survey of more than 2,900 security leaders, puts machine identities ahead of human identities by 109 to 1. The [Cloud Security Alliance](https://labs.cloudsecurityalliance.org/research/csa-whitepaper-nonhuman-identity-agentic-ai-governance-v1-cs/) published a paper in May 2026 whose title states the position this brief takes: *The Non-Human Identity Governance Vacuum*, subtitled *AI Agents and the Fastest-Growing Unmanaged Attack Surface*.
+The scale is not marginal. In the estates I have worked in, the count runs above five thousand machine identities, a floor rather than a total. [Palo Alto Networks' 2026 Identity Security Landscape](https://www.paloaltonetworks.com/idira/idira-identity-security-landscape), a vendor survey of more than 2,900 security leaders, puts machine identities ahead of human identities by 109 to 1. The [Cloud Security Alliance](https://labs.cloudsecurityalliance.org/research/csa-whitepaper-nonhuman-identity-agentic-ai-governance-v1-cs/) published a paper in May 2026 whose title states the position this brief takes: *The Non-Human Identity Governance Vacuum*, subtitled *AI Agents and the Fastest-Growing Unmanaged Attack Surface*.
 
 ## Why an agent is worse than a service account
 
