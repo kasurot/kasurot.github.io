@@ -487,9 +487,15 @@
             }
             .nav-links a:last-child { border-bottom: none; }
             .nav-right { display: none; }
-            h2 { letter-spacing: 0.2px; font-size: 10px; }
+            /* The identity block is the first thing on every page. On a phone the
+               name at 40px and the tagline at 19px consumed 136px, a sixth of the
+               viewport, before any content appeared. The tagline fits one line at
+               16px, which alone recovers 32px. */
+            h1 { font-size: 30px; line-height: 1.15; margin-bottom: 4px; }
+            header h2 { font-size: 16px; line-height: 1.35; margin-bottom: 8px; }
+            header { padding-bottom: 10px; }
             .competency-grid { grid-template-columns: 1fr; }
-            .resume-container { margin-top: 0; padding: 20px; }
+            .resume-container { margin-top: 0; padding: 12px 20px 20px; }
             .contact-info { flex-direction: column; gap: 5px; }
             .separator { display: none; }
             .trust-ribbon {
@@ -740,6 +746,7 @@
             .post-item { padding: 1rem; }
             .post-item h4 { font-size: 1.1rem; }
             .topic-block { margin-bottom: 2rem; }
+            .topic-heading { margin-bottom: .625rem; }
             /* 2.5rem is a desktop display size. On a 390px screen it forces the
                longest brief titles to five lines and eats a quarter of the first
                viewport. 2rem is the point where five lines becomes four. */
