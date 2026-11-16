@@ -10,18 +10,28 @@ description: Executive briefs on identity, risk and IT leadership from Kevin Arm
 </section>
 
 <section class="featured-briefs">
-    {% assign recent = site.briefs | sort: "date" | reverse %}
-    <h2 class="section-title">Latest</h2>
-    <div class="posts-list">
-      {% for brief in recent limit: 3 %}
-        {% include brief-card.html brief=brief show_topic=true %}
-      {% endfor %}
-    </div>
-    <p class="home-archive-link"><a href="{{ '/briefs.html' | relative_url }}">All {{ site.briefs.size }} briefs, by topic &rarr;</a></p>
+    {% assign topic_order = "Identity & Access,Risk & Governance,Capital & Vendors" | split: "," %}
+
+    {% for topic in topic_order %}
+      {% assign in_topic = site.briefs | where: "topic", topic | sort: "date" | reverse %}
+      {% if in_topic.size > 0 %}
+      <div class="topic-block">
+        <h3 class="topic-heading">{{ topic }}</h3>
+        <div class="posts-list">
+          {% for brief in in_topic limit: 3 %}
+            {% include brief-card.html brief=brief %}
+          {% endfor %}
+        </div>
+        {% if in_topic.size > 3 %}
+        <p class="topic-more"><a href="{{ '/briefs.html' | relative_url }}">All {{ in_topic.size }} in {{ topic }} &rarr;</a></p>
+        {% endif %}
+      </div>
+      {% endif %}
+    {% endfor %}
 </section>
 
 <style>
-    /* Page-specific: the home standfirst, the standing line and the archive link. */
+    /* Page-specific: the home standfirst and the standing line. */
     .home-intro {
         padding: 0 0 1.4rem;
         border-bottom: 1px solid var(--border-light);
@@ -42,14 +52,4 @@ description: Executive briefs on identity, risk and IT leadership from Kevin Arm
         margin: 0;
     }
     .featured-briefs { margin-bottom: 20px; }
-    .home-archive-link {
-        font-family: var(--font-ui);
-        font-size: .875rem;
-        margin: 1.5rem 0 0;
-    }
-    .home-archive-link a {
-        color: var(--accent-gold);
-        text-decoration: underline;
-        text-underline-offset: 2px;
-    }
 </style>
