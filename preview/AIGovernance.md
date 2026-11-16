@@ -6,14 +6,14 @@ description: "Almost every AI agent reaches production with an identity and no o
 tags: [AI, Identity Strategy, Risk Management, Governance]
 topic: "Identity & Access"
 preview: true
-preview_note: "Rewritten to 1,591 words with four verified citations, an ask and a five-number reporting block. Reviewed by the C-suite round. The opening now states the PAM scope finding instead of the platform credential. Ready for your approval."
+preview_note: "Rewritten to 1,614 words with four verified citations, an ask and a five-number reporting block. Reviewed by the C-suite round. The opening states the PAM scope finding instead of the platform credential, and the terminology is standardised to service accounts with non-human identity introduced once as the umbrella. Ready for your approval."
 noindex: true
 permalink: /preview/AIGovernance/
 ---
 
 Almost every AI agent deployed to production receives an identity. Few receive a named owner. That ordering is the whole problem, and it is the one thing about AI you can fix without waiting for anyone.
 
-At a multi-acquisition insurance brokerage I inventoried 1,697 service principals in a single estate. About 200 were no longer used by anything, so they came out. Another 100 carried advanced permissions, so each was audited individually and the remainder were risk-ranked and deferred behind work that could hurt the business. The service accounts had been out of scope for the privileged access platform and excluded from the quarterly access review, so the platform could tell you what it had vaulted and not what it had missed. Nobody had ever asked it to look.
+At a multi-acquisition insurance brokerage I inventoried 1,697 service accounts in a single estate. About 200 were no longer used by anything, so they came out. Another 100 carried advanced permissions, so each was audited individually and the remainder were risk-ranked and deferred behind work that could hurt the business. The service accounts had been out of scope for the privileged access platform and excluded from the quarterly access review, so the platform could tell you what it had vaulted and not what it had missed. Nobody had ever asked it to look.
 
 That work is why this brief exists. The AI agent problem is that problem on a faster clock.
 
@@ -23,7 +23,7 @@ The [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llmrisk/llm06202
 
 None of those three is about the model. They are the questions an identity practitioner asks about a service account, and OWASP arrived at them from the security side of the AI problem rather than the identity side. That is worth noticing, with one caution. The first two map cleanly onto identity work and the third does not, because autonomy is not ownership. An agent can carry a named owner and still act unsupervised. An agent can require approval on every call and still have nobody accountable for it. They are different properties, and OWASP's remedy for autonomy is a control rather than a register.
 
-The scale is not marginal. In the estates I have worked in, the count runs above five thousand machine identities, a floor rather than a total. [Palo Alto Networks' 2026 Identity Security Landscape](https://www.paloaltonetworks.com/idira/idira-identity-security-landscape), a vendor survey of more than 2,900 security leaders, puts machine identities ahead of human identities by 109 to 1. The [Cloud Security Alliance](https://labs.cloudsecurityalliance.org/research/csa-whitepaper-nonhuman-identity-agentic-ai-governance-v1-cs/) published a paper in May 2026 whose title states the position this brief takes: *The Non-Human Identity Governance Vacuum*, subtitled *AI Agents and the Fastest-Growing Unmanaged Attack Surface*.
+The scale is not marginal. In the estates I have worked in, the count runs above five thousand, a floor rather than a total. [Palo Alto Networks' 2026 Identity Security Landscape](https://www.paloaltonetworks.com/idira/idira-identity-security-landscape), a vendor survey of more than 2,900 security leaders, puts machine identities ahead of human identities by 109 to 1. The [Cloud Security Alliance](https://labs.cloudsecurityalliance.org/research/csa-whitepaper-nonhuman-identity-agentic-ai-governance-v1-cs/) published a paper in May 2026 whose title states the position this brief takes: *The Non-Human Identity Governance Vacuum*, subtitled *AI Agents and the Fastest-Growing Unmanaged Attack Surface*. Non-human identity is the umbrella term, and it covers the service accounts already sitting in your estate as well as the agents arriving now.
 
 ## Why an agent is worse than a service account
 
@@ -31,7 +31,7 @@ A service account sits idle until something calls it. Its behaviour is a functio
 
 An agent decides. It selects a tool, composes a call and takes a next step without a human in the loop. The permission set may be identical to the service account beside it. What changed is that the permission set is now exercised by something that chooses when and how.
 
-Autonomy is the variable that moved. Scope did not. In the estates I have worked in, agents commonly carry permissions granted at proof of concept, when the intent was to see whether the thing worked at all, and the grant was rarely revisited when it went to production. That is the same failure I found in the service principal estate, with one difference that matters to your C-suite: an over-permissioned service account is exploited by somebody who has to find it first, and an over-permissioned agent can be manipulated into exploiting itself.
+Autonomy is the variable that moved. Scope did not. In the estates I have worked in, agents commonly carry permissions granted at proof of concept, when the intent was to see whether the thing worked at all, and the grant was rarely revisited when it went to production. That is the same failure I found in the service account estate, with one difference that matters to your C-suite: an over-permissioned service account is exploited by somebody who has to find it first, and an over-permissioned agent can be manipulated into exploiting itself.
 
 The mechanism deserves stating precisely, because it is where the service account comparison flatters us. An agent reads untrusted input, so business-normal content becomes the caller: an email, a ticket, a page. The exploit channel is not a secret sitting in a repository, which at least has to leak. It is your ordinary operating traffic, which never has to.
 
@@ -69,7 +69,7 @@ A tool will find the orphans and surface the over-permissioned agents. A tool is
 
 That sentence is narrow on purpose. It needs no platform, no policy library and no maturity model, and it is enforceable at the point of deployment, which is the only point where it is free. The cost is two fields in an inventory and a gate in change control, which is why it needs no budget line and should not wait for one.
 
-For the estate already running, use the method I used on the service principals rather than an open-ended sweep: **register or risk-rank every agent before the next risk review, schedule the tail behind work that can hurt the business, and decommission unowned agents by default unless an owner is named.** A deadline that requires every agent registered is a deadline that slips. A deadline that requires every agent ranked does not.
+For the estate already running, use the method I used on the service accounts rather than an open-ended sweep: **register or risk-rank every agent before the next risk review, schedule the tail behind work that can hurt the business, and decommission unowned agents by default unless an owner is named.** A deadline that requires every agent registered is a deadline that slips. A deadline that requires every agent ranked does not.
 
 Three of those decisions are yours and cannot be delegated. Name the accountable executive. Put the numbers on the risk committee agenda yourself. Give your CISO standing authority to block any agent at deployment until it has both fields.
 
