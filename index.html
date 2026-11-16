@@ -55,5 +55,8 @@ description: Executive briefs on identity, risk and IT leadership from Kevin Arm
     /* Tighter than desktop so the first card sits higher on a phone. */
     @media (max-width: 768px) {
         .home-intro { padding-bottom: .875rem; margin-bottom: 1.25rem; }
+        /* At a fixed 16.8px the standfirst wrapped to two lines on a 375px iPhone,
+           which is 27px of a small screen. Scaling holds it to one line from 320px. */
+        .home-standfirst { font-size: clamp(12.5px, 4.25vw, 16.8px); }
     }
 </style>
