@@ -22,7 +22,7 @@ noindex: true
       <span class="sep">&middot;</span>
       <span>{{ d.content | strip_html | number_of_words }} words</span>
     </p>
-    <h2><a href="{{ d.url | relative_url }}">{{ d.title }}</a></h2>
+    <h2><a href="{{ d.url | relative_url }}{% if d.image %}#hero{% else %}#content{% endif %}">{{ d.title }}</a></h2>
     {% if d.preview_note %}<p class="preview-note">{{ d.preview_note }}</p>{% endif %}
   </div>
   {% endfor %}

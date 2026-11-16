@@ -200,6 +200,12 @@
         }
         .post-header .meta { font-size: 13px; color: var(--text-gray); font-style: italic; }
 
+        /* Card links jump past the title, which the reader has just clicked, to the
+           body. The offset clears the 54px sticky nav on desktop; on phones that nav
+           is hidden, so no offset is needed. */
+        #content, #hero { scroll-margin-top: 66px; }
+        @media (max-width: 768px) { #content, #hero { scroll-margin-top: 0; } }
+
         .post-nav {
             margin-bottom: 20px;
         }

@@ -11,6 +11,6 @@
     <span class="sep">&middot;</span>
     <span class="post-read">{{ mins }} min read</span>
   </p>
-  <h4><a href="{{ include.brief.url | relative_url }}">{{ include.brief.title }}</a></h4>
+  <h4><a href="{{ include.brief.url | relative_url }}{% if include.brief.image %}#hero{% else %}#content{% endif %}">{{ include.brief.title }}</a></h4>
   <p class="post-description">{{ include.brief.description }}</p>
 </div>

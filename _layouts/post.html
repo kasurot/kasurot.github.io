@@ -94,7 +94,7 @@ layout: default
   </div>
 
   {% if page.image %}
-  <figure class="post-hero">
+  <figure class="post-hero" id="hero">
     <picture>
       <source type="image/webp"
         srcset="{{ page.image | replace: '.jpg', '-716.webp' | relative_url }} 716w, {{ page.image | replace: '.jpg', '-1432.webp' | relative_url }} 1432w"
@@ -109,7 +109,7 @@ layout: default
   </figure>
   {% endif %}
 
-  <div class="post-content">
+  <div class="post-content" id="content">
     {{ content }}
   </div>
 
