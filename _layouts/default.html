@@ -492,7 +492,10 @@
                viewport, before any content appeared. The tagline fits one line at
                16px, which alone recovers 32px. */
             h1 { font-size: 30px; line-height: 1.15; margin-bottom: 4px; }
-            header h2 { font-size: 16px; line-height: 1.35; margin-bottom: 8px; }
+            /* A fixed 16px fitted at 390px but wrapped to two lines at 375, which is
+               a very common iPhone width. Scaling with the viewport holds the
+               tagline on one line from 320px to 430px. */
+            header h2 { font-size: clamp(13px, 4.15vw, 16px); line-height: 1.35; margin-bottom: 8px; }
             header { padding-bottom: 10px; }
             .competency-grid { grid-template-columns: 1fr; }
             .resume-container { margin-top: 0; padding: 12px 20px 20px; }
