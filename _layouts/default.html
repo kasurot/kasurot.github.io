@@ -734,6 +734,10 @@
             .post-item { padding: 1rem; }
             .post-item h4 { font-size: 1.1rem; }
             .topic-block { margin-bottom: 2rem; }
+            /* 2.5rem is a desktop display size. On a 390px screen it forces the
+               longest brief titles to five lines and eats a quarter of the first
+               viewport. 2rem is the point where five lines becomes four. */
+            .post-header .post-title { font-size: 2rem; line-height: 1.2; padding-bottom: 12px; }
         }
     </style>
 </head>
