@@ -6,7 +6,7 @@ description: "Almost every AI agent reaches production with an identity and no o
 tags: [AI, Identity Strategy, Risk Management, Governance]
 topic: "Identity & Access"
 preview: true
-preview_note: "Rewritten to 1,614 words with four verified citations, an ask and a five-number reporting block. Reviewed by the C-suite round. The opening states the PAM scope finding instead of the platform credential, and the terminology is standardised to service accounts with non-human identity introduced once as the umbrella. Ready for your approval."
+preview_note: "Rewritten to 1,650 words with four verified citations, an ask and a five-number reporting block. Reviewed by the C-suite round. The opening states the PAM scope finding instead of the platform credential, and the terminology is standardised to service accounts with non-human identity introduced once as the umbrella. The three decisions no longer assume the reader is the CEO. Ready for your approval."
 noindex: true
 permalink: /preview/AIGovernance/
 ---
@@ -31,7 +31,7 @@ A service account sits idle until something calls it. Its behaviour is a functio
 
 An agent decides. It selects a tool, composes a call and takes a next step without a human in the loop. The permission set may be identical to the service account beside it. What changed is that the permission set is now exercised by something that chooses when and how.
 
-Autonomy is the variable that moved. Scope did not. In the estates I have worked in, agents commonly carry permissions granted at proof of concept, when the intent was to see whether the thing worked at all, and the grant was rarely revisited when it went to production. That is the same failure I found in the service account estate, with one difference that matters to your C-suite: an over-permissioned service account is exploited by somebody who has to find it first, and an over-permissioned agent can be manipulated into exploiting itself.
+Autonomy is the variable that moved. Scope did not. In the estates I have worked in, agents commonly carry permissions granted at proof of concept, when the intent was to see whether the thing worked at all, and the grant was rarely revisited when it went to production. That is the same failure I found in the service account estate, with one difference that matters to whoever carries the risk: an over-permissioned service account is exploited by somebody who has to find it first, and an over-permissioned agent can be manipulated into exploiting itself.
 
 The mechanism deserves stating precisely, because it is where the service account comparison flatters us. An agent reads untrusted input, so business-normal content becomes the caller: an email, a ticket, a page. The exploit channel is not a secret sitting in a repository, which at least has to leak. It is your ordinary operating traffic, which never has to.
 
@@ -71,7 +71,7 @@ That sentence is narrow on purpose. It needs no platform, no policy library and 
 
 For the estate already running, use the method I used on the service accounts rather than an open-ended sweep: **register or risk-rank every agent before the next risk review, schedule the tail behind work that can hurt the business, and decommission unowned agents by default unless an owner is named.** A deadline that requires every agent registered is a deadline that slips. A deadline that requires every agent ranked does not.
 
-Three of those decisions are yours and cannot be delegated. Name the accountable executive. Put the numbers on the risk committee agenda yourself. Give your CISO standing authority to block any agent at deployment until it has both fields.
+Three of those decisions sit above the deploying team and cannot be delegated to it. The accountable executive has to come from the business unit the agent serves. The numbers have to reach the risk committee through whoever sets its agenda. The identity function needs standing authority to block any agent at deployment until it has both fields. Whichever of them is yours, none of them belongs to the team that shipped the agent.
 
 Report quarterly, on five numbers.
 
