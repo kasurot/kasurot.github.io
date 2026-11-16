@@ -1,10 +1,14 @@
 ---
+layout: post
 title: "Governance as Code: The Cost of Knowledge Debt"
 date: 2026-01-29
 description: "Knowledge debt becomes audit failures, fines and delayed incident response. The shift is to DocOps: versioned, auditable, code-based documentation."
 tags: [Governance, Risk Management]
 topic: "Risk & Governance"
-approved: true
+preview: true
+preview_note: "398 words, zero citations, no reporting element. Needs rebuilding as an operating standard."
+noindex: true
+permalink: /preview/DocOps/
 ---
 
 **If you had to run your "Break Glass" procedure during an active cyberattack right now, would you trust the PDF stored in SharePoint?**

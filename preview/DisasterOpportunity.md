@@ -5,7 +5,10 @@ date: 2026-03-12
 description: "Disaster architecture turns breach response into a full-suite purchase you cannot operationalize. The Panic Premium is what you pay for skipping governance."
 tags: [Risk Management, Capital Efficiency, Vendor Strategy]
 topic: "Risk & Governance"
-approved: true
+preview: true
+preview_note: "536 words, zero citations, no reporting element. Needs a full rewrite."
+noindex: true
+permalink: /preview/DisasterOpportunity/
 ---
 
 The aphorism "Never let a good crisis go to waste" is often cited in boardrooms as a call to action. In the context of IT strategy, however, this mindset leads to **"Disaster Architecture"**: expensive, poorly integrated tools purchased at a panic premium, governed by the clock instead of by design.

@@ -4,6 +4,7 @@ title: "Dense figure component demo"
 date: 2026-11-13
 description: "Preview of the HTML/CSS dense figure component at 716px and 350px."
 tags: [Preview]
+preview: true
 noindex: true
 permalink: /preview/dense-figure-demo/
 ---

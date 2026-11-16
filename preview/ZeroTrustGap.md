@@ -5,7 +5,10 @@ date: 2026-02-19
 description: "Most organizations deployed conditional access and called it Zero Trust. That is one control in one layer. The gap between belief and reality is the liability."
 tags: [Zero Trust, Risk Management, Capital Efficiency, Governance]
 topic: "Identity & Access"
-approved: true
+preview: true
+preview_note: "512 words, zero citations, no reporting element. Needs a full rewrite."
+noindex: true
+permalink: /preview/ZeroTrustGap/
 ---
 
 Most executives believe they have Zero Trust. Most executives are wrong.

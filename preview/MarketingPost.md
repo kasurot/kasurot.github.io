@@ -1,10 +1,14 @@
 ---
+layout: post
 title: "Marketing is Not Arts & Crafts: It's Unit Economics"
 date: 2026-04-23
 description: "Marketing solved the last mile problem decades ago. IT still has not. What changes when you treat access friction as a distribution tax rather than a cost."
 tags: [Capital Efficiency]
 topic: "Capital & Vendors"
-approved: true
+preview: true
+preview_note: "435 words, zero citations, no reporting element. Needs evidence, a reader action and a band."
+noindex: true
+permalink: /preview/MarketingPost/
 ---
 
 Marketing solved the Last Mile Problem decades ago. IT still hasn't.

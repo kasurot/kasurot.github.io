@@ -1,0 +1,43 @@
+---
+layout: default
+title: Preview index | Kevin Armstrong
+description: Unindexed drafts under review. Not part of the published site.
+noindex: true
+---
+<section class="preview-intro">
+  <h1>Preview index</h1>
+  <p>Unindexed drafts. These pages are excluded from the briefs collection, the sitemap and the
+  site listings, and <code>robots.txt</code> disallows the path. Old <code>/briefs/</code> URLs
+  redirect here so nothing 404s. When a draft is approved it moves back into the collection at its
+  original address.</p>
+</section>
+
+{% assign drafts = site.pages | where: "preview", true | sort: "date" | reverse %}
+<section class="preview-list">
+  {% for d in drafts %}
+  <div class="preview-item">
+    <p class="preview-meta">
+      {% if d.topic %}<span class="preview-topic">{{ d.topic }}</span><span class="sep">&middot;</span>{% endif %}
+      <span>{{ d.date | date: "%B %-d, %Y" }}</span>
+      <span class="sep">&middot;</span>
+      <span>{{ d.content | strip_html | number_of_words }} words</span>
+    </p>
+    <h2><a href="{{ d.url | relative_url }}">{{ d.title }}</a></h2>
+    {% if d.preview_note %}<p class="preview-note">{{ d.preview_note }}</p>{% endif %}
+  </div>
+  {% endfor %}
+</section>
+
+<style>
+  .preview-intro { margin-bottom: 2.25rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--border-light); }
+  .preview-intro h1 { font-size: 2rem; margin: 0 0 .75rem; }
+  .preview-intro p { max-width: 68ch; color: var(--text-body); }
+  .preview-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border-light); }
+  .preview-meta {
+    font-family: var(--font-ui); font-size: .8125rem; letter-spacing: .03em;
+    color: var(--text-gray); margin: 0 0 .35rem;
+  }
+  .preview-topic { text-transform: uppercase; letter-spacing: .06em; }
+  .preview-item h2 { font-size: 1.25rem; margin: 0 0 .35rem; line-height: 1.3; }
+  .preview-note { color: var(--text-body); margin: 0; max-width: 72ch; font-size: .95rem; }
+</style>

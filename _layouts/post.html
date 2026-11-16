@@ -82,7 +82,11 @@ layout: default
 </style>
 <article class="post">
   <div class="post-nav">
+    {% if page.preview %}
+    <a href="{{ '/preview/' | relative_url }}">&larr; Back to preview index</a>
+    {% else %}
     <a href="{{ '/briefs.html' | relative_url }}">&larr; Back to all briefs</a>
+    {% endif %}
   </div>
   <div class="post-header">
     <h2 class="post-title">{{ page.title }}</h2>
@@ -110,6 +114,10 @@ layout: default
   </div>
 
   <div class="post-nav post-nav-bottom">
+    {% if page.preview %}
+    <a href="{{ '/preview/' | relative_url }}">&larr; Back to preview index</a>
+    {% else %}
     <a href="{{ '/briefs.html' | relative_url }}">&larr; Back to all briefs</a>
+    {% endif %}
   </div>
 </article>
